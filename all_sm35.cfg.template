@@ -1,0 +1,2 @@
+current_renderer = ""
+modules = ("GLRenderer", "cure_sm35", "FreePipe_sm35", "CUDARaster_sm35")

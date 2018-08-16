@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ImportGroup>
+		<Import Project="dependencies.props" />
+		<Import Project="$(Win32_core_tools_root)build\vs2017\Win32_core_tools.props" Condition="'$(Win32_core_tools)' == ''" />
+		<Import Project="$(COM_core_tools_root)build\vs2017\COM_core_tools.props" Condition="'$(COM_core_tools)' == ''" />
+	</ImportGroup>
+	<PropertyGroup>
+		<IncludePath>$(MSBuildThisFileDirectory)..\..\include\;$(IncludePath)</IncludePath>
+		<LibraryPath Condition="'$(Platform)' == 'Win32'">$(MSBuildThisFileDirectory)lib\x86\;$(LibraryPath)</LibraryPath>
+		<LibraryPath Condition="'$(Platform)' == 'x64'">$(MSBuildThisFileDirectory)lib\x64\;$(LibraryPath)</LibraryPath>
+		<image_tools>$(MSBuildThisFileDirectory)</image_tools>
+	</PropertyGroup>
+	<Target Name="image_tools_add_library_dependencies" BeforeTargets="Win32_core_tools_add_library_dependencies;COM_core_tools_add_library_dependencies" DependsOnTargets="ClCompile">
+		<ItemGroup>
+			<Link Condition="$([System.Text.RegularExpressions.Regex]::IsMatch(%(AdditionalDependencies), '(.*;)?image_tools-MDd\.lib(;.*)?'))">
+				<AdditionalDependencies>Win32_core_tools-MDd.lib;COM_core_tools-MDd.lib;windowscodecs.lib;%(AdditionalDependencies)</AdditionalDependencies>
+			</Link>
+			<Link Condition="$([System.Text.RegularExpressions.Regex]::IsMatch(%(AdditionalDependencies), '(.*;)?image_tools-MD\.lib(;.*)?'))">
+				<AdditionalDependencies>Win32_core_tools-MD.lib;COM_core_tools-MD.lib;windowscodecs.lib;%(AdditionalDependencies)</AdditionalDependencies>
+			</Link>
+		</ItemGroup>
+	</Target>
+</Project>

@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="source">
+      <UniqueIdentifier>{971E4048-94C7-48D3-B2FE-5AD10C0616F2}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="source\materials">
+      <UniqueIdentifier>{48C8DC57-8A42-4491-91ED-54DC3A59FD89}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="dll.def" />
+    <None Include="..\..\..\source\FreePipe\materials\LitMaterial.cuh">
+      <Filter>source\materials</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\source\FreePipe\materials\ClipspaceMaterial.h">
+      <Filter>source\materials</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\FreePipe\materials\ColoredMaterial.h">
+      <Filter>source\materials</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\FreePipe\materials\LitMaterial.h">
+      <Filter>source\materials</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\FreePipe\materials\TexturedLitMaterial.h">
+      <Filter>source\materials</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\FreePipe\materials\TexturedMaterial.h">
+      <Filter>source\materials</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\FreePipe\Geometry.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\FreePipe\Renderer.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\FreePipe\Texture.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\FreePipe\VertexShader.h">
+      <Filter>source</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\source\FreePipe\materials\ColoredMaterial.cpp">
+      <Filter>source\materials</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\FreePipe\materials\LitMaterial.cpp">
+      <Filter>source\materials</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\FreePipe\materials\TexturedLitMaterial.cpp">
+      <Filter>source\materials</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\FreePipe\materials\TexturedMaterial.cpp">
+      <Filter>source\materials</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\FreePipe\materials\ClipspaceMaterial.cpp">
+      <Filter>source\materials</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\FreePipe\Geometry.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\FreePipe\Renderer.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\FreePipe\Texture.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\FreePipe\VertexShader.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\FreePipe\DllMain.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

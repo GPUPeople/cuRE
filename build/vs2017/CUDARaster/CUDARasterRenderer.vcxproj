@@ -1,0 +1,461 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug_sm35|x64">
+      <Configuration>Debug_sm35</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug_sm52|x64">
+      <Configuration>Debug_sm52</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug_sm61|x64">
+      <Configuration>Debug_sm61</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release_sm35|x64">
+      <Configuration>Release_sm35</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release_sm52|x64">
+      <Configuration>Release_sm52</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release_sm61|x64">
+      <Configuration>Release_sm61</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\source\CUDARaster\App.cpp" />
+    <ClCompile Include="..\..\..\source\CUDARaster\base\Array.cpp" />
+    <ClCompile Include="..\..\..\source\CUDARaster\base\helpling.cpp" />
+    <ClCompile Include="..\..\..\source\CUDARaster\base\Math.cpp" />
+    <ClCompile Include="..\..\..\source\CUDARaster\base\String.cpp" />
+    <ClCompile Include="..\..\..\source\CUDARaster\CudaRaster.cpp" />
+    <ClCompile Include="..\..\..\source\CUDARaster\DllMain.cpp" />
+    <ClCompile Include="..\..\..\source\CUDARaster\Geometry.cpp" />
+    <ClCompile Include="..\..\..\source\CUDARaster\main.cpp" />
+    <ClCompile Include="..\..\..\source\CUDARaster\materials\ClipspaceMaterial.cpp" />
+    <ClCompile Include="..\..\..\source\CUDARaster\materials\ColoredMaterial.cpp" />
+    <ClCompile Include="..\..\..\source\CUDARaster\materials\EyeCandyMaterial.cpp" />
+    <ClCompile Include="..\..\..\source\CUDARaster\materials\LitMaterial.cpp" />
+    <ClCompile Include="..\..\..\source\CUDARaster\materials\TexturedLitMaterial.cpp" />
+    <ClCompile Include="..\..\..\source\CUDARaster\materials\TexturedMaterial.cpp" />
+    <ClCompile Include="..\..\..\source\CUDARaster\Renderer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\source\CUDARaster\App.hpp" />
+    <ClInclude Include="..\..\..\source\CUDARaster\base\Array.hpp" />
+    <ClInclude Include="..\..\..\source\CUDARaster\base\Defs.hpp" />
+    <ClInclude Include="..\..\..\source\CUDARaster\base\helpling.h" />
+    <ClInclude Include="..\..\..\source\CUDARaster\base\Math.hpp" />
+    <ClInclude Include="..\..\..\source\CUDARaster\base\String.hpp" />
+    <ClInclude Include="..\..\..\source\CUDARaster\CudaRaster.hpp" />
+    <ClInclude Include="..\..\..\source\CUDARaster\Geometry.h" />
+    <ClInclude Include="..\..\..\source\CUDARaster\Material.h" />
+    <ClInclude Include="..\..\..\source\CUDARaster\materials\ClipspaceMaterial.h" />
+    <ClInclude Include="..\..\..\source\CUDARaster\materials\ColoredMaterial.h" />
+    <ClInclude Include="..\..\..\source\CUDARaster\materials\EyeCandyMaterial.h" />
+    <ClInclude Include="..\..\..\source\CUDARaster\materials\LitMaterial.h" />
+    <ClInclude Include="..\..\..\source\CUDARaster\materials\Material.h" />
+    <ClInclude Include="..\..\..\source\CUDARaster\materials\TexturedLitMaterial.h" />
+    <ClInclude Include="..\..\..\source\CUDARaster\materials\TexturedMaterial.h" />
+    <ClInclude Include="..\..\..\source\CUDARaster\Renderer.h" />
+    <ClInclude Include="..\..\..\source\CUDARaster\Shaders.hpp" />
+    <ClInclude Include="..\..\..\source\CUDARaster\types.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\source\CUDARaster\shader\camera" />
+    <None Include="..\..\..\source\CUDARaster\shader\draw_render_target.fs.glsl" />
+    <None Include="..\..\..\source\CUDARaster\shader\fragment_shader.glsl" />
+    <None Include="..\..\..\source\CUDARaster\shader\fullscreen_triangle.vs.glsl" />
+    <None Include="..\..\..\source\CUDARaster\shader\vertex_shader.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="cudaraster.vcxproj">
+      <Project>{ccd1bd13-bfa8-483f-8f85-7f5e873f7074}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{665D78F3-38DE-4C89-8147-F12A6688A30A}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>CUDARaster</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_sm52|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_sm61|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_sm35|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_sm52|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_sm61|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_sm35|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup>
+    <Import Project="..\..\dependencies\dependencies.props" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug_sm52|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug_sm61|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug_sm35|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release_sm52|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release_sm61|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release_sm35|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup>
+    <Import Project="$(CUPTI_core_tools_root)build\vs2017\CUPTI_core_tools.props" Condition="'$(CUPTI_core_tools)' == ''" />
+    <Import Project="$(CUDA_core_tools_root)build\vs2017\CUDA_core_tools.props" Condition="'$(CUDA_core_tools)' == ''" />
+    <Import Project="$(CUDA_graphics_interop_tools_root)build\vs2017\CUDA_graphics_interop_tools.props" Condition="'$(CUDA_graphics_interop_tools)' == ''" />
+    <Import Project="$(GL_core_tools_root)build\vs2017\GL_core_tools.props" Condition="'$(GL_core_tools)' == ''" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_sm52|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)bin\x64\Debug\plugins\</OutDir>
+    <IntDir>build\x64\$(Configuration)\</IntDir>
+    <TargetName>CUDARaster_sm52</TargetName>
+    <IncludePath>..\..\..\source\testbed\include;..\..\dependencies;..\..\..\source\utils\;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_sm61|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)bin\x64\Debug\plugins\</OutDir>
+    <IntDir>build\x64\$(Configuration)\</IntDir>
+    <TargetName>CUDARaster_sm61</TargetName>
+    <IncludePath>..\..\..\source\testbed\include;..\..\dependencies;..\..\..\source\utils\;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_sm35|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)bin\x64\Debug\plugins\</OutDir>
+    <IntDir>build\x64\$(Configuration)\</IntDir>
+    <TargetName>CUDARaster_sm35</TargetName>
+    <IncludePath>..\..\..\source\testbed\include;..\..\dependencies;..\..\..\source\utils\;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_sm52|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)bin\x64\Release\plugins\</OutDir>
+    <IntDir>build\x64\$(Configuration)\</IntDir>
+    <TargetName>CUDARaster_sm52</TargetName>
+    <IncludePath>..\..\..\source\testbed\include;..\..\dependencies;..\..\..\source\utils\;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_sm61|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)bin\x64\Release\plugins\</OutDir>
+    <IntDir>build\x64\$(Configuration)\</IntDir>
+    <TargetName>CUDARaster_sm61</TargetName>
+    <IncludePath>..\..\..\source\testbed\include;..\..\dependencies;..\..\..\source\utils\;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_sm35|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)bin\x64\Release\plugins\</OutDir>
+    <IntDir>build\x64\$(Configuration)\</IntDir>
+    <TargetName>CUDARaster_sm35</TargetName>
+    <IncludePath>..\..\..\source\testbed\include;..\..\dependencies;..\..\..\source\utils\;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_sm52|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;CUDARASTER_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <DisableSpecificWarnings>4522</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories>..\..\..\source\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MinimalRebuild>false</MinimalRebuild>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ModuleDefinitionFile>dll.def</ModuleDefinitionFile>
+      <AdditionalDependencies>CUDA_core_tools-MDd.lib;CUDA_graphics_interop_tools-MDd.lib;cuda.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <CudaCompile>
+      <CompileOut>$(IntDir)%(Filename)%(Extension).cubin</CompileOut>
+    </CudaCompile>
+    <CudaCompile>
+      <NvccCompilation>cubin</NvccCompilation>
+    </CudaCompile>
+    <CudaCompile>
+      <CudaRuntime>None</CudaRuntime>
+    </CudaCompile>
+    <CudaCompile>
+      <TargetMachinePlatform>64</TargetMachinePlatform>
+      <CodeGeneration>compute_52,sm_52</CodeGeneration>
+      <GPUDebugInfo>false</GPUDebugInfo>
+      <EmbedCUDAObjectFileName>$(IntDir)%(Filename).cubin.obj</EmbedCUDAObjectFileName>
+      <EmbedCUDASymbolName>?%(Filename)@CUBIN@@3DB</EmbedCUDASymbolName>
+      <EmbedCUDAEndSymbolName>?%(Filename)_end@CUBIN@@3DB</EmbedCUDAEndSymbolName>
+      <EmbedCUDALinkTargetFileName>
+      </EmbedCUDALinkTargetFileName>
+      <KeepDir>$(IntDir)</KeepDir>
+    </CudaCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_sm61|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;CUDARASTER_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <DisableSpecificWarnings>4522</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories>..\..\..\source\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MinimalRebuild>false</MinimalRebuild>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ModuleDefinitionFile>dll.def</ModuleDefinitionFile>
+      <AdditionalDependencies>CUDA_core_tools-MDd.lib;CUDA_graphics_interop_tools-MDd.lib;cuda.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <CudaCompile>
+      <CompileOut>$(IntDir)%(Filename)%(Extension).cubin</CompileOut>
+    </CudaCompile>
+    <CudaCompile>
+      <NvccCompilation>cubin</NvccCompilation>
+    </CudaCompile>
+    <CudaCompile>
+      <CudaRuntime>None</CudaRuntime>
+    </CudaCompile>
+    <CudaCompile>
+      <TargetMachinePlatform>64</TargetMachinePlatform>
+      <CodeGeneration>compute_52,sm_52</CodeGeneration>
+      <GPUDebugInfo>false</GPUDebugInfo>
+      <EmbedCUDAObjectFileName>$(IntDir)%(Filename).cubin.obj</EmbedCUDAObjectFileName>
+      <EmbedCUDASymbolName>?%(Filename)@CUBIN@@3DB</EmbedCUDASymbolName>
+      <EmbedCUDAEndSymbolName>?%(Filename)_end@CUBIN@@3DB</EmbedCUDAEndSymbolName>
+      <EmbedCUDALinkTargetFileName>
+      </EmbedCUDALinkTargetFileName>
+      <KeepDir>$(IntDir)</KeepDir>
+    </CudaCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_sm35|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;CUDARASTER_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <DisableSpecificWarnings>4522</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories>..\..\..\source\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MinimalRebuild>false</MinimalRebuild>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ModuleDefinitionFile>dll.def</ModuleDefinitionFile>
+      <AdditionalDependencies>CUDA_core_tools-MDd.lib;CUDA_graphics_interop_tools-MDd.lib;cuda.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <CudaCompile>
+      <CompileOut>$(IntDir)%(Filename)%(Extension).cubin</CompileOut>
+    </CudaCompile>
+    <CudaCompile>
+      <NvccCompilation>cubin</NvccCompilation>
+    </CudaCompile>
+    <CudaCompile>
+      <CudaRuntime>None</CudaRuntime>
+    </CudaCompile>
+    <CudaCompile>
+      <TargetMachinePlatform>64</TargetMachinePlatform>
+      <CodeGeneration>compute_52,sm_52</CodeGeneration>
+      <GPUDebugInfo>false</GPUDebugInfo>
+      <EmbedCUDAObjectFileName>$(IntDir)%(Filename).cubin.obj</EmbedCUDAObjectFileName>
+      <EmbedCUDASymbolName>?%(Filename)@CUBIN@@3DB</EmbedCUDASymbolName>
+      <EmbedCUDAEndSymbolName>?%(Filename)_end@CUBIN@@3DB</EmbedCUDAEndSymbolName>
+      <EmbedCUDALinkTargetFileName>
+      </EmbedCUDALinkTargetFileName>
+      <KeepDir>$(IntDir)</KeepDir>
+    </CudaCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_sm52|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;CUDARASTER_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <DisableSpecificWarnings>4522</DisableSpecificWarnings>
+      <AdditionalOptions>/Zo %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>..\..\..\source\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ModuleDefinitionFile>dll.def</ModuleDefinitionFile>
+      <AdditionalDependencies>CUDA_core_tools-MD.lib;CUDA_graphics_interop_tools-MD.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <CudaCompile>
+      <CompileOut>$(IntDir)%(Filename)%(Extension).cubin</CompileOut>
+    </CudaCompile>
+    <CudaCompile>
+      <NvccCompilation>cubin</NvccCompilation>
+    </CudaCompile>
+    <CudaCompile>
+      <CudaRuntime>None</CudaRuntime>
+    </CudaCompile>
+    <CudaCompile>
+      <TargetMachinePlatform>64</TargetMachinePlatform>
+      <CodeGeneration>compute_52,sm_52</CodeGeneration>
+      <EmbedCUDAObjectFileName>$(IntDir)%(Filename).cubin.obj</EmbedCUDAObjectFileName>
+      <EmbedCUDASymbolName>?%(Filename)@CUBIN@@3DB</EmbedCUDASymbolName>
+      <EmbedCUDAEndSymbolName>?%(Filename)_end@CUBIN@@3DB</EmbedCUDAEndSymbolName>
+      <EmbedCUDALinkTargetFileName>
+      </EmbedCUDALinkTargetFileName>
+      <KeepDir>$(IntDir)</KeepDir>
+    </CudaCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_sm61|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;CUDARASTER_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <DisableSpecificWarnings>4522</DisableSpecificWarnings>
+      <AdditionalOptions>/Zo %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>..\..\..\source\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ModuleDefinitionFile>dll.def</ModuleDefinitionFile>
+      <AdditionalDependencies>CUDA_core_tools-MD.lib;CUDA_graphics_interop_tools-MD.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <CudaCompile>
+      <CompileOut>$(IntDir)%(Filename)%(Extension).cubin</CompileOut>
+    </CudaCompile>
+    <CudaCompile>
+      <NvccCompilation>cubin</NvccCompilation>
+    </CudaCompile>
+    <CudaCompile>
+      <CudaRuntime>None</CudaRuntime>
+    </CudaCompile>
+    <CudaCompile>
+      <TargetMachinePlatform>64</TargetMachinePlatform>
+      <CodeGeneration>compute_52,sm_52</CodeGeneration>
+      <EmbedCUDAObjectFileName>$(IntDir)%(Filename).cubin.obj</EmbedCUDAObjectFileName>
+      <EmbedCUDASymbolName>?%(Filename)@CUBIN@@3DB</EmbedCUDASymbolName>
+      <EmbedCUDAEndSymbolName>?%(Filename)_end@CUBIN@@3DB</EmbedCUDAEndSymbolName>
+      <EmbedCUDALinkTargetFileName>
+      </EmbedCUDALinkTargetFileName>
+      <KeepDir>$(IntDir)</KeepDir>
+    </CudaCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_sm35|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;CUDARASTER_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <DisableSpecificWarnings>4522</DisableSpecificWarnings>
+      <AdditionalOptions>/Zo %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>..\..\..\source\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ModuleDefinitionFile>dll.def</ModuleDefinitionFile>
+      <AdditionalDependencies>CUDA_core_tools-MD.lib;CUDA_graphics_interop_tools-MD.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <CudaCompile>
+      <CompileOut>$(IntDir)%(Filename)%(Extension).cubin</CompileOut>
+    </CudaCompile>
+    <CudaCompile>
+      <NvccCompilation>cubin</NvccCompilation>
+    </CudaCompile>
+    <CudaCompile>
+      <CudaRuntime>None</CudaRuntime>
+    </CudaCompile>
+    <CudaCompile>
+      <TargetMachinePlatform>64</TargetMachinePlatform>
+      <CodeGeneration>compute_52,sm_52</CodeGeneration>
+      <EmbedCUDAObjectFileName>$(IntDir)%(Filename).cubin.obj</EmbedCUDAObjectFileName>
+      <EmbedCUDASymbolName>?%(Filename)@CUBIN@@3DB</EmbedCUDASymbolName>
+      <EmbedCUDAEndSymbolName>?%(Filename)_end@CUBIN@@3DB</EmbedCUDAEndSymbolName>
+      <EmbedCUDALinkTargetFileName>
+      </EmbedCUDALinkTargetFileName>
+      <KeepDir>$(IntDir)</KeepDir>
+    </CudaCompile>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>

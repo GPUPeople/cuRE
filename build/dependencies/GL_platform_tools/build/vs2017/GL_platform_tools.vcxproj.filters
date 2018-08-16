@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="source">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="source\win32">
+      <UniqueIdentifier>{5646ba7c-2f2b-4def-a631-6ac100cf86a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\win32\GL">
+      <UniqueIdentifier>{2d707e4f-eff6-455e-a848-2ad886860a2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\x11">
+      <UniqueIdentifier>{082e3bf4-1c01-42ee-8392-c738fbb96b83}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\GL\platform\Application.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\GL\platform\Context.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\GL\platform\DisplayHandler.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\GL\platform\InputHandler.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\GL\platform\interface.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\GL\platform\Renderer.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\GL\platform\Window.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\win32\include\GL\gl.h">
+      <Filter>source\win32\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\win32\wglext.h">
+      <Filter>source\win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\win32\Win32GLApplication.h">
+      <Filter>source\win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\win32\Win32GLContext.h">
+      <Filter>source\win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\win32\Win32GLWindow.h">
+      <Filter>source\win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\win32\Win32Input.h">
+      <Filter>source\win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\x11\glxext.h">
+      <Filter>source\x11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\x11\platform.h">
+      <Filter>source\x11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\x11\x11_ptr.h">
+      <Filter>source\x11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\x11\X11ColormapHandle.h">
+      <Filter>source\x11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\x11\X11Display.h">
+      <Filter>source\x11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\x11\X11GLContext.h">
+      <Filter>source\x11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\x11\X11GLWindow.h">
+      <Filter>source\x11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\x11\X11Input.h">
+      <Filter>source\x11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\x11\X11WindowHandle.h">
+      <Filter>source\x11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\x11\X11GLApplication.h">
+      <Filter>source\x11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\GL\platform\DefaultDisplayHandler.h">
+      <Filter>source</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\source\win32\Win32GLApplication.cpp">
+      <Filter>source\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\win32\Win32GLContext.cpp">
+      <Filter>source\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\win32\Win32GLWindow.cpp">
+      <Filter>source\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\x11\X11GLApplication.cpp">
+      <Filter>source\x11</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\x11\X11Display.cpp">
+      <Filter>source\x11</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\x11\X11GLContext.cpp">
+      <Filter>source\x11</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\x11\X11GLWindow.cpp">
+      <Filter>source\x11</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\DefaultDisplayHandler.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="GL_platform_tools.props" />
+  </ItemGroup>
+</Project>

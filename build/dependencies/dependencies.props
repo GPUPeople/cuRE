@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<PropertyGroup>
+		<dependencies>$(MSBuildThisFileDirectory)</dependencies>
+		<Win32_core_tools_root>$(dependencies)Win32_core_tools\</Win32_core_tools_root>
+		<GL_platform_tools_root>$(dependencies)GL_platform_tools\</GL_platform_tools_root>
+		<CUDA_common_tools_root>$(dependencies)CUDA_common_tools\</CUDA_common_tools_root>
+		<CUDA_core_tools_root>$(dependencies)CUDA_core_tools\</CUDA_core_tools_root>
+		<CUPTI_core_tools_root>$(dependencies)CUPTI_core_tools\</CUPTI_core_tools_root>
+		<COFF_tools_root>$(dependencies)COFF_tools\</COFF_tools_root>
+		<CUDA_build_tools_root>$(dependencies)CUDA_build_tools\</CUDA_build_tools_root>
+		<GL_core_tools_root>$(dependencies)GL_core_tools\</GL_core_tools_root>
+		<GLSL_build_tools_root>$(dependencies)GLSL_build_tools\</GLSL_build_tools_root>
+		<COM_core_tools_root>$(dependencies)COM_core_tools\</COM_core_tools_root>
+		<image_tools_root>$(dependencies)image_tools\</image_tools_root>
+		<CUDA_compiler_tools_root>$(dependencies)CUDA_compiler_tools\</CUDA_compiler_tools_root>
+		<CUDA_binary_tools_root>$(dependencies)CUDA_binary_tools\</CUDA_binary_tools_root>
+		<cub_root>$(dependencies)cub\</cub_root>
+		<CUDA_graphics_interop_tools_root>$(dependencies)CUDA_graphics_interop_tools\</CUDA_graphics_interop_tools_root>
+		<core_tools_root>$(dependencies)core_tools\</core_tools_root>
+		<config_tools_root>$(dependencies)config_tools\</config_tools_root>
+	</PropertyGroup>
+</Project>

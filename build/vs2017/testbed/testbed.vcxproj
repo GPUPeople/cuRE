@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\source\testbed\argparse.h" />
+    <ClInclude Include="..\..\..\source\testbed\BlendIsoScene.h" />
+    <ClInclude Include="..\..\..\source\testbed\BlendScene.h" />
+    <ClInclude Include="..\..\..\source\testbed\CheckerboardScene.h" />
+    <ClInclude Include="..\..\..\source\testbed\ClipspaceScene.h" />
+    <ClInclude Include="..\..\..\source\testbed\ClipspaceViewScene.h" />
+    <ClInclude Include="..\..\..\source\testbed\Config.h" />
+    <ClInclude Include="..\..\..\source\testbed\ConfigParser.h" />
+    <ClInclude Include="..\..\..\source\testbed\ConfigStream.h" />
+    <ClInclude Include="..\..\..\source\testbed\ConsoleHandler.h" />
+    <ClInclude Include="..\..\..\source\testbed\CubeScene.h" />
+    <ClInclude Include="..\..\..\source\testbed\Display.h" />
+    <ClInclude Include="..\..\..\source\testbed\EyeCandyScene.h" />
+    <ClInclude Include="..\..\..\source\testbed\FirstPersonNavigator.h" />
+    <ClInclude Include="..\..\..\source\testbed\GlyphScene.h" />
+    <ClInclude Include="..\..\..\source\testbed\IcosahedronScene.h" />
+    <ClInclude Include="..\..\..\source\testbed\include\Camera.h" />
+    <ClInclude Include="..\..\..\source\testbed\include\interface.h" />
+    <ClInclude Include="..\..\..\source\testbed\include\PlugIn.h" />
+    <ClInclude Include="..\..\..\source\testbed\include\PlugInClient.h" />
+    <ClInclude Include="..\..\..\source\testbed\include\plugin_ptr.h" />
+    <ClInclude Include="..\..\..\source\testbed\include\Renderer.h" />
+    <ClInclude Include="..\..\..\source\testbed\include\Resource.h" />
+    <ClInclude Include="..\..\..\source\testbed\include\ResourceImp.h" />
+    <ClInclude Include="..\..\..\source\testbed\include\resource_ptr.h" />
+    <ClInclude Include="..\..\..\source\testbed\IndexedTriangleMesh.h" />
+    <ClInclude Include="..\..\..\source\testbed\InputHandler.h" />
+    <ClInclude Include="..\..\..\source\testbed\InteractivePerformanceMonitor.h" />
+    <ClInclude Include="..\..\..\source\testbed\io.h" />
+    <ClInclude Include="..\..\..\source\testbed\LoadedScene.h" />
+    <ClInclude Include="..\..\..\source\testbed\Navigator.h" />
+    <ClInclude Include="..\..\..\source\testbed\Noncamera.h" />
+    <ClInclude Include="..\..\..\source\testbed\OrbitalNavigator.h" />
+    <ClInclude Include="..\..\..\source\testbed\PerformanceMonitor.h" />
+    <ClInclude Include="..\..\..\source\testbed\PerspectiveCamera.h" />
+    <ClInclude Include="..\..\..\source\testbed\PlugInManager.h" />
+    <ClInclude Include="..\..\..\source\testbed\RecordingPerformanceMonitor.h" />
+    <ClInclude Include="..\..\..\source\testbed\RenderingSystem.h" />
+    <ClInclude Include="..\..\..\source\testbed\Scene.h" />
+    <ClInclude Include="..\..\..\source\testbed\SphereScene.h" />
+    <ClInclude Include="..\..\..\source\testbed\StippleIsoScene.h" />
+    <ClInclude Include="..\..\..\source\testbed\Testbed.h" />
+    <ClInclude Include="..\..\..\source\testbed\TriangleScene.h" />
+    <ClInclude Include="..\..\..\source\testbed\WaterScene.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\source\testbed\argparse.cpp" />
+    <ClCompile Include="..\..\..\source\testbed\BlendIsoScene.cpp" />
+    <ClCompile Include="..\..\..\source\testbed\BlendScene.cpp" />
+    <ClCompile Include="..\..\..\source\testbed\CheckerboardScene.cpp" />
+    <ClCompile Include="..\..\..\source\testbed\ClipspaceScene.cpp" />
+    <ClCompile Include="..\..\..\source\testbed\ClipspaceViewScene.cpp" />
+    <ClCompile Include="..\..\..\source\testbed\Config.cpp" />
+    <ClCompile Include="..\..\..\source\testbed\ConfigParser.cpp" />
+    <ClCompile Include="..\..\..\source\testbed\ConfigStream.cpp" />
+    <ClCompile Include="..\..\..\source\testbed\ConsoleHandler.cpp" />
+    <ClCompile Include="..\..\..\source\testbed\CubeScene.cpp" />
+    <ClCompile Include="..\..\..\source\testbed\Display.cpp" />
+    <ClCompile Include="..\..\..\source\testbed\EyeCandyScene.cpp" />
+    <ClCompile Include="..\..\..\source\testbed\FirstPersonNavigator.cpp" />
+    <ClCompile Include="..\..\..\source\testbed\GlyphScene.cpp" />
+    <ClCompile Include="..\..\..\source\testbed\IcosahedronScene.cpp" />
+    <ClCompile Include="..\..\..\source\testbed\IndexedTriangleMesh.cpp" />
+    <ClCompile Include="..\..\..\source\testbed\InputHandler.cpp" />
+    <ClCompile Include="..\..\..\source\testbed\InteractivePerformanceMonitor.cpp" />
+    <ClCompile Include="..\..\..\source\testbed\LoadedScene.cpp" />
+    <ClCompile Include="..\..\..\source\testbed\main.cpp" />
+    <ClCompile Include="..\..\..\source\testbed\Noncamera.cpp" />
+    <ClCompile Include="..\..\..\source\testbed\OrbitalNavigator.cpp" />
+    <ClCompile Include="..\..\..\source\testbed\PerspectiveCamera.cpp" />
+    <ClCompile Include="..\..\..\source\testbed\PlugInManager.cpp" />
+    <ClCompile Include="..\..\..\source\testbed\RecordingPerformanceMonitor.cpp" />
+    <ClCompile Include="..\..\..\source\testbed\RenderingSystem.cpp" />
+    <ClCompile Include="..\..\..\source\testbed\SphereScene.cpp" />
+    <ClCompile Include="..\..\..\source\testbed\StippleIsoScene.cpp" />
+    <ClCompile Include="..\..\..\source\testbed\Testbed.cpp" />
+    <ClCompile Include="..\..\..\source\testbed\TriangleScene.cpp" />
+    <ClCompile Include="..\..\..\source\testbed\WaterScene.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <GLSL Include="..\..\..\source\testbed\shaders\draw_color_buffer.fs.glsl" />
+    <GLSL Include="..\..\..\source\testbed\shaders\fullscreen_triangle.vs.glsl" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{97D367BA-5948-4236-A7CD-9E8444A1776F}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>testbed</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup>
+    <Import Project="..\..\dependencies\dependencies.props" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(GLSL_build_tools_root)GLSL.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup>
+    <Import Project="$(core_tools_root)build\vs2017\core_tools.props" Condition="'$(core_tools)' == ''" />
+    <Import Project="$(image_tools_root)build\vs2017\image_tools.props" Condition="'$(image_tools)' == ''" />
+    <Import Project="$(Win32_core_tools_root)build\vs2017\Win32_core_tools.props" Condition="'$(Win32_core_tools)' == ''" />
+    <Import Project="$(CUDA_core_tools_root)build\vs2017\CUDA_core_tools.props" Condition="'$(CUDA_core_tools)' == ''" />
+    <Import Project="$(GL_platform_tools_root)build\vs2017\GL_platform_tools.props" Condition="'$(GL_platform_tools)' == ''" />
+    <Import Project="$(GL_core_tools_root)build\vs2017\GL_core_tools.props" Condition="'$(GL_core_tools)' == ''" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)bin\x64\Debug\</OutDir>
+    <IntDir>build\x64\$(Configuration)\</IntDir>
+    <IncludePath>..\..\dependencies\;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)bin\x64\Release\</OutDir>
+    <IntDir>build\x64\$(Configuration)\</IntDir>
+    <IncludePath>..\..\dependencies\;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_SCL_SECURE_NO_WARNINGS;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..\source\testbed\include;..\..\..\tools\sceneconverter\source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <DisableSpecificWarnings>4522</DisableSpecificWarnings>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>image_tools-MDd.lib;Win32_core_tools-MDd.lib;CUDA_core_tools-MDd.lib;GL_platform_tools-glcoreDd-MDd.lib;GL_core_tools-glcoreDd-MDd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy "$(GL_platform_tools_root)build\vs2017\bin\x64\glcore-d.dll" "$(TargetDir)"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>_SCL_SECURE_NO_WARNINGS;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..\source\testbed\include;..\..\..\tools\sceneconverter\source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <DisableSpecificWarnings>4522</DisableSpecificWarnings>
+      <AdditionalOptions>/Zo %(AdditionalOptions)</AdditionalOptions>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>image_tools-MD.lib;Win32_core_tools-MD.lib;CUDA_core_tools-MD.lib;GL_platform_tools-glcoreD-MD.lib;GL_core_tools-glcoreD-MD.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy "$(GL_platform_tools_root)build\vs2017\bin\x64\glcore.dll" "$(TargetDir)"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(GLSL_build_tools_root)GLSL.targets" />
+  </ImportGroup>
+</Project>

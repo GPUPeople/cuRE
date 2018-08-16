@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <CUDARoot>$(CUDA_PATH)\</CUDARoot>
+    
+    <IncludePath>$(CUDARoot)include;$(IncludePath)</IncludePath>
+    
+    <LibraryPath Condition="'$(Platform)' == 'Win32'">$(CUDARoot)lib\Win32;$(LibraryPath)</LibraryPath>
+    <LibraryPath Condition="'$(Platform)' == 'x64'">$(CUDARoot)lib\x64;$(LibraryPath)</LibraryPath>
+    
+    <ExecutablePath>$(CUDARoot)bin;$(ExecutablePath)</ExecutablePath>
+  </PropertyGroup>
+</Project>

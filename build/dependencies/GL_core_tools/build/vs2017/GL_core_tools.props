@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ImportGroup>
+		<Import Project="dependencies.props" />
+		<Import Project="$(GL_platform_tools_root)build\vs2017\GL_platform_tools.props" Condition="'$(GL_platform_tools)' == ''" />
+	</ImportGroup>
+	<PropertyGroup>
+		<IncludePath>$(MSBuildThisFileDirectory)..\..\include\;$(IncludePath)</IncludePath>
+		<LibraryPath Condition="'$(Platform)' == 'Win32'">$(MSBuildThisFileDirectory)lib\x86\;$(LibraryPath)</LibraryPath>
+		<LibraryPath Condition="'$(Platform)' == 'x64'">$(MSBuildThisFileDirectory)lib\x64\;$(LibraryPath)</LibraryPath>
+		<GL_core_tools>$(MSBuildThisFileDirectory)</GL_core_tools>
+	</PropertyGroup>
+	<Target Name="GL_core_tools_add_library_dependencies" BeforeTargets="GL_platform_tools_add_library_dependencies" DependsOnTargets="ClCompile">
+		<ItemGroup>
+			<Link Condition="$([System.Text.RegularExpressions.Regex]::IsMatch(%(AdditionalDependencies), '(.*;)?GL_core_tools-glcore-MDd\.lib(;.*)?'))">
+				<AdditionalDependencies>GL_platform_tools-glcore-MDd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+			</Link>
+			<Link Condition="$([System.Text.RegularExpressions.Regex]::IsMatch(%(AdditionalDependencies), '(.*;)?GL_core_tools-glcore-MD\.lib(;.*)?'))">
+				<AdditionalDependencies>GL_platform_tools-glcore-MD.lib;%(AdditionalDependencies)</AdditionalDependencies>
+			</Link>
+			<Link Condition="$([System.Text.RegularExpressions.Regex]::IsMatch(%(AdditionalDependencies), '(.*;)?GL_core_tools-glcoreDd-MDd\.lib(;.*)?'))">
+				<AdditionalDependencies>GL_platform_tools-glcoreDd-MDd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+			</Link>
+			<Link Condition="$([System.Text.RegularExpressions.Regex]::IsMatch(%(AdditionalDependencies), '(.*;)?GL_core_tools-glcoreD-MD\.lib(;.*)?'))">
+				<AdditionalDependencies>GL_platform_tools-glcoreD-MD.lib;%(AdditionalDependencies)</AdditionalDependencies>
+			</Link>
+		</ItemGroup>
+	</Target>
+</Project>

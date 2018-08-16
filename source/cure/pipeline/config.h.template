@@ -1,0 +1,81 @@
+
+
+
+#ifndef INCLUDED_CURE_PIPELINE_CONFIG
+#define INCLUDED_CURE_PIPELINE_CONFIG
+
+#pragma once
+
+#include "cure_config.h"
+#include "gpu_configs.h"
+
+
+using PipelineConfigs = PipelineConfigList <
+	//GTX_780
+	//GTX_780_Ti
+	//GTX_780_Ti_dynamic
+	//GTX_TITAN
+	//GTX_960
+	//GTX_970
+	//GTX_980
+	//GTX_980_Ti
+	//GTX_980_Ti_dynamic
+	//GTX_TITAN_X
+	//GTX_1060
+	//GTX_1060_dynamic
+	//GTX_1070
+	//GTX_1070_Ti
+	GTX_1080
+	//GTX_1080_dynamic
+	//GTX_1080_Ti
+	//GTX_1080_Ti_dynamic
+	//TITAN_X
+	//TITAN_X_dynamic
+	//TITAN_Xp
+>;
+
+constexpr int MAX_NUM_RASTERIZERS = PipelineConfigs::MAX_NUM_RASTERIZERS;
+constexpr int MAX_NUM_BLOCKS = PipelineConfigs::MAX_NUM_BLOCKS;
+constexpr int MAX_WARPS_PER_BLOCK = PipelineConfigs::MAX_WARPS_PER_BLOCK;
+
+constexpr int NUM_INTERPOLATORS = 16;
+
+constexpr bool CLIPPING = true;
+constexpr int BACKFACE_CULLING = 1;
+constexpr bool DEPTH_TEST = true;
+constexpr bool DEPTH_WRITE = true;
+constexpr bool BLENDING = false;
+constexpr bool FRAMEBUFFER_SRGB = true;
+
+constexpr bool WIREFRAME = false;
+constexpr bool DRAW_BOUNDING_BOX = false;
+
+constexpr unsigned int TRIANGLE_BUFFER_SIZE = 1024 * 1024;
+constexpr unsigned int RASTERIZER_QUEUE_SIZE = 32 * 1024 * 2;
+constexpr int RASTERIZATION_CONSUME_THRESHOLD = MAX_NUM_BLOCKS * MAX_WARPS_PER_BLOCK * WARP_SIZE;
+constexpr int DYNAMIC_RASTERIZER_EFFICIENT_THRESHOLD = 0; // 0 will result in blocksize
+
+constexpr bool TRIANGLEBUFFER_REFCOUNTING = true;
+constexpr bool INDEXQUEUEATOMICS = false;
+constexpr bool INDEXQUEUEABORTONOVERFLOW = true;
+
+constexpr bool ENFORCE_PRIMITIVE_ORDER = true;
+constexpr bool FORCE_QUAD_SHADING = true;
+constexpr TILE_ACCESS_MODE BINRASTER_EXCLUSIVE_TILE_ACCESS_MODE = TILE_ACCESS_MODE::COVERAGE_MASK; //0 = exclusive tiles, 1 = warp per tile and fragment based resolution, 2 = coverage mask tile raster
+constexpr FRAMEBUFFER_SYNC_METHOD TILE_RASTER_EXCLUSIVE_ACCESS_METHOD = FRAMEBUFFER_SYNC_METHOD::SYNC_FRAGMENTS; //0 = none, 1-2/5 different versions
+
+constexpr bool VERTEX_FETCH_CS = false;
+
+constexpr bool TRACK_FILL_LEVEL = false;
+constexpr bool ENABLE_INSTRUMENTATION = false;
+
+constexpr PATTERNTECHNIQUE PATTERN_TECHNIQUE = PATTERNTECHNIQUE::OFFSET;
+
+// For offset+shift: calculate parameter ALWAYS as
+// floor(sqrt(MAX_NUM_RASTERIZERS + 1))
+//constexpr int OFFSET_PARAMETER = static_small_sqrt_floor<MAX_NUM_RASTERIZERS + 1>::value;
+constexpr int OFFSET_PARAMETER = static_small_sqrt_floor<MAX_NUM_RASTERIZERS>::value;
+
+#include "instrumentation_config.h"
+
+#endif  // INCLUDED_CURE_PIPELINE_CONFIG

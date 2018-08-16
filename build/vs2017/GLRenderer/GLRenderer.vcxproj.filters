@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="source">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="source\shaders">
+      <UniqueIdentifier>{0be1fd3a-98ca-4ac0-8690-713605b06c9e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\materials">
+      <UniqueIdentifier>{0ce92469-5450-4e84-8e65-104618f18921}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="dll.def" />
+    <None Include="..\..\..\source\GLRenderer\shaders\light">
+      <Filter>source\shaders</Filter>
+    </None>
+    <None Include="..\..\..\source\GLRenderer\shaders\object">
+      <Filter>source\shaders</Filter>
+    </None>
+    <None Include="..\..\..\source\GLRenderer\shaders\camera">
+      <Filter>source\shaders</Filter>
+    </None>
+    <None Include="..\..\..\source\GLRenderer\shaders\noise">
+      <Filter>source\shaders</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\source\GLRenderer\materials\ColoredMaterial.cpp">
+      <Filter>source\materials</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\GLRenderer\materials\LitMaterial.cpp">
+      <Filter>source\materials</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\GLRenderer\materials\TexturedLitMaterial.cpp">
+      <Filter>source\materials</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\GLRenderer\materials\TexturedMaterial.cpp">
+      <Filter>source\materials</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\GLRenderer\materials\ClipspaceMaterial.cpp">
+      <Filter>source\materials</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\GLRenderer\shaders\ColoredShader.cpp">
+      <Filter>source\shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\GLRenderer\shaders\LitShader.cpp">
+      <Filter>source\shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\GLRenderer\shaders\TexturedLitShader.cpp">
+      <Filter>source\shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\GLRenderer\shaders\TexturedShader.cpp">
+      <Filter>source\shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\GLRenderer\shaders\ClipspaceShader.cpp">
+      <Filter>source\shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\GLRenderer\shaders\ClipspaceWireframeShader.cpp">
+      <Filter>source\shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\GLRenderer\DllMain.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\GLRenderer\Geometry.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\GLRenderer\Renderer.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\GLRenderer\ShaderState.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\GLRenderer\Texture.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\GLRenderer\materials\EyeCandyMaterial.cpp">
+      <Filter>source\materials</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\GLRenderer\shaders\EyeCandyShader.cpp">
+      <Filter>source\shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\GLRenderer\materials\HeavyMaterials.cpp">
+      <Filter>source\materials</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\GLRenderer\shaders\HeavyShaders.cpp">
+      <Filter>source\shaders</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\source\GLRenderer\materials\ColoredMaterial.h">
+      <Filter>source\materials</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\GLRenderer\materials\LitMaterial.h">
+      <Filter>source\materials</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\GLRenderer\materials\TexturedLitMaterial.h">
+      <Filter>source\materials</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\GLRenderer\materials\TexturedMaterial.h">
+      <Filter>source\materials</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\GLRenderer\materials\ClipspaceMaterial.h">
+      <Filter>source\materials</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\GLRenderer\shaders\ColoredShader.h">
+      <Filter>source\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\GLRenderer\shaders\LitShader.h">
+      <Filter>source\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\GLRenderer\shaders\TexturedLitShader.h">
+      <Filter>source\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\GLRenderer\shaders\TexturedShader.h">
+      <Filter>source\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\GLRenderer\shaders\ClipspaceShader.h">
+      <Filter>source\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\GLRenderer\shaders\ClipspaceWireframeShader.h">
+      <Filter>source\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\GLRenderer\Geometry.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\GLRenderer\Renderer.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\GLRenderer\ShaderState.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\GLRenderer\Texture.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\GLRenderer\materials\EyeCandyMaterial.h">
+      <Filter>source\materials</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\GLRenderer\shaders\EyeCandyShader.h">
+      <Filter>source\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\GLRenderer\config.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\GLRenderer\materials\HeavyMaterials.h">
+      <Filter>source\materials</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\GLRenderer\shaders\HeavyShaders.h">
+      <Filter>source\shaders</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\lit.fs.glsl">
+      <Filter>source\shaders</Filter>
+    </GLSL>
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\lit.vs.glsl">
+      <Filter>source\shaders</Filter>
+    </GLSL>
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\textured.fs.glsl">
+      <Filter>source\shaders</Filter>
+    </GLSL>
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\textured.vs.glsl">
+      <Filter>source\shaders</Filter>
+    </GLSL>
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\textured_lit.fs.glsl">
+      <Filter>source\shaders</Filter>
+    </GLSL>
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\textured_lit.vs.glsl">
+      <Filter>source\shaders</Filter>
+    </GLSL>
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\clipspace.fs.glsl">
+      <Filter>source\shaders</Filter>
+    </GLSL>
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\clipspace.vs.glsl">
+      <Filter>source\shaders</Filter>
+    </GLSL>
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\clipspace_wireframe.fs.glsl">
+      <Filter>source\shaders</Filter>
+    </GLSL>
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\clipspace_wireframe.gs.glsl">
+      <Filter>source\shaders</Filter>
+    </GLSL>
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\clipspace_wireframe.vs.glsl">
+      <Filter>source\shaders</Filter>
+    </GLSL>
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\colored.fs.glsl">
+      <Filter>source\shaders</Filter>
+    </GLSL>
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\colored.vs.glsl">
+      <Filter>source\shaders</Filter>
+    </GLSL>
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\eyecandy.fs.glsl">
+      <Filter>source\shaders</Filter>
+    </GLSL>
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\eyecandy.vs.glsl">
+      <Filter>source\shaders</Filter>
+    </GLSL>
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\eyecandy_interlocked.fs.glsl">
+      <Filter>source\shaders</Filter>
+    </GLSL>
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\clipspace_interlocked.fs.glsl">
+      <Filter>source\shaders</Filter>
+    </GLSL>
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\heavy_fragment.vs.glsl">
+      <Filter>source\shaders</Filter>
+    </GLSL>
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\heavy_vertex.fs.glsl">
+      <Filter>source\shaders</Filter>
+    </GLSL>
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\heavy_vertex.vs.glsl">
+      <Filter>source\shaders</Filter>
+    </GLSL>
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\heavy_fragment.fs.glsl">
+      <Filter>source\shaders</Filter>
+    </GLSL>
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\heavy_fragment_interlocked.fs.glsl">
+      <Filter>source\shaders</Filter>
+    </GLSL>
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\heavy_vertex_interlocked.fs.glsl">
+      <Filter>source\shaders</Filter>
+    </GLSL>
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\eyecandy_fragment_heavy_interlocked.fs.glsl">
+      <Filter>source\shaders</Filter>
+    </GLSL>
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\eyecandy_vertex_heavy.fs.glsl">
+      <Filter>source\shaders</Filter>
+    </GLSL>
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\eyecandy_vertex_heavy.vs.glsl">
+      <Filter>source\shaders</Filter>
+    </GLSL>
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\eyecandy_vertex_heavy_interlocked.fs.glsl">
+      <Filter>source\shaders</Filter>
+    </GLSL>
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\eyecandy_fragment_heavy.fs.glsl">
+      <Filter>source\shaders</Filter>
+    </GLSL>
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\eyecandy_fragment_heavy.vs.glsl">
+      <Filter>source\shaders</Filter>
+    </GLSL>
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\clipspace_fragment_heavy_interlocked.fs.glsl">
+      <Filter>source\shaders</Filter>
+    </GLSL>
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\clipspace_vertex_heavy.fs.glsl">
+      <Filter>source\shaders</Filter>
+    </GLSL>
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\clipspace_vertex_heavy_interlocked.fs.glsl">
+      <Filter>source\shaders</Filter>
+    </GLSL>
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\clipspace_fragment_heavy.fs.glsl">
+      <Filter>source\shaders</Filter>
+    </GLSL>
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\clipspace_vertex_heavy.vs.glsl">
+      <Filter>source\shaders</Filter>
+    </GLSL>
+  </ItemGroup>
+</Project>

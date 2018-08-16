@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemGroup>
+		<PropertyPageSchema Include="$(MSBuildThisFileDirectory)$(MSBuildThisFileName).xml" />
+		<AvailableItemName Include="GLSL">
+			<Targets>GLSL</Targets>
+		</AvailableItemName>
+	</ItemGroup>
+
+	<UsingTask TaskName="EmbedGLSL.glsl2cpp" AssemblyFile="EmbedGLSL.dll" />
+
+	<Target Name="GLSLSelectedFiles" DependsOnTargets="_SelectedFiles">
+		<ItemGroup Condition="'@(SelectedFiles)' != ''">
+			<GLSL Remove="@(GLSL)" Condition="'%(Identity)' != '@(SelectedFiles)'" />
+		</ItemGroup>
+		<!-- Force rebuild of selected files -->
+		<PropertyGroup Condition="'@(SelectedFiles)' != ''">
+			<GLSLForceRebuild>true</GLSLForceRebuild>
+		</PropertyGroup>
+		<PropertyGroup Condition="'@(SelectedFiles)' == ''">
+			<GLSLForceRebuild>false</GLSLForceRebuild>
+		</PropertyGroup>
+	</Target>
+
+	<Target Name="GLSL" BeforeTargets="ClCompile" DependsOnTargets="GLSLSelectedFiles">
+		<EmbedGLSL.glsl2cpp SourceFiles="@(GLSL)" ForceRebuild="$(GLSLForceRebuild)" DependencyLog="$(IntDir)GLSL.read.tlog" CommandLog="$(IntDir)GLSL.command.tlog">
+			<Output ItemName="EmbeddedGLSL" TaskParameter="Outputs" />
+		</EmbedGLSL.glsl2cpp>
+		<CL Condition="'@(EmbeddedGLSL)' != ''" Sources="%(EmbeddedGLSL.Identity)" ObjectFileName="%(EmbeddedGLSL.ObjectFileName)" CompileAs="CompileAsCpp" OmitDefaultLibName="True" SuppressStartupBanner="True" />
+		<ItemGroup>
+			<Object Include="%(GLSL.ObjectFileName)" />
+		</ItemGroup>
+	</Target>
+
+	<Target Name="GLSLClean" AfterTargets="Clean">
+		<Delete Files="@(GLSL->'%(ObjectFileName)')" />
+		<Delete Files="@(GLSL->'%(ObjectFileName).cpp')" />
+	</Target>
+</Project>

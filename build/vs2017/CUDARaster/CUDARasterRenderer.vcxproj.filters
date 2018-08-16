@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="source">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="source\base">
+      <UniqueIdentifier>{50cd0e25-5f95-4bb2-906d-20bbc55307d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\shader">
+      <UniqueIdentifier>{431ae742-690f-41bc-8415-0682db061f64}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\materials">
+      <UniqueIdentifier>{b4299183-6196-4dc8-af21-7e3fc9241fb1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\source\CUDARaster\App.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\CUDARaster\CudaRaster.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\CUDARaster\DllMain.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\CUDARaster\Geometry.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\CUDARaster\main.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\CUDARaster\Renderer.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\CUDARaster\base\Array.cpp">
+      <Filter>source\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\CUDARaster\base\helpling.cpp">
+      <Filter>source\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\CUDARaster\base\Math.cpp">
+      <Filter>source\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\CUDARaster\base\String.cpp">
+      <Filter>source\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\CUDARaster\materials\LitMaterial.cpp">
+      <Filter>source\materials</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\CUDARaster\materials\TexturedLitMaterial.cpp">
+      <Filter>source\materials</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\CUDARaster\materials\TexturedMaterial.cpp">
+      <Filter>source\materials</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\CUDARaster\materials\ColoredMaterial.cpp">
+      <Filter>source\materials</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\CUDARaster\materials\ClipspaceMaterial.cpp">
+      <Filter>source\materials</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\CUDARaster\materials\EyeCandyMaterial.cpp">
+      <Filter>source\materials</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\source\CUDARaster\App.hpp">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\CUDARaster\CudaRaster.hpp">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\CUDARaster\Geometry.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\CUDARaster\Renderer.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\CUDARaster\Shaders.hpp">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\CUDARaster\types.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\CUDARaster\base\Array.hpp">
+      <Filter>source\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\CUDARaster\base\Defs.hpp">
+      <Filter>source\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\CUDARaster\base\helpling.h">
+      <Filter>source\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\CUDARaster\base\Math.hpp">
+      <Filter>source\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\CUDARaster\base\String.hpp">
+      <Filter>source\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\CUDARaster\Material.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\CUDARaster\materials\LitMaterial.h">
+      <Filter>source\materials</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\CUDARaster\materials\Material.h">
+      <Filter>source\materials</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\CUDARaster\materials\TexturedLitMaterial.h">
+      <Filter>source\materials</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\CUDARaster\materials\TexturedMaterial.h">
+      <Filter>source\materials</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\CUDARaster\materials\ColoredMaterial.h">
+      <Filter>source\materials</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\CUDARaster\materials\ClipspaceMaterial.h">
+      <Filter>source\materials</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\CUDARaster\materials\EyeCandyMaterial.h">
+      <Filter>source\materials</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\source\CUDARaster\shader\camera">
+      <Filter>source\shader</Filter>
+    </None>
+    <None Include="..\..\..\source\CUDARaster\shader\draw_render_target.fs.glsl">
+      <Filter>source\shader</Filter>
+    </None>
+    <None Include="..\..\..\source\CUDARaster\shader\fragment_shader.glsl">
+      <Filter>source\shader</Filter>
+    </None>
+    <None Include="..\..\..\source\CUDARaster\shader\fullscreen_triangle.vs.glsl">
+      <Filter>source\shader</Filter>
+    </None>
+    <None Include="..\..\..\source\CUDARaster\shader\vertex_shader.glsl">
+      <Filter>source\shader</Filter>
+    </None>
+  </ItemGroup>
+</Project>

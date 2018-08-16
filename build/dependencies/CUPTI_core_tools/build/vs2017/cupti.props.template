@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<PropertyGroup>
+		<CUPTIRoot>$(CUDA_PATH)\extras\CUPTI\</CUPTIRoot>
+
+		<IncludePath>$(CUPTIRoot)include;$(IncludePath)</IncludePath>
+
+		<LibraryPath Condition="'$(Platform)' == 'Win32'">$(CUPTIRoot)libWin32;$(LibraryPath)</LibraryPath>
+		<LibraryPath Condition="'$(Platform)' == 'x64'">$(CUPTIRoot)libx64;$(LibraryPath)</LibraryPath>
+	</PropertyGroup>
+</Project>

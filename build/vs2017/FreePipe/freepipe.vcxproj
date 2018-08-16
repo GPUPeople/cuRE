@@ -1,0 +1,522 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug_sm35|x64">
+      <Configuration>Debug_sm35</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug_sm52_d|x64">
+      <Configuration>Debug_sm52_d</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug_sm52|x64">
+      <Configuration>Debug_sm52</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug_sm35_d|x64">
+      <Configuration>Debug_sm35_d</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug_sm61_d|x64">
+      <Configuration>Debug_sm61_d</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug_sm61|x64">
+      <Configuration>Debug_sm61</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release_sm35|x64">
+      <Configuration>Release_sm35</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release_sm52|x64">
+      <Configuration>Release_sm52</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release_sm61|x64">
+      <Configuration>Release_sm61</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\source\FreePipe\config.h" />
+    <None Include="..\..\..\source\FreePipe\materials\ClipspaceMaterial.cuh" />
+    <ClInclude Include="..\..\..\source\FreePipe\materials\ColoredMaterial.cuh" />
+    <None Include="..\..\..\source\FreePipe\materials\TexturedLitMaterial.cuh" />
+    <ClInclude Include="..\..\..\source\FreePipe\shaders\clipspace.cuh" />
+    <ClInclude Include="..\..\..\source\FreePipe\shaders\clipspace.h" />
+    <ClInclude Include="..\..\..\source\FreePipe\shaders\fragment_phong.cuh" />
+    <ClInclude Include="..\..\..\source\FreePipe\shaders\fragment_phong.h" />
+    <ClInclude Include="..\..\..\source\FreePipe\shaders\simple_vertexdata.cuh" />
+    <ClInclude Include="..\..\..\source\FreePipe\shaders\vertex_simple.cuh" />
+    <ClInclude Include="..\..\..\source\FreePipe\tools\bitonicSort.cuh" />
+    <ClInclude Include="..\..\..\source\FreePipe\tools\prefixSum.cuh" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\source\FreePipe\shaders\fragment_simple.cuh" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\source\FreePipe\fragment_data.cuh" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\source\FreePipe\DepthStorage.cuh" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\source\FreePipe\fragment_processing.cuh" />
+  </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="..\..\..\source\FreePipe\free_pipe.cu" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\source\FreePipe\geometry_processing.cuh" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\source\FreePipe\IntermediateGeometryStorage.cuh" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\source\FreePipe\materials\LitMaterial.cuh" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{EA77215E-FE2C-408E-8C80-FDC5D7CB9590}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>freepipe</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_sm52|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_sm61|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_sm61_d|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_sm52_d|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_sm35|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_sm35_d|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_sm52|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_sm61|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_sm35|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup>
+    <Import Project="..\..\dependencies\dependencies.props" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(CUDA_build_tools_root)embedCUDA\embedCUDA.props" />
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 9.2.props" />
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug_sm52|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug_sm61|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug_sm61_d|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug_sm52_d|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug_sm35|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug_sm35_d|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release_sm52|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release_sm61|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release_sm35|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_sm52|x64'">
+    <OutDir>lib\x64\$(Configuration)\pipeline\</OutDir>
+    <IntDir>build\x64\$(Configuration)\pipeline\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_sm61|x64'">
+    <OutDir>lib\x64\$(Configuration)\pipeline\</OutDir>
+    <IntDir>build\x64\$(Configuration)\pipeline\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_sm61_d|x64'">
+    <OutDir>lib\x64\$(Configuration)\pipeline\</OutDir>
+    <IntDir>build\x64\$(Configuration)\pipeline\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_sm52_d|x64'">
+    <OutDir>lib\x64\$(Configuration)\pipeline\</OutDir>
+    <IntDir>build\x64\$(Configuration)\pipeline\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_sm35|x64'">
+    <OutDir>lib\x64\$(Configuration)\pipeline\</OutDir>
+    <IntDir>build\x64\$(Configuration)\pipeline\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_sm35_d|x64'">
+    <OutDir>lib\x64\$(Configuration)\pipeline\</OutDir>
+    <IntDir>build\x64\$(Configuration)\pipeline\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_sm52|x64'">
+    <OutDir>lib\x64\$(Configuration)\pipeline\</OutDir>
+    <IntDir>build\x64\$(Configuration)\pipeline\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_sm61|x64'">
+    <OutDir>lib\x64\$(Configuration)\pipeline\</OutDir>
+    <IntDir>build\x64\$(Configuration)\pipeline\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_sm35|x64'">
+    <OutDir>lib\x64\$(Configuration)\pipeline\</OutDir>
+    <IntDir>build\x64\$(Configuration)\pipeline\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_sm52|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <CudaCompile>
+      <EmbedCUDAObjectFileName>$(IntDir)%(Filename).cubin.obj</EmbedCUDAObjectFileName>
+    </CudaCompile>
+    <CudaCompile>
+      <EmbedCUDALinkTargetFileName />
+      <EmbedCUDASymbolName>?%(Filename)@CUBIN@@3DB</EmbedCUDASymbolName>
+      <EmbedCUDAEndSymbolName>?%(Filename)_end@CUBIN@@3DB</EmbedCUDAEndSymbolName>
+      <Include>..\..\dependencies\;..\..\..\source\utils;%(Include)</Include>
+      <UseHostInclude>false</UseHostInclude>
+      <Keep>true</Keep>
+      <KeepDir>$(IntDir)</KeepDir>
+      <NvccCompilation>cubin</NvccCompilation>
+      <CudaRuntime>None</CudaRuntime>
+      <TargetMachinePlatform>64</TargetMachinePlatform>
+      <CodeGeneration>compute_52,sm_52</CodeGeneration>
+      <GenerateLineInfo>true</GenerateLineInfo>
+      <PtxAsOptionV>true</PtxAsOptionV>
+    </CudaCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_sm61|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <CudaCompile>
+      <EmbedCUDAObjectFileName>$(IntDir)%(Filename).cubin.obj</EmbedCUDAObjectFileName>
+    </CudaCompile>
+    <CudaCompile>
+      <EmbedCUDALinkTargetFileName>
+      </EmbedCUDALinkTargetFileName>
+      <EmbedCUDASymbolName>?%(Filename)@CUBIN@@3DB</EmbedCUDASymbolName>
+      <EmbedCUDAEndSymbolName>?%(Filename)_end@CUBIN@@3DB</EmbedCUDAEndSymbolName>
+      <Include>..\..\dependencies\;..\..\..\source\utils;%(Include)</Include>
+      <UseHostInclude>false</UseHostInclude>
+      <Keep>true</Keep>
+      <KeepDir>$(IntDir)</KeepDir>
+      <NvccCompilation>cubin</NvccCompilation>
+      <CudaRuntime>None</CudaRuntime>
+      <TargetMachinePlatform>64</TargetMachinePlatform>
+      <CodeGeneration>compute_61,sm_61</CodeGeneration>
+      <GenerateLineInfo>true</GenerateLineInfo>
+      <PtxAsOptionV>true</PtxAsOptionV>
+    </CudaCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_sm61_d|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <CudaCompile>
+      <EmbedCUDAObjectFileName>$(IntDir)%(Filename).cubin.obj</EmbedCUDAObjectFileName>
+    </CudaCompile>
+    <CudaCompile>
+      <EmbedCUDALinkTargetFileName>
+      </EmbedCUDALinkTargetFileName>
+      <EmbedCUDASymbolName>?%(Filename)@CUBIN@@3DB</EmbedCUDASymbolName>
+      <EmbedCUDAEndSymbolName>?%(Filename)_end@CUBIN@@3DB</EmbedCUDAEndSymbolName>
+      <Include>..\..\dependencies\;..\..\..\source\utils;%(Include)</Include>
+      <UseHostInclude>false</UseHostInclude>
+      <Keep>true</Keep>
+      <KeepDir>$(IntDir)</KeepDir>
+      <NvccCompilation>cubin</NvccCompilation>
+      <CudaRuntime>None</CudaRuntime>
+      <TargetMachinePlatform>64</TargetMachinePlatform>
+      <CodeGeneration>compute_61,sm_61</CodeGeneration>
+      <GPUDebugInfo>true</GPUDebugInfo>
+      <GenerateLineInfo>true</GenerateLineInfo>
+      <PtxAsOptionV>true</PtxAsOptionV>
+    </CudaCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_sm52_d|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <CudaCompile>
+      <EmbedCUDAObjectFileName>$(IntDir)%(Filename).cubin.obj</EmbedCUDAObjectFileName>
+    </CudaCompile>
+    <CudaCompile>
+      <EmbedCUDALinkTargetFileName>
+      </EmbedCUDALinkTargetFileName>
+      <EmbedCUDASymbolName>?%(Filename)@CUBIN@@3DB</EmbedCUDASymbolName>
+      <EmbedCUDAEndSymbolName>?%(Filename)_end@CUBIN@@3DB</EmbedCUDAEndSymbolName>
+      <Include>..\..\dependencies\;..\..\..\source\utils;%(Include)</Include>
+      <UseHostInclude>false</UseHostInclude>
+      <Keep>true</Keep>
+      <KeepDir>$(IntDir)</KeepDir>
+      <NvccCompilation>cubin</NvccCompilation>
+      <CudaRuntime>None</CudaRuntime>
+      <TargetMachinePlatform>64</TargetMachinePlatform>
+      <CodeGeneration>compute_52,sm_52</CodeGeneration>
+      <GPUDebugInfo>true</GPUDebugInfo>
+      <GenerateLineInfo>true</GenerateLineInfo>
+      <PtxAsOptionV>true</PtxAsOptionV>
+    </CudaCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_sm35|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <CudaCompile>
+      <EmbedCUDAObjectFileName>$(IntDir)%(Filename).cubin.obj</EmbedCUDAObjectFileName>
+    </CudaCompile>
+    <CudaCompile>
+      <EmbedCUDALinkTargetFileName />
+      <EmbedCUDASymbolName>?%(Filename)@CUBIN@@3DB</EmbedCUDASymbolName>
+      <EmbedCUDAEndSymbolName>?%(Filename)_end@CUBIN@@3DB</EmbedCUDAEndSymbolName>
+      <Include>..\..\dependencies\;..\..\..\source\utils;%(Include)</Include>
+      <UseHostInclude>false</UseHostInclude>
+      <Keep>true</Keep>
+      <KeepDir>$(IntDir)</KeepDir>
+      <NvccCompilation>cubin</NvccCompilation>
+      <CudaRuntime>None</CudaRuntime>
+      <TargetMachinePlatform>64</TargetMachinePlatform>
+      <CodeGeneration>compute_35,sm_35</CodeGeneration>
+      <GenerateLineInfo>true</GenerateLineInfo>
+      <PtxAsOptionV>true</PtxAsOptionV>
+    </CudaCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_sm35_d|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <CudaCompile>
+      <EmbedCUDAObjectFileName>$(IntDir)%(Filename).cubin.obj</EmbedCUDAObjectFileName>
+    </CudaCompile>
+    <CudaCompile>
+      <EmbedCUDALinkTargetFileName>
+      </EmbedCUDALinkTargetFileName>
+      <EmbedCUDASymbolName>?%(Filename)@CUBIN@@3DB</EmbedCUDASymbolName>
+      <EmbedCUDAEndSymbolName>?%(Filename)_end@CUBIN@@3DB</EmbedCUDAEndSymbolName>
+      <Include>..\..\dependencies\;..\..\..\source\utils;%(Include)</Include>
+      <UseHostInclude>false</UseHostInclude>
+      <Keep>true</Keep>
+      <KeepDir>$(IntDir)</KeepDir>
+      <NvccCompilation>cubin</NvccCompilation>
+      <CudaRuntime>None</CudaRuntime>
+      <TargetMachinePlatform>64</TargetMachinePlatform>
+      <CodeGeneration>compute_35,sm_35</CodeGeneration>
+      <GPUDebugInfo>true</GPUDebugInfo>
+      <GenerateLineInfo>true</GenerateLineInfo>
+      <PtxAsOptionV>true</PtxAsOptionV>
+    </CudaCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_sm52|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <CudaCompile>
+      <EmbedCUDAObjectFileName>$(IntDir)%(Filename).cubin.obj</EmbedCUDAObjectFileName>
+    </CudaCompile>
+    <CudaCompile>
+      <EmbedCUDALinkTargetFileName />
+      <EmbedCUDASymbolName>?%(Filename)@CUBIN@@3DB</EmbedCUDASymbolName>
+      <EmbedCUDAEndSymbolName>?%(Filename)_end@CUBIN@@3DB</EmbedCUDAEndSymbolName>
+      <Include>..\..\dependencies\;..\..\..\source\utils;%(Include)</Include>
+      <UseHostInclude>false</UseHostInclude>
+      <Keep>true</Keep>
+      <KeepDir>$(IntDir)</KeepDir>
+      <NvccCompilation>cubin</NvccCompilation>
+      <CudaRuntime>None</CudaRuntime>
+      <TargetMachinePlatform>64</TargetMachinePlatform>
+      <CodeGeneration>compute_52,sm_52</CodeGeneration>
+      <GenerateLineInfo>true</GenerateLineInfo>
+      <PtxAsOptionV>true</PtxAsOptionV>
+    </CudaCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_sm61|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <CudaCompile>
+      <EmbedCUDAObjectFileName>$(IntDir)%(Filename).cubin.obj</EmbedCUDAObjectFileName>
+    </CudaCompile>
+    <CudaCompile>
+      <EmbedCUDALinkTargetFileName>
+      </EmbedCUDALinkTargetFileName>
+      <EmbedCUDASymbolName>?%(Filename)@CUBIN@@3DB</EmbedCUDASymbolName>
+      <EmbedCUDAEndSymbolName>?%(Filename)_end@CUBIN@@3DB</EmbedCUDAEndSymbolName>
+      <Include>..\..\dependencies\;..\..\..\source\utils;%(Include)</Include>
+      <UseHostInclude>false</UseHostInclude>
+      <Keep>true</Keep>
+      <KeepDir>$(IntDir)</KeepDir>
+      <NvccCompilation>cubin</NvccCompilation>
+      <CudaRuntime>None</CudaRuntime>
+      <TargetMachinePlatform>64</TargetMachinePlatform>
+      <CodeGeneration>compute_61,sm_61</CodeGeneration>
+      <GenerateLineInfo>true</GenerateLineInfo>
+      <PtxAsOptionV>true</PtxAsOptionV>
+    </CudaCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_sm35|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <CudaCompile>
+      <EmbedCUDAObjectFileName>$(IntDir)%(Filename).cubin.obj</EmbedCUDAObjectFileName>
+    </CudaCompile>
+    <CudaCompile>
+      <EmbedCUDALinkTargetFileName />
+      <EmbedCUDASymbolName>?%(Filename)@CUBIN@@3DB</EmbedCUDASymbolName>
+      <EmbedCUDAEndSymbolName>?%(Filename)_end@CUBIN@@3DB</EmbedCUDAEndSymbolName>
+      <Include>..\..\dependencies\;..\..\..\source\utils;%(Include)</Include>
+      <UseHostInclude>false</UseHostInclude>
+      <Keep>true</Keep>
+      <KeepDir>$(IntDir)</KeepDir>
+      <NvccCompilation>cubin</NvccCompilation>
+      <CudaRuntime>None</CudaRuntime>
+      <TargetMachinePlatform>64</TargetMachinePlatform>
+      <CodeGeneration>compute_35,sm_35</CodeGeneration>
+      <GenerateLineInfo>true</GenerateLineInfo>
+      <PtxAsOptionV>true</PtxAsOptionV>
+    </CudaCompile>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(CUDA_build_tools_root)embedCUDA\embedCUDA.targets" />
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 9.2.targets" />
+  </ImportGroup>
+</Project>

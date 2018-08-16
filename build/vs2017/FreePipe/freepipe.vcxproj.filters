@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="source">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="source\tools">
+      <UniqueIdentifier>{0b64b4cf-9a63-4975-8ce6-e7e079ebbf39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\shaders">
+      <UniqueIdentifier>{1c2eb5e2-5aa3-452f-9bd9-732eadf55192}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\source\FreePipe\shaders\fragment_simple.cuh">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\FreePipe\fragment_data.cuh">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\FreePipe\DepthStorage.cuh">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\FreePipe\fragment_processing.cuh">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\FreePipe\geometry_processing.cuh">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\FreePipe\IntermediateGeometryStorage.cuh">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\FreePipe\tools\bitonicSort.cuh">
+      <Filter>source\tools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\FreePipe\tools\prefixSum.cuh">
+      <Filter>source\tools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\FreePipe\shaders\fragment_phong.cuh">
+      <Filter>source\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\FreePipe\shaders\simple_vertexdata.cuh">
+      <Filter>source\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\FreePipe\shaders\vertex_simple.cuh">
+      <Filter>source\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\FreePipe\shaders\fragment_phong.h">
+      <Filter>source\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\FreePipe\config.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\FreePipe\shaders\clipspace.cuh">
+      <Filter>source\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\FreePipe\shaders\clipspace.h">
+      <Filter>source\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\FreePipe\materials\ColoredMaterial.cuh">
+      <Filter>source\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\FreePipe\materials\LitMaterial.cuh">
+      <Filter>source\shaders</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="..\..\..\source\FreePipe\free_pipe.cu">
+      <Filter>source</Filter>
+    </CudaCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\source\FreePipe\materials\ClipspaceMaterial.cuh">
+      <Filter>source\shaders</Filter>
+    </None>
+    <None Include="..\..\..\source\FreePipe\materials\TexturedLitMaterial.cuh">
+      <Filter>source\shaders</Filter>
+    </None>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="source">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\source\buffer.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\shader.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\texture.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\error.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\framebuffer.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\vertex_array.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\event.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\transform_feedback.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\GL\buffer.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\GL\shader.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\GL\texture.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\GL\error.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\GL\unique_name.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\GL\vertex_array.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\GL\framebuffer.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\GL\event.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\GL\transform_feedback.h">
+      <Filter>source</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="GL_core_tools.props" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="source">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="source\shaders">
+      <UniqueIdentifier>{b07ce683-5ed7-4351-80ad-4dec0be84fe7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\include">
+      <UniqueIdentifier>{d814510f-c2e5-4892-b126-e83e073872d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\scenes">
+      <UniqueIdentifier>{a126a523-2f57-4988-904c-1f01bd5f0851}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\config">
+      <UniqueIdentifier>{7f4e6a6c-fe11-4206-9811-e40b8c81fed6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\utility">
+      <UniqueIdentifier>{004151a3-d74d-4eda-9663-c7f08c2961f2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\source\testbed\Navigator.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\testbed\Noncamera.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\testbed\OrbitalNavigator.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\testbed\PerformanceMonitor.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\testbed\PerspectiveCamera.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\testbed\PlugInManager.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\testbed\RecordingPerformanceMonitor.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\testbed\RenderingSystem.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\testbed\ConsoleHandler.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\testbed\Display.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\testbed\FirstPersonNavigator.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\testbed\InputHandler.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\testbed\InteractivePerformanceMonitor.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\testbed\include\interface.h">
+      <Filter>source\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\testbed\include\PlugIn.h">
+      <Filter>source\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\testbed\include\plugin_ptr.h">
+      <Filter>source\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\testbed\include\PlugInClient.h">
+      <Filter>source\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\testbed\include\Renderer.h">
+      <Filter>source\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\testbed\include\Resource.h">
+      <Filter>source\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\testbed\include\resource_ptr.h">
+      <Filter>source\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\testbed\include\ResourceImp.h">
+      <Filter>source\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\testbed\include\Camera.h">
+      <Filter>source\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\testbed\ClipspaceScene.h">
+      <Filter>source\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\testbed\ClipspaceViewScene.h">
+      <Filter>source\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\testbed\CubeScene.h">
+      <Filter>source\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\testbed\IcosahedronScene.h">
+      <Filter>source\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\testbed\IndexedTriangleMesh.h">
+      <Filter>source\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\testbed\LoadedScene.h">
+      <Filter>source\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\testbed\SphereScene.h">
+      <Filter>source\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\testbed\TriangleScene.h">
+      <Filter>source\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\testbed\Config.h">
+      <Filter>source\config</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\testbed\ConfigParser.h">
+      <Filter>source\config</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\testbed\ConfigStream.h">
+      <Filter>source\config</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\testbed\io.h">
+      <Filter>source\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\testbed\Scene.h">
+      <Filter>source\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\testbed\EyeCandyScene.h">
+      <Filter>source\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\testbed\WaterScene.h">
+      <Filter>source\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\testbed\BlendScene.h">
+      <Filter>source\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\testbed\BlendIsoScene.h">
+      <Filter>source\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\testbed\StippleIsoScene.h">
+      <Filter>source\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\testbed\GlyphScene.h">
+      <Filter>source\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\testbed\CheckerboardScene.h">
+      <Filter>source\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\testbed\Testbed.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\testbed\argparse.h">
+      <Filter>source\utility</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\source\testbed\Noncamera.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\testbed\OrbitalNavigator.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\testbed\PerspectiveCamera.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\testbed\PlugInManager.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\testbed\RecordingPerformanceMonitor.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\testbed\RenderingSystem.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\testbed\ConsoleHandler.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\testbed\Display.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\testbed\FirstPersonNavigator.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\testbed\InputHandler.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\testbed\InteractivePerformanceMonitor.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\testbed\main.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\testbed\ClipspaceScene.cpp">
+      <Filter>source\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\testbed\ClipspaceViewScene.cpp">
+      <Filter>source\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\testbed\CubeScene.cpp">
+      <Filter>source\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\testbed\IcosahedronScene.cpp">
+      <Filter>source\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\testbed\IndexedTriangleMesh.cpp">
+      <Filter>source\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\testbed\LoadedScene.cpp">
+      <Filter>source\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\testbed\SphereScene.cpp">
+      <Filter>source\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\testbed\TriangleScene.cpp">
+      <Filter>source\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\testbed\Config.cpp">
+      <Filter>source\config</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\testbed\ConfigParser.cpp">
+      <Filter>source\config</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\testbed\ConfigStream.cpp">
+      <Filter>source\config</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\testbed\EyeCandyScene.cpp">
+      <Filter>source\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\testbed\WaterScene.cpp">
+      <Filter>source\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\testbed\BlendScene.cpp">
+      <Filter>source\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\testbed\BlendIsoScene.cpp">
+      <Filter>source\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\testbed\StippleIsoScene.cpp">
+      <Filter>source\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\testbed\GlyphScene.cpp">
+      <Filter>source\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\testbed\CheckerboardScene.cpp">
+      <Filter>source\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\testbed\Testbed.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\testbed\argparse.cpp">
+      <Filter>source\utility</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <GLSL Include="..\..\..\source\testbed\shaders\fullscreen_triangle.vs.glsl">
+      <Filter>source\shaders</Filter>
+    </GLSL>
+    <GLSL Include="..\..\..\source\testbed\shaders\draw_color_buffer.fs.glsl">
+      <Filter>source\shaders</Filter>
+    </GLSL>
+  </ItemGroup>
+</Project>

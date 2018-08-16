@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="source">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="source\shaders">
+      <UniqueIdentifier>{bc6347ea-1c37-4c4c-9851-b789536a6ffd}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\source\cure\pipeline\clipping.cuh">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\cure\pipeline\common.cuh">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\cure\pipeline\config.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\cure\pipeline\cure_config.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\cure\pipeline\fragment_shader_input.cuh">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\cure\pipeline\fragment_shader_stage.cuh">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\cure\pipeline\framebuffer.cuh">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\cure\pipeline\geometry_stage.cuh">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\cure\pipeline\index_queue.cuh">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\cure\pipeline\instrumentation.cuh">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\cure\pipeline\PerWarpPatchGeometryStage.cuh">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\cure\pipeline\Pipeline.cuh">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\cure\pipeline\pipeline_module.cuh">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\cure\pipeline\progress_queue.cuh">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\cure\pipeline\rasterization_stage.cuh">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\cure\pipeline\rasterization_stage_non_exclusive.cuh">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\cure\pipeline\shader.cuh">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\cure\pipeline\StampShading.cuh">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\cure\pipeline\TileRasterizer.cuh">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\cure\pipeline\TileRasterizerMask.cuh">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\cure\pipeline\triangle_buffer.cuh">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\cure\pipeline\TriangleBlockBinTileWorkAssignment.cuh">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\cure\pipeline\vertex_shader_input.cuh">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\cure\pipeline\vertex_shader_stage.cuh">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\cure\pipeline\viewport.cuh">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\cure\pipeline\work_assignment.cuh">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\cure\pipeline\BinRasterizer.cuh">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\cure\pipeline\BinTileRasterizationStage.cuh">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\cure\pipeline\BinTileSpace.cuh">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\cure\pipeline\bitmask.cuh">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\cure\shaders\blend_shader.cuh">
+      <Filter>source\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\cure\pipeline\primitive_types.cuh">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\cure\shaders\uniforms.cuh">
+      <Filter>source\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\cure\shaders\noise.cuh">
+      <Filter>source\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\cure\shaders\simple_shading.cuh">
+      <Filter>source\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\cure\shaders\eyecandy.cuh">
+      <Filter>source\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\cure\shaders\ocean.cuh">
+      <Filter>source\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\cure\shaders\checkerboard.cuh">
+      <Filter>source\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\cure\shaders\blending.cuh">
+      <Filter>source\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\cure\shaders\clipspace.cuh">
+      <Filter>source\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\cure\pipeline\gpu_configs.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\cure\pipeline\instrumentation_config.h">
+      <Filter>source</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="..\..\..\source\cure\pipeline\cure.cu">
+      <Filter>source</Filter>
+    </CudaCompile>
+    <CudaCompile Include="..\..\..\source\cure\pipeline\framebuffer.cu">
+      <Filter>source</Filter>
+    </CudaCompile>
+    <CudaCompile Include="..\..\..\source\cure\pipeline\geometry_stage.cu">
+      <Filter>source</Filter>
+    </CudaCompile>
+    <CudaCompile Include="..\..\..\source\cure\pipeline\instrumentation.cu">
+      <Filter>source</Filter>
+    </CudaCompile>
+    <CudaCompile Include="..\..\..\source\cure\pipeline\rasterization_stage.cu">
+      <Filter>source</Filter>
+    </CudaCompile>
+    <CudaCompile Include="..\..\..\source\cure\shaders\uniforms.cu">
+      <Filter>source\shaders</Filter>
+    </CudaCompile>
+  </ItemGroup>
+</Project>

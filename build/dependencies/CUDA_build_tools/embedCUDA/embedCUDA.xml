@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProjectSchemaDefinitions xmlns="http://schemas.microsoft.com/build/2009/properties" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+	
+	<ContentType Name="embedCUDA" ItemType="CudaCompile" />
+	
+	<Rule
+	  Name="embedCUDA"
+	  PageTemplate="tool"
+	  DisplayName="embed CUDA"
+	  Order="13">
+
+		<Rule.DataSource>
+			<DataSource Persistence="ProjectFile" ItemType="CudaCompile" />
+		</Rule.DataSource>
+
+		<Rule.Categories>
+			<Category Name="General" DisplayName="General" />
+		</Rule.Categories>
+
+		<StringProperty
+		  Subtype="file"
+		  Name="EmbedCUDAObjectFileName"
+		  DisplayName="Object File"
+		  Description="Output object file name"
+		  Category="General" />
+
+		<StringProperty
+		  Subtype="file"
+		  Name="EmbedCUDALinkTargetFileName"
+		  DisplayName="Link Target File"
+		  Description="Link target file name"
+		  Category="General" />
+
+		<StringProperty
+		  Subtype="file"
+		  Name="EmbedCUDASymbolName"
+		  DisplayName="Symbol Name"
+		  Description="Symbol name"
+		  Category="General" />
+
+		<StringProperty
+		  Subtype="file"
+		  Name="EmbedCUDAEndSymbolName"
+		  DisplayName="End Symbol Name"
+		  Description="End symbol name"
+		  Category="General" />
+	</Rule>
+</ProjectSchemaDefinitions>

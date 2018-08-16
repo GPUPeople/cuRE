@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProjectSchemaDefinitions xmlns="http://schemas.microsoft.com/build/2009/properties" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+	<ContentType Name="GLSL" DisplayName="Embed GLSL" ItemType="GLSL" />
+	<ItemType Name="GLSL" DisplayName="Embed GLSL" />
+	<FileExtension Name="*.glsl" ContentType="GLSL" />
+
+	<Rule
+	  Name="GLSL"
+	  PageTemplate="tool"
+	  DisplayName="GLSL"
+	  Order="42">
+
+		<Rule.DataSource>
+			<DataSource Persistence="ProjectFile" ItemType="GLSL" />
+		</Rule.DataSource>
+
+		<StringListProperty
+		  Subtype="folder"
+		  Name="AdditionalIncludeDirectories"
+		  DisplayName="Additional Include Directories"
+		  Switch="/I"
+		  Description="Additional include directories."
+		  Category="General" />
+
+		<StringListProperty
+		  Name="PreprocessorDefinitions"
+		  DisplayName="Preprocessor Definitions"
+		  Switch="/D"
+		  Description="Define preprocessor macros."
+		  Category="Preprocessor" />
+
+		<StringProperty
+		  Name="VariableName"
+		  DisplayName="Variable Name"
+		  Description="Variable Name."
+		  Category="General" />
+
+		<StringProperty
+		  Subtype="file"
+		  Name="ObjectFileName"
+		  DisplayName="Object File Name"
+		  Description="Output object file."
+		  Category="General" />
+
+	</Rule>
+</ProjectSchemaDefinitions>

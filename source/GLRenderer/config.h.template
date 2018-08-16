@@ -1,0 +1,16 @@
+
+
+
+#ifndef INCLUDED_OPENGL_CONFIG
+#define INCLUDED_OPENGL_CONFIG
+
+#pragma once
+
+constexpr bool CLIPPING = true;
+constexpr int BACKFACE_CULLING = 1;
+constexpr bool DEPTH_TEST = true;
+constexpr bool DEPTH_WRITE = true;
+constexpr bool BLENDING = false;
+constexpr bool FRAGMENT_SHADER_INTERLOCK = false;
+
+#endif  // INCLUDED_OPENGL_CONFIG

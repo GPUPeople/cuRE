@@ -1,0 +1,18 @@
+
+
+
+#ifndef INCLUDED_LIGHT
+#define INCLUDED_LIGHT
+
+struct Light
+{
+	vec3 position;
+	vec3 color;
+};
+
+layout(std140, row_major, binding = 2) uniform LightUniformBuffer
+{
+	Light light;
+};
+
+#endif  // INCLUDED_LIGHT

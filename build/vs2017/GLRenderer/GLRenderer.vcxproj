@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\source\GLRenderer\shaders\camera" />
+    <None Include="..\..\..\source\GLRenderer\shaders\light" />
+    <None Include="..\..\..\source\GLRenderer\shaders\noise">
+      <FileType>Document</FileType>
+    </None>
+    <None Include="..\..\..\source\GLRenderer\shaders\object" />
+    <None Include="dll.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\source\GLRenderer\DllMain.cpp" />
+    <ClCompile Include="..\..\..\source\GLRenderer\Geometry.cpp" />
+    <ClCompile Include="..\..\..\source\GLRenderer\materials\ClipspaceMaterial.cpp" />
+    <ClCompile Include="..\..\..\source\GLRenderer\materials\ColoredMaterial.cpp" />
+    <ClCompile Include="..\..\..\source\GLRenderer\materials\EyeCandyMaterial.cpp" />
+    <ClCompile Include="..\..\..\source\GLRenderer\materials\HeavyMaterials.cpp" />
+    <ClCompile Include="..\..\..\source\GLRenderer\materials\LitMaterial.cpp" />
+    <ClCompile Include="..\..\..\source\GLRenderer\materials\TexturedLitMaterial.cpp" />
+    <ClCompile Include="..\..\..\source\GLRenderer\materials\TexturedMaterial.cpp" />
+    <ClCompile Include="..\..\..\source\GLRenderer\Renderer.cpp" />
+    <ClCompile Include="..\..\..\source\GLRenderer\ShaderState.cpp" />
+    <ClCompile Include="..\..\..\source\GLRenderer\shaders\ClipspaceShader.cpp" />
+    <ClCompile Include="..\..\..\source\GLRenderer\shaders\ClipspaceWireframeShader.cpp" />
+    <ClCompile Include="..\..\..\source\GLRenderer\shaders\ColoredShader.cpp" />
+    <ClCompile Include="..\..\..\source\GLRenderer\shaders\EyeCandyShader.cpp" />
+    <ClCompile Include="..\..\..\source\GLRenderer\shaders\HeavyShaders.cpp" />
+    <ClCompile Include="..\..\..\source\GLRenderer\shaders\LitShader.cpp" />
+    <ClCompile Include="..\..\..\source\GLRenderer\shaders\TexturedLitShader.cpp" />
+    <ClCompile Include="..\..\..\source\GLRenderer\shaders\TexturedShader.cpp" />
+    <ClCompile Include="..\..\..\source\GLRenderer\Texture.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\source\GLRenderer\config.h" />
+    <ClInclude Include="..\..\..\source\GLRenderer\Geometry.h" />
+    <ClInclude Include="..\..\..\source\GLRenderer\materials\ClipspaceMaterial.h" />
+    <ClInclude Include="..\..\..\source\GLRenderer\materials\ColoredMaterial.h" />
+    <ClInclude Include="..\..\..\source\GLRenderer\materials\EyeCandyMaterial.h" />
+    <ClInclude Include="..\..\..\source\GLRenderer\materials\HeavyMaterials.h" />
+    <ClInclude Include="..\..\..\source\GLRenderer\materials\LitMaterial.h" />
+    <ClInclude Include="..\..\..\source\GLRenderer\materials\TexturedLitMaterial.h" />
+    <ClInclude Include="..\..\..\source\GLRenderer\materials\TexturedMaterial.h" />
+    <ClInclude Include="..\..\..\source\GLRenderer\Renderer.h" />
+    <ClInclude Include="..\..\..\source\GLRenderer\ShaderState.h" />
+    <ClInclude Include="..\..\..\source\GLRenderer\shaders\ClipspaceShader.h" />
+    <ClInclude Include="..\..\..\source\GLRenderer\shaders\ClipspaceWireframeShader.h" />
+    <ClInclude Include="..\..\..\source\GLRenderer\shaders\ColoredShader.h" />
+    <ClInclude Include="..\..\..\source\GLRenderer\shaders\EyeCandyShader.h" />
+    <ClInclude Include="..\..\..\source\GLRenderer\shaders\HeavyShaders.h" />
+    <ClInclude Include="..\..\..\source\GLRenderer\shaders\LitShader.h" />
+    <ClInclude Include="..\..\..\source\GLRenderer\shaders\TexturedLitShader.h" />
+    <ClInclude Include="..\..\..\source\GLRenderer\shaders\TexturedShader.h" />
+    <ClInclude Include="..\..\..\source\GLRenderer\Texture.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\clipspace.fs.glsl" />
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\clipspace.vs.glsl" />
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\clipspace_fragment_heavy.fs.glsl" />
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\clipspace_fragment_heavy_interlocked.fs.glsl" />
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\clipspace_interlocked.fs.glsl" />
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\clipspace_vertex_heavy.fs.glsl" />
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\clipspace_vertex_heavy.vs.glsl" />
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\clipspace_vertex_heavy_interlocked.fs.glsl" />
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\clipspace_wireframe.fs.glsl" />
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\clipspace_wireframe.gs.glsl" />
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\clipspace_wireframe.vs.glsl" />
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\colored.fs.glsl" />
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\colored.vs.glsl" />
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\eyecandy.fs.glsl" />
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\eyecandy.vs.glsl" />
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\eyecandy_fragment_heavy.fs.glsl" />
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\eyecandy_fragment_heavy.vs.glsl" />
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\eyecandy_fragment_heavy_interlocked.fs.glsl" />
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\eyecandy_interlocked.fs.glsl" />
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\eyecandy_vertex_heavy.fs.glsl" />
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\eyecandy_vertex_heavy.vs.glsl" />
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\eyecandy_vertex_heavy_interlocked.fs.glsl" />
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\heavy_fragment.fs.glsl" />
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\heavy_fragment.vs.glsl" />
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\heavy_fragment_interlocked.fs.glsl" />
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\heavy_vertex.fs.glsl" />
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\heavy_vertex.vs.glsl" />
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\heavy_vertex_interlocked.fs.glsl" />
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\lit.fs.glsl" />
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\lit.vs.glsl" />
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\textured.fs.glsl" />
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\textured.vs.glsl" />
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\textured_lit.fs.glsl" />
+    <GLSL Include="..\..\..\source\GLRenderer\shaders\textured_lit.vs.glsl" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{DDC9A9ED-E3BB-4844-850A-B8C4861B87F9}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>GLRender</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup>
+    <Import Project="..\..\dependencies\dependencies.props" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(GLSL_build_tools_root)GLSL.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup>
+    <Import Project="$(core_tools_root)build\vs2017\core_tools.props" Condition="'$(core_tools)' == ''" />
+    <Import Project="$(GL_core_tools_root)build\vs2017\GL_core_tools.props" Condition="'$(GL_core_tools)' == ''" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)bin\x64\Debug\plugins\</OutDir>
+    <IntDir>build\x64\$(Configuration)\</IntDir>
+    <IncludePath>..\..\..\source\testbed\include;..\..\dependencies;..\..\..\source\utils\;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)bin\x64\Release\plugins\</OutDir>
+    <IntDir>build\x64\$(Configuration)\</IntDir>
+    <IncludePath>..\..\..\source\testbed\include;..\..\dependencies;..\..\..\source\utils\;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;GLRENDER_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <DisableSpecificWarnings>4522</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories>..\..\..\source\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ModuleDefinitionFile>dll.def</ModuleDefinitionFile>
+      <AdditionalDependencies>GL_core_tools-glcoreDd-MDd.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;GLRENDER_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <DisableSpecificWarnings>4522</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories>..\..\..\source\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>/Zo %(AdditionalOptions)</AdditionalOptions>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ModuleDefinitionFile>dll.def</ModuleDefinitionFile>
+      <AdditionalDependencies>GL_core_tools-glcoreD-MD.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(GLSL_build_tools_root)GLSL.targets" />
+  </ImportGroup>
+</Project>

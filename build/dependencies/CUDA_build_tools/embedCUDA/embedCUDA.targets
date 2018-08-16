@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemGroup>
+		<PropertyPageSchema Include="$(MSBuildThisFileDirectory)$(MSBuildThisFileName).xml" />
+	</ItemGroup>
+
+	<UsingTask TaskName="embedCUDA.wrap" AssemblyFile="embedCUDA.dll" />
+	<UsingTask TaskName="embedCUDA.nvlink" AssemblyFile="embedCUDA.dll" />
+
+
+	<Target Name="embedCUDALinkCollectInputs">
+		<ItemGroup>
+			<embedCUDALink Include="@(CudaCompile->'%(CompileOut)')" Condition="'%(CudaCompile.EmbedCUDALinkTargetFileName)' != '' And '%(CudaCompile.ExcludedFromBuild)' != 'true'">
+				<LinkTargetFileName>%(EmbedCUDALinkTargetFileName)</LinkTargetFileName>
+				<ObjectFileName>%(EmbedCUDAObjectFileName)</ObjectFileName>
+				<SymbolName>%(EmbedCUDASymbolName)</SymbolName>
+				<EndSymbolName>%(EmbedCUDAEndSymbolName)</EndSymbolName>
+			</embedCUDALink>
+		</ItemGroup>
+	</Target>
+
+	<Target Name="embedCUDALink" Inputs="@(embedCUDALink)" Outputs="%(embedCUDALink.LinkTargetFileName)" DependsOnTargets="embedCUDALinkCollectInputs;CudaBuild" BeforeTargets="embedCUDA">
+	<!--<Target Name="embedCUDALink" DependsOnTargets="embedCUDALinkCollectInputs;CudaBuild" BeforeTargets="embedCUDA">-->
+		<Message Text="linking @(embedCUDALink) -> %(embedCUDALink.LinkTargetFileName)" Importance="high" />
+		<embedCUDA.nvlink
+			Inputs="@(embedCUDALink)"
+			TargetMachinePlatform="%(TargetMachinePlatform)"
+			CodeGeneration="%(CodeGeneration)"
+			OutputFile="%(embedCUDALink.LinkTargetFileName)"
+		/>
+	</Target>
+
+	<Target Name="embedCUDACollectInputs" DependsOnTargets="embedCUDALinkCollectInputs">
+		<ItemGroup>
+			<embedCUDA Include="%(CudaCompile.CompileOut)" Condition="'%(EmbedCUDALinkTargetFileName)' == '' And '%(CudaCompile.ExcludedFromBuild)' != 'true'">
+				<ObjectFileName>%(EmbedCUDAObjectFileName)</ObjectFileName>
+				<SymbolName>%(EmbedCUDASymbolName)</SymbolName>
+				<EndSymbolName>%(EmbedCUDAEndSymbolName)</EndSymbolName>
+			</embedCUDA>
+			<embedCUDA Include="%(embedCUDALink.LinkTargetFileName)">
+				<LinkTargetFileName>%(embedCUDALink.LinkTargetFileName)</LinkTargetFileName>
+				<ObjectFileName>%(embedCUDALink.ObjectFileName)</ObjectFileName>
+				<SymbolName>%(embedCUDALink.SymbolName)</SymbolName>
+				<EndSymbolName>%(embedCUDALink.EndSymbolName)</EndSymbolName>
+			</embedCUDA>
+		</ItemGroup>
+		<Message Text="bla @(embedCUDA)" Importance="high" />
+	</Target>
+
+	<Target Name="embedCUDA" Inputs="@(embedCUDA)" Outputs="%(embedCUDA.ObjectFileName)" DependsOnTargets="embedCUDACollectInputs;CudaBuild" BeforeTargets="BeforeLink;BeforeLib">
+		<Message Text="wrapping @(embedCUDA) -> @(embedCUDA->'%(SymbolName)') in %(embedCUDA.ObjectFileName)" Importance="high" />
+		<embedCUDA.wrap
+			Inputs="@(embedCUDA)"
+			SymbolNames="@(embedCUDA->'%(SymbolName)')"
+			EndSymbolNames="@(embedCUDA->'%(EndSymbolName)')"
+			ObjectFile="%(embedCUDA.ObjectFileName)"
+		/>
+	</Target>
+
+	<Target Name="embedCUDAAddOutputs" DependsOnTargets="embedCUDACollectInputs" BeforeTargets="BeforeLink;BeforeLib">
+		<ItemGroup>
+			<Lib Include="%(embedCUDA.ObjectFileName)" />
+			<Link Include="%(embedCUDA.ObjectFileName)" />
+		</ItemGroup>
+	</Target>
+
+	<Target Name="embedCUDAClean" DependsOnTargets="embedCUDACollectInputs" AfterTargets="Clean">
+		<Delete Files="@(embedCUDA)" />
+		<Delete Files="%(embedCUDA.ObjectFileName)" />
+	</Target>
+</Project>

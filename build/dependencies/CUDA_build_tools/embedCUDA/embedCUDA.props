@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemDefinitionGroup>
+		<CudaCompile>
+			<EmbedCUDALinkTargetFileName>$(IntDir)$(TargetName).cubin</EmbedCUDALinkTargetFileName>
+			<EmbedCUDAObjectFileName>$(IntDir)$(TargetName).cubin.obj</EmbedCUDAObjectFileName>
+			<EmbedCUDASymbolName>?$(ProjectName)@CUBIN@@3DB</EmbedCUDASymbolName>
+			<EmbedCUDAEndSymbolName>?$(ProjectName)_end@CUBIN@@3DB</EmbedCUDAEndSymbolName>
+		</CudaCompile>
+	</ItemDefinitionGroup>
+</Project>

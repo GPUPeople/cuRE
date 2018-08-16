@@ -1,0 +1,49 @@
+
+
+
+#ifndef INCLUDED_FREEPIPE_CONFIG
+#define INCLUDED_FREEPIPE_CONFIG
+
+#pragma once
+
+#define CLIPSPACE_GEOMETRY 1
+
+namespace FreePipe
+{
+	enum GEOMETRYPROCESSINGMETHOD
+	{
+		GPM_ALLVERTICES,
+		GPM_ALLINDICES,
+		GPM_SORTING,
+		GPM_HASHING,
+		GPM_HASHING_COLLABORATIVE,
+		GPM_WARP_VOTING,
+		GPM_WARP_VOTING_NOPREPATCHING
+	};
+
+	const unsigned int GEOMETRY_PROCESSING = GPM_ALLINDICES;
+
+	// no patching
+	const int GPM_ALLVERTICES_THREADS = 1024;
+
+	// patch config
+	const int GPM_PATCH_MAX_INDICES = 1023; // +1 must be evenly divisible by geometry stage threads
+	const int GPM_PATCH_MAX_VERTICES = 256;
+
+	const int GPM_WARP_MAX_INDICES = 192;
+	const int GPM_WARP_MAX_VERTICES = 32;
+
+	const int GPM_WARP_NOPREPATCHING_INDICES = 96; // only makes sense to be a multiple of 32 and 3 ... 96, 192
+
+
+
+	const int KERNEL_THREADS = 512;
+
+	const bool DEPTH_TEST = false;
+
+	const int MAX_TEMP_VERTICES = 1024 * 1024;
+	const int MAX_TEMP_INDICES = 4 * 1024 * 1024;
+}
+
+
+#endif // INCLUDED_FREEPIPE_CONFIG

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <GL_platform_tools_root>$(MSBuildThisFileDirectory)..\..\..\GL_platform_tools\</GL_platform_tools_root>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="source">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="source\materials">
+      <UniqueIdentifier>{cc239d79-6d55-4c1a-8842-c413584e7640}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="dll.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\source\cure\Framebuffer.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\cure\Geometry.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\cure\GeometryStage.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\cure\Instrumentation.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\cure\Pipeline.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\cure\PipelineKernel.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\cure\PipelineModule.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\cure\RasterizationStage.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\cure\Renderer.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\cure\ShaderState.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\cure\Texture.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\cure\materials\ClipspaceMaterial.h">
+      <Filter>source\materials</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\cure\materials\LitMaterial.h">
+      <Filter>source\materials</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\cure\materials\TexturedLitMaterial.h">
+      <Filter>source\materials</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\cure\materials\TexturedMaterial.h">
+      <Filter>source\materials</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\cure\materials\EyeCandyMaterial.h">
+      <Filter>source\materials</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\cure\materials\HeavyMaterial.h">
+      <Filter>source\materials</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\source\cure\Geometry.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\cure\GeometryStage.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\cure\Instrumentation.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\cure\Pipeline.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\cure\PipelineKernel.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\cure\PipelineModule.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\cure\RasterizationStage.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\cure\Renderer.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\cure\ShaderState.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\cure\Texture.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\cure\DllMain.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\cure\Framebuffer.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\cure\materials\LitMaterial.cpp">
+      <Filter>source\materials</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\cure\materials\TexturedLitMaterial.cpp">
+      <Filter>source\materials</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\cure\materials\TexturedMaterial.cpp">
+      <Filter>source\materials</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\cure\materials\ClipspaceMaterial.cpp">
+      <Filter>source\materials</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\cure\materials\EyeCandyMaterial.cpp">
+      <Filter>source\materials</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\cure\materials\HeavyMaterial.cpp">
+      <Filter>source\materials</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="source">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\source\error.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\memory.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\module.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\context.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\link.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\array.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\texture.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\event.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\stream.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\surface.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\device.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\resource.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\launch.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\CUDA\module.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\CUDA\context.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\CUDA\memory.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\CUDA\error.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\CUDA\device.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\CUDA\link.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\CUDA\array.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\CUDA\surface.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\CUDA\texture.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\CUDA\event.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\CUDA\stream.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\CUDA\resource.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\CUDA\launch.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\CUDA\type_traits.h">
+      <Filter>source</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CUDA_core_tools.props" />
+  </ItemGroup>
+</Project>

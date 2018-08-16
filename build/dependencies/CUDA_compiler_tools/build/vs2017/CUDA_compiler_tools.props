@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ImportGroup>
+		<Import Project="dependencies.props" />
+		<Import Project="$(CUDA_common_tools_root)build/vs2017/CUDA_common_tools.props" Condition="'$(CUDA_common_tools)' == ''" />
+	</ImportGroup>
+	<PropertyGroup>
+		<IncludePath>$(MSBuildThisFileDirectory)..\..\include\;$(IncludePath)</IncludePath>
+		<LibraryPath Condition="'$(Platform)' == 'Win32'">$(MSBuildThisFileDirectory)lib\x86\;$(LibraryPath)</LibraryPath>
+		<LibraryPath Condition="'$(Platform)' == 'x64'">$(MSBuildThisFileDirectory)lib\x64\;$(LibraryPath)</LibraryPath>
+		<CUDA_compiler_tools>$(MSBuildThisFileDirectory)</CUDA_compiler_tools>
+	</PropertyGroup>
+	<Target Name="CUDA_compiler_tools_add_library_dependencies" BeforeTargets="CUDA_common_tools_add_library_dependencies" DependsOnTargets="ClCompile">
+		<ItemGroup>
+			<Link Condition="$([System.Text.RegularExpressions.Regex]::IsMatch(%(AdditionalDependencies), '(.*;)?CUDA_compiler_tools-MDd\.lib(;.*)?'))">
+				<AdditionalDependencies>nvrtc.lib;%(AdditionalDependencies)</AdditionalDependencies>
+			</Link>
+			<Link Condition="$([System.Text.RegularExpressions.Regex]::IsMatch(%(AdditionalDependencies), '(.*;)?CUDA_compiler_tools-MD\.lib(;.*)?'))">
+				<AdditionalDependencies>nvrtc.lib;%(AdditionalDependencies)</AdditionalDependencies>
+			</Link>
+		</ItemGroup>
+	</Target>
+</Project>

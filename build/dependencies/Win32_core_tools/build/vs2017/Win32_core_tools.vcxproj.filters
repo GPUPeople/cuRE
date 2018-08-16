@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="source">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\source\unicode.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\event.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\error.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\async_io.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\memory.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\module.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\window.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\file.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\handle.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\crypt.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="win32_core_tools.props" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\win32\error.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\win32\file.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\win32\unicode.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\win32\unique_handle.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\win32\platform.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\win32\WindowClass.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\win32\event.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\win32\memory.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\win32\async_io.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\win32\module.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\win32\window.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\win32\handle.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\win32\crypt.h">
+      <Filter>source</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

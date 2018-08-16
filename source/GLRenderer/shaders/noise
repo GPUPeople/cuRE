@@ -1,0 +1,113 @@
+
+
+
+#ifndef INCLUDED_CURE_SHADERS_NOISE
+#define INCLUDED_CURE_SHADERS_NOISE
+
+//#pragma once
+
+
+// based on Ken Perlin, Noise hardware. In Real-Time Shading SIGGRAPH Course Notes (2001), Olano M., (Ed.).
+// https://www.csee.umbc.edu/~olano/s2002c36/ch02.pdf
+//
+
+// taken from https://en.wikipedia.org/wiki/Xorshift
+//
+uint rand(uint x)
+{
+	/* Algorithm "xor" from p. 4 of Marsaglia, "Xorshift RNGs" */
+	x ^= x << 13;
+	x ^= x >> 17;
+	x ^= x << 5;
+	return x;
+}
+
+float randf(uint x)
+{
+	return uintBitsToFloat((127U << 23) | (rand(x) >> 9)) * 2.0f - 3.0f;
+}
+
+vec3 noiseGradient(vec3 p)
+{
+	uint seed1 = rand(floatBitsToUint(p.x) ^ (floatBitsToUint(p.z) << 16));
+	uint seed2 = rand(floatBitsToUint(p.y) ^ (floatBitsToUint(p.z) << 16));
+	float u = randf(seed1);
+	float theta = randf(seed2) * 3.14159265358979f;
+
+	float s = sqrt(1.0f - u * u);
+
+	return vec3(s * cos(theta), s * sin(theta), u);
+}
+
+vec3 skew(vec3 p)
+{
+	float s = (p.x + p.y + p.z) / 3.0f;
+	return vec3(p.x + s, p.y + s, p.z + s);
+}
+
+vec3 unskew(vec3 p)
+{
+	float s = (p.x + p.y + p.z) / 6.0f;
+	return vec3(p.x - s, p.y - s, p.z - s);
+}
+
+struct simplex_t
+{
+	vec3 v[4];
+};
+
+simplex_t simplex(vec3 p)
+{
+	vec3 skewed_base = floor(skew(p));
+	vec3 v_0 = unskew(skewed_base);
+
+	vec3 v = p - v_0;
+
+	uint b1 = v.x < v.y ? 1U : 0U;
+	uint b2 = v.y < v.z ? 1U : 0U;
+	uint b3 = v.z < v.x ? 1U : 0U;
+
+	vec3 e_1 = { (~b1 & b3) != 0U ? 1.0f : 0.0f, (~b2 & b1) != 0U ? 1.0f : 0.0f, (~b3 & b2) != 0U ? 1.0f : 0.0f };
+	vec3 e_2 = { (b1 ^ b3) != 0U ? 0.0f : 1.0f, (b2 ^ b1) != 0U ? 0.0f : 1.0f, (b3 ^ b2) != 0U ? 0.0f : 1.0f };
+	vec3 e_3 = { (b1 & ~b3) != 0U ? 1.0f : 0.0f, (b2 & ~b1) != 0U ? 1.0f : 0.0f, (b3 & ~b2) != 0U ? 1.0f : 0.0f };
+
+	simplex_t s = { { v_0, v_0 + unskew(e_1), v_0 + unskew(e_1 + e_2), v_0 + unskew(e_1 + e_2 + e_3) } };
+	return s;
+}
+
+float simplexContribution(vec3 d, vec3 gradient)
+{
+	float t = 0.5f - dot(d, d);
+	float t2 = t * t;
+	float t4 = t2 * t2;
+	return t > 0.0f ? 8.0f * t4 * dot(gradient, d) : 0.0f;
+}
+
+float simplexNoise(vec3 p)
+{
+	simplex_t s = simplex(p);
+
+	return
+		simplexContribution(p - s.v[0], noiseGradient(s.v[0])) +
+		simplexContribution(p - s.v[1], noiseGradient(s.v[1])) +
+		simplexContribution(p - s.v[2], noiseGradient(s.v[2])) +
+		simplexContribution(p - s.v[3], noiseGradient(s.v[3]));
+}
+
+
+layout(std140, row_major, binding = 5) uniform NoiseParameters
+{
+	int noise_octaves;
+};
+
+float simplexNoiseFractal(vec3 p)
+{
+	float r = 0.0f;
+
+	for (int i = 0; i < noise_octaves; ++i)
+		r += 1.0f / (1 << i) * simplexNoise(p * (1 << i));
+
+	return 1.0f / (2.0f - 1.0f / (1 << (noise_octaves - 1))) * r;
+}
+
+#endif  // INCLUDED_CURE_SHADERS_NOISE

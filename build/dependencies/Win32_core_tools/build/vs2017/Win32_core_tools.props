@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<PropertyGroup>
+		<IncludePath>$(MSBuildThisFileDirectory)..\..\include\;$(IncludePath)</IncludePath>
+		<LibraryPath Condition="'$(Platform)' == 'Win32'">$(MSBuildThisFileDirectory)lib\x86\;$(LibraryPath)</LibraryPath>
+		<LibraryPath Condition="'$(Platform)' == 'x64'">$(MSBuildThisFileDirectory)lib\x64\;$(LibraryPath)</LibraryPath>
+		<Win32_core_tools>$(MSBuildThisFileDirectory)</Win32_core_tools>
+	</PropertyGroup>
+	<Target Name="Win32_core_tools_add_library_dependencies" BeforeTargets="Link" DependsOnTargets="ClCompile" />
+</Project>
