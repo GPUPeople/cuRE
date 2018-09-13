@@ -33,9 +33,6 @@
     <ClInclude Include="..\..\include\pfm.h">
       <Filter>source</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\source\io.h">
-      <Filter>source</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\include\rgb32f.h">
       <Filter>source</Filter>
     </ClInclude>

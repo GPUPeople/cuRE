@@ -49,7 +49,6 @@ int Testbed::run(Config& config, int res_x, int res_y, int record, const char* p
 {
 	PlugInManager plugin_man(config);
 
-	CUdevice device = CU::getDevice(config.loadInt("device", 0));
 	const char* scenefile = config.loadString("scene", "icosahedron");
 
 	union PerfMonitors {
@@ -61,7 +60,7 @@ int Testbed::run(Config& config, int res_x, int res_y, int record, const char* p
 
 	PerformanceMonitor* perf_mon = record > 0 ? static_cast<PerformanceMonitor*>(new (&perf_monitors) RecordingPerformanceMonitor(record)) : static_cast<PerformanceMonitor*>(new (&perf_monitors) InteractivePerformanceMonitor());
 
-	RenderingSystem rendering_system(plugin_man, config, device, perf_mon, scenefile, res_x, res_y);
+	RenderingSystem rendering_system(plugin_man, config, perf_mon, scenefile, res_x, res_y);
 
 	OrbitalNavigator navigator(config.loadConfig("orbital_navigator"), -math::constants<float>::pi() * 0.5f, 0.0f, 10.0f);
 	//FirstPersonNavigator navigator(1.0f, 0.1f, 0.0f);

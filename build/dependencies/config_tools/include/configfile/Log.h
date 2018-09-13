@@ -9,7 +9,7 @@
 #include <cstddef>
 #include <string>
 
-#include <core/interface.h>
+#include <core/interface>
 
 
 namespace configfile

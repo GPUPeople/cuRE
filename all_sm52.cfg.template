@@ -1,2 +1,0 @@
-current_renderer = ""
-modules = ("GLRenderer", "cure_sm52", "FreePipe_sm52", "CUDARaster_sm52")

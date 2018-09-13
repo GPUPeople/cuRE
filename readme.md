@@ -29,7 +29,7 @@ Use one of the three default configuration files `all_sm35.cfg`, `all_sm52.cfg`,
 
 ## How to build
 
-Only Windows 10 is currently supported. Building the project requires
+Only Windows 10 (64 Bit) is currently supported. Building the project requires
   * Visual Studio 2017 (15.7+),
   * Windows SDK 10.0.16299,
   * CUDA 9.2 toolkit, and
@@ -76,14 +76,14 @@ PipelineConfig<num_multiprocessors, num_blocks_per_multiprocessor, num_warps_per
 ```
 Add your own in `source/cure/pipeline/gpu_configs.h` or place a `PipelineConfig` directly in `PipelineConfigList<   >`.
 
-> Note: In principle, the `PipelineConfigList` can contain multiple `PipelineConfig`s. The cuRE plugin will simply contain an instance of the cuRE pipeline kernels for each `PipelineConfig`. At runtime, all pipeline kernel instances are enumerated in the order in which they happen to appear in the CUDA binary symbol table. The first kernel that fits onto the device we are running on is selected to run. Since the kernels have to be compiled once for each `PipelineConfig`, it is generally a good idea to only activate the `PipelineConfig` one currently intends to run to avoid unnecessarily long build times.
+> Note: In principle, the `PipelineConfigList` can contain multiple `PipelineConfig` elements. The cuRE plugin will simply contain an instance of the cuRE pipeline kernels for each `PipelineConfig`. At runtime, all pipeline kernel instances are enumerated in the order in which they happen to appear in the CUDA binary symbol table. The first kernel that fits onto the device we are running on is selected to run. Since the kernels have to be compiled once for each `PipelineConfig`, it is generally a good idea to only activate the `PipelineConfig` one currently intends to run to avoid unnecessarily long build times.
 
 
 #### A word on debugging
 
-Due to the complexity of the device code, it is recommended to avoid running the device debug build unless absolutely necessary as they will be extremely slow, if they compile at all, as they tend to exceed resource limits.
+Due to the complexity of the device code, it is recommended to avoid running device debug builds unless absolutely necessary as they will be extremely slow (if they compile at all; they have a tendency to exceed resource limits).
 
-The cuRE pipeline is based on a megakernel design. To avoid issues like system crashes and freezes when debugging the GPU code (e.g. using Nsight), it is recommended to run a pipeline built for a launch configuration with less multiprocessors than the GPU actually being used has.
+The cuRE pipeline is based on a megakernel design. To avoid issues like system crashes and freezes, it is recommended to run a pipeline built for a launch configuration with less multiprocessors than the GPU actually being used has when debugging the GPU code (e.g. using Nsight).
 
 
 ### FreePipe

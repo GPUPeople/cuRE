@@ -12,7 +12,7 @@
 #include <utility>
 #include <vector>
 
-#include <core/interface.h>
+#include <core/interface>
 
 #include <configfile/Log.h>
 

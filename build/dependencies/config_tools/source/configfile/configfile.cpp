@@ -8,7 +8,7 @@
 #include <iostream>
 #include <iomanip>
 
-#include <core/utils/memory.h>
+#include <core/utils/memory>
 
 #include <configfile.h>
 

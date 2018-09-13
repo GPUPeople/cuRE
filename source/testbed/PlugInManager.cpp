@@ -5,7 +5,6 @@
 #include <sstream>
 #include <iostream>
 
-#include <win32/unicode.h>
 #include <win32/file.h>
 
 #include <objbase.h>
@@ -42,13 +41,10 @@ namespace
 
 	constexpr bool ENABLE_HOTSWAPPING = false;
 
-	Win32::unique_hmodule loadDLL(const std::wstring& name, const path& plugin_dir, const path& hot_swap_dir)
+	Win32::unique_hmodule loadDLL(const path& dll_path, const path& hot_swap_dir)
 	{
-		path src_dll_name = name + L".dll";
-		path dll_src = plugin_dir / src_dll_name;
-
 		if constexpr (!ENABLE_HOTSWAPPING)
-			return Win32::unique_hmodule(LoadLibraryW(dll_src.wstring().c_str()));
+			return Win32::unique_hmodule(LoadLibraryW(dll_path.wstring().c_str()));
 
 		GUID guid;
 		CoCreateGuid(&guid);
@@ -56,16 +52,16 @@ namespace
 		wchar_t buffer[256];
 		StringFromGUID2(guid, buffer, 256);
 
-		path pdb_name = name + L".pdb";
-		path dest_dll_name = std::wstring(buffer) + L".dll";
+		auto pdb_name = dll_path.filename().replace_extension(".pdb");
+		path dest_dll_name = path(buffer).concat(".dll");
 
-		path pdb_src = plugin_dir / pdb_name;
-		path pdb_dest = hot_swap_dir / pdb_name;
+		path pdb_src = dll_path.parent_path()/pdb_name;
+		path pdb_dest = hot_swap_dir/pdb_name;
 		CopyFileW(pdb_src.wstring().c_str(), pdb_dest.wstring().c_str(), TRUE);
 
-		path dll_dest = hot_swap_dir / dest_dll_name;
+		path dll_dest = hot_swap_dir/dest_dll_name;
 
-		if (CopyFileW(dll_src.wstring().c_str(), dll_dest.wstring().c_str(), TRUE))
+		if (CopyFileW(dll_path.wstring().c_str(), dll_dest.wstring().c_str(), TRUE))
 			return Win32::unique_hmodule(LoadLibraryW(dll_dest.wstring().c_str()));
 
 		return Win32::unique_hmodule();
@@ -120,18 +116,18 @@ void PlugInManager::Module::attach(Callback* callback)
 }
 
 
+std::filesystem::path PlugInManager::buildDLLPath(const char* module) const
+{
+	return (plugin_dir/module).concat(".dll");
+}
+
 PlugInManager::PlugInManager(const Config& config)
-	: plugin_dir(imagePath(0).parent_path() / path(L"plugins")),
-	  hot_swap_dir(plugin_dir / path(L"hot")),
+	: plugin_dir(imagePath(0).parent_path()/"plugins"),
+	  hot_swap_dir(plugin_dir/"hot"),
 	  callback(nullptr)
 {
 	if (!exists(hot_swap_dir))
 		std::filesystem::create_directories(hot_swap_dir);
-
-	auto modules = config.loadTuple("modules", {});
-
-	for (auto&& m : modules)
-		loadModule(widen(m).c_str());
 }
 
 
@@ -139,24 +135,25 @@ void PlugInManager::refreshModules()
 {
 	for (auto& m : modules)
 	{
-		FILETIME t = timestamp(plugin_dir / path(std::get<1>(m) + L".dll"));
+		FILETIME t = timestamp(buildDLLPath(std::get<1>(m).c_str()));
 		
 		if (CompareFileTime(&t, &std::get<2>(m)) > 0)
 			loadModule(std::get<1>(m).c_str());
 	}
 }
 
-void PlugInManager::loadModule(const wchar_t* name)
+void PlugInManager::loadModule(const char* name)
 {
-	Win32::unique_hmodule hdll = loadDLL(name, plugin_dir, hot_swap_dir);
+	auto dll_path = buildDLLPath(name);
+	Win32::unique_hmodule hdll = loadDLL(dll_path, hot_swap_dir);
 
 	if (hdll)
 	{
-		FILETIME t = timestamp(plugin_dir / path(std::wstring(name) + L".dll"));
+		FILETIME t = timestamp(dll_path);
 		Module m = Module(std::move(hdll));
 		m.attach(this->callback);
 
-		auto found = std::find_if(begin(modules), end(modules), [name](const decltype(modules)::value_type& m) { return std::get<1>(m) == name; });
+		auto found = std::find_if(begin(modules), end(modules), [name](const auto& m) { return std::get<1>(m) == name; });
 
 		if (found != end(modules))
 		{
@@ -186,7 +183,7 @@ void PlugInManager::save(Config& config) const
 	std::vector<std::string> module_names;
 
 	for (auto&& m : modules)
-		module_names.emplace_back(narrow(std::get<1>(m)));
+		module_names.emplace_back(std::get<1>(m));
 
 	config.saveTuple("modules", std::move(module_names));
 }

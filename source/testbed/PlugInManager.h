@@ -68,14 +68,16 @@ private:
 	std::filesystem::path plugin_dir;
 	std::filesystem::path hot_swap_dir;
 
-	std::vector<std::tuple<Module, std::wstring, FILETIME>> modules;
+	std::vector<std::tuple<Module, std::string, FILETIME>> modules;
 
 	Callback* callback;
+
+	std::filesystem::path buildDLLPath(const char* module) const;
 
 public:
 	PlugInManager(const Config& config);
 
-	void loadModule(const wchar_t* name);
+	void loadModule(const char* name);
 
 	void refreshModules();
 

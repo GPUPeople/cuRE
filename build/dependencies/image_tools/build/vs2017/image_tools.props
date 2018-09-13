@@ -2,6 +2,7 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 	<ImportGroup>
 		<Import Project="dependencies.props" />
+		<Import Project="$(core_tools_root)build\vs2017\core_tools.props" Condition="'$(core_tools)' == ''" />
 		<Import Project="$(Win32_core_tools_root)build\vs2017\Win32_core_tools.props" Condition="'$(Win32_core_tools)' == ''" />
 		<Import Project="$(COM_core_tools_root)build\vs2017\COM_core_tools.props" Condition="'$(COM_core_tools)' == ''" />
 	</ImportGroup>

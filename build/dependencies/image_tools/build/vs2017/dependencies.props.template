@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 	<PropertyGroup>
+		<core_tools_root>$(MSBuildThisFileDirectory)..\..\..\core_tools\</core_tools_root>
 		<Win32_core_tools_root>$(MSBuildThisFileDirectory)..\..\..\Win32_core_tools\</Win32_core_tools_root>
 		<COM_core_tools_root>$(MSBuildThisFileDirectory)..\..\..\COM_core_tools\</COM_core_tools_root>
 	</PropertyGroup>

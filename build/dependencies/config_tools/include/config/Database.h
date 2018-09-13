@@ -8,7 +8,7 @@
 
 #include <string>
 
-#include <core/interface.h>
+#include <core/interface>
 
 
 namespace config

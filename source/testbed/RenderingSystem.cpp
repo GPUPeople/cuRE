@@ -2,10 +2,14 @@
 
 
 #include <cstring>
+#include <string>
+#include <string_view>
 #include <iomanip>
 #include <iostream>
 #include <sstream>
-#include <string>
+
+#include <CUDA/device.h>
+#include <CUDA/error.h>
 
 #include <png.h>
 
@@ -42,18 +46,50 @@ namespace
 
 		return false;
 	}
+
+	std::string buildModuleName(std::string_view name, int cc_major, int cc_minor)
+	{
+		std::ostringstream s;
+		s << name << "_sm" << cc_major << cc_minor;
+		return s.str();
+	}
+
+	void loadModules(PlugInManager& plugin_man, const Config& config, CUdevice device)
+	{
+		auto modules = config.loadTuple("modules", {});
+
+		if (!modules.empty())
+		{
+			for (auto&& m : modules)
+				plugin_man.loadModule(m.c_str());
+		}
+		else
+		{
+			int cc_major = CU::getDeviceAttribute<CU_DEVICE_ATTRIBUTE_COMPUTE_CAPABILITY_MAJOR>(device);
+			int cc_minor = CU::getDeviceAttribute<CU_DEVICE_ATTRIBUTE_COMPUTE_CAPABILITY_MINOR>(device);
+
+			plugin_man.loadModule("GLRenderer");
+			plugin_man.loadModule(buildModuleName("cure", cc_major, cc_minor).c_str());
+			plugin_man.loadModule(buildModuleName("FreePipe", cc_major, cc_minor).c_str());
+
+			if (cc_major <= 3 && cc_minor <= 5)
+				plugin_man.loadModule(buildModuleName("CUDARaster", cc_major, cc_minor).c_str());
+		}
+	}
 }
 
-RenderingSystem::RenderingSystem(PlugInManager& plugin_man, const Config& config, int device, PerformanceMonitor* perf_mon, const char* scene, int res_x, int res_y)
-    : camera(60.0f * math::constants<float>::pi() / 180.0f, 0.1f, 100.0f),
-      renderer(nullptr),
-      display(config),
-      plugin_man(plugin_man),
-      current_plugin(0U),
-      device(device),
-      perf_mon(perf_mon)
+RenderingSystem::RenderingSystem(PlugInManager& plugin_man, const Config& config, PerformanceMonitor* perf_mon, const char* scene, int res_x, int res_y)
+	: camera(60.0f * math::constants<float>::pi() / 180.0f, 0.1f, 100.0f),
+	  renderer(nullptr),
+	  display(config),
+	  plugin_man(plugin_man),
+	  current_plugin(0U),
+	  device(config.loadInt("device", 0)),
+	  perf_mon(perf_mon)
 {
 	plugin_man.attach(this);
+
+	loadModules(plugin_man, config, device);
 
 	display.attach(perf_mon);
 

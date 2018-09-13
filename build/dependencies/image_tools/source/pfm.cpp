@@ -7,7 +7,7 @@
 
 #include <rgb32f.h>
 
-#include "io.h"
+#include <core/utils/io>
 
 #include "pfm.h"
 
@@ -29,7 +29,7 @@ namespace
 		image2D<T> img(w, h);
 
 		for (size_t j = 0; j < h; ++j)
-			read(file, data(img) + w * (h - 1 - j), w);
+			read(data(img) + w * (h - 1 - j), file, w);
 
 		return img;
 	}

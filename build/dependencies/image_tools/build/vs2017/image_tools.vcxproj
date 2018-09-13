@@ -33,7 +33,6 @@
     <ClInclude Include="..\..\include\rgb32f.h" />
     <ClInclude Include="..\..\include\rgba32f.h" />
     <ClInclude Include="..\..\include\rgba8.h" />
-    <ClInclude Include="..\..\source\io.h" />
     <ClInclude Include="..\..\source\win32\wic.h" />
   </ItemGroup>
   <ItemGroup>

@@ -64,7 +64,7 @@ public:
 	RenderingSystem(const RenderingSystem&) = delete;
 	RenderingSystem& operator =(const RenderingSystem&) = delete;
 
-	RenderingSystem(PlugInManager& plugin_man, const Config& config, int device, PerformanceMonitor* perf_mon, const char* scene = nullptr, int res_x = -1, int res_y = -1);
+	RenderingSystem(PlugInManager& plugin_man, const Config& config, PerformanceMonitor* perf_mon, const char* scene = nullptr, int res_x = -1, int res_y = -1);
 	~RenderingSystem();
 
 	void switchRenderer(int d = 1);

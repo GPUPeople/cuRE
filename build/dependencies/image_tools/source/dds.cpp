@@ -8,9 +8,9 @@
 #include <iostream>
 #include <fstream>
 
-#include <win32/unicode.h>
+#include <core/utils/io>
 
-#include "io.h"
+#include <win32/unicode.h>
 
 #include "dds.h"
 
@@ -74,13 +74,13 @@ namespace
 
 	std::istream& readSurface(std::istream& file, char* buffer, int width, int pixel_size)
 	{
-		return read(file, buffer, width * pixel_size);
+		return read(buffer, file, width * pixel_size);
 	}
 
 	std::istream& readSurface(std::istream& file, char* buffer, int width, int height, int pixel_size)
 	{
 		for (int y = height - 1; y >= 0; --y)
-			read(file, buffer + y * width * pixel_size, width * pixel_size);
+			read(buffer + y * width * pixel_size, file, width * pixel_size);
 		return file;
 	}
 
@@ -94,7 +94,7 @@ namespace
 	bool isDDS(std::istream& file)
 	{
 		char magic_num[4];
-		read<char, 4>(file, magic_num);
+		read<char, 4>(magic_num, file);
 
 		if (std::strncmp(magic_num, "DDS ", 4) == 0)
 			return true;
@@ -108,8 +108,7 @@ namespace
 		if (!isDDS(file))
 			throw std::runtime_error("not a dds file");
 
-		DDS_HEADER header;
-		read(file, &header);
+		auto header = read<DDS_HEADER>(file);
 
 		int levels = header.dwMipMapCount == 0 ? 1 : header.dwMipMapCount;
 		int width = header.dwWidth;
