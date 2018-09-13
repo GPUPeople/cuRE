@@ -33,6 +33,7 @@ def _build(project_file, platform, *configurations):
 
 def _buildDependencies():
 	deps_dir = this_dir/"build/dependencies"
+	tools_dir = this_dir/"tools"
 	_build(deps_dir/"COFF_tools/dotNET/COFF_tools.sln", "Any CPU", "Debug")
 	_build(deps_dir/"CUDA_build_tools/embedCUDA/source/embedCUDA.sln", "Any CPU", "Debug")
 	_build(deps_dir/"Win32_core_tools/build/vs2017/Win32_core_tools.vcxproj", "x64", "Debug", "Release")
@@ -48,6 +49,7 @@ def _buildDependencies():
 	_build(deps_dir/"config_tools/build/vs2017/config_tools.vcxproj", "x64", "Debug", "Release")
 	_build(deps_dir/"GL_core_tools/build/vs2017/GL_core_tools.vcxproj", "x64", "Debug", "Release", "Debug DLL", "Release DLL")
 	_build(deps_dir/"GLSL_build_tools/build/vs2017/GLSL_build_tools.sln", "x64", "Debug")
+	_build(tools_dir/"sceneconverter/build/vs2017/sceneconverter.vcxproj", "x64", "Release")
 
 
 def main(args):
