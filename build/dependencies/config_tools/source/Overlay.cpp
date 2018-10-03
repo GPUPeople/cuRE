@@ -8,10 +8,10 @@
 namespace config
 {
 	DatabaseOverlay::DatabaseOverlay(Database& base, std::initializer_list<const Database*> overlays)
-		: base(base),
+		: base(&base),
 		  overlays(overlays)
 	{
-		this->overlays.push_back(&base);
+		this->overlays.push_back(this->base);
 	}
 
 
@@ -132,7 +132,7 @@ namespace config
 
 	Database& DatabaseOverlay::fetchNode(const char* key)
 	{
-		return base.fetchNode(key);
+		return base->fetchNode(key);
 	}
 
 	bool DatabaseOverlay::fetchNode(const Database*& node, const char* key) const
@@ -145,7 +145,7 @@ namespace config
 
 	bool DatabaseOverlay::fetchNode(Database*& node, const char* key)
 	{
-		return base.fetchNode(node, key);
+		return base->fetchNode(node, key);
 	}
 
 	const Database& DatabaseOverlay::queryNode(const char* key, const Database& default_node) const
@@ -161,37 +161,37 @@ namespace config
 
 	Database& DatabaseOverlay::queryNode(const char* key, Database& default_node)
 	{
-		return base.queryNode(key, default_node);
+		return base->queryNode(key, default_node);
 	}
 
 	Database& DatabaseOverlay::openNode(const char* key)
 	{
-		return base.openNode(key);
+		return base->openNode(key);
 	}
 
 
 	void DatabaseOverlay::storeString(const char* key, const char* value)
 	{
-		base.storeString(key, value);
+		base->storeString(key, value);
 	}
 
 	void DatabaseOverlay::storeString(const char* key, const std::string& value)
 	{
-		base.storeString(key, value);
+		base->storeString(key, value);
 	}
 
 	void DatabaseOverlay::storeString(const char* key, std::string&& value)
 	{
-		base.storeString(key, value);
+		base->storeString(key, value);
 	}
 
 	void DatabaseOverlay::storeInt(const char* key, int value)
 	{
-		base.storeInt(key, value);
+		base->storeInt(key, value);
 	}
 
 	void DatabaseOverlay::storeFloat(const char* key, float value)
 	{
-		base.storeFloat(key, value);
+		base->storeFloat(key, value);
 	}
 }

@@ -2,7 +2,6 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 	<ImportGroup>
 		<Import Project="cupti.props" />
-		<Import Project="dependencies.props" />
 		<Import Project="$(CUDA_core_tools_root)build\vs2017\CUDA_core_tools.props" Condition="'$(CUDA_core_tools)' == ''" />
 	</ImportGroup>
 	<PropertyGroup>

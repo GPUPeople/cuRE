@@ -29,11 +29,11 @@ Use one of the three default configuration files `all_sm35.cfg`, `all_sm52.cfg`,
 
 ## How to build
 
-Only Windows 10 (64 Bit) is currently supported. Building the project requires
+Only Windows 10 (64-Bit) is currently supported. Building the project requires
   * Visual Studio 2017 (15.7+),
-  * Windows SDK 10.0.16299,
-  * CUDA 9.2 toolkit, and
-  * Python 3.5+.
+  * Windows SDK 10.0.17763.0,
+  * CUDA Toolkit 10.0, and
+  * Python 3.6+.
 
 To initialize the build system and build dependencies, run `setup.py` from a Visual Studio 2017 Command Prompt. Once this is done, you can open `build/vs2017/cure.sln`.
 

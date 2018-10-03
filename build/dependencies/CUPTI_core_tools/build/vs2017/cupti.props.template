@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ImportGroup>
+		<Import Project="dependencies.props" />
+		<Import Project="$(CUDA_common_tools_root)build/vs2017/CUDA_common_tools.props" Condition="'$(CUDA_common_tools)' == ''" />
+	</ImportGroup>
 	<PropertyGroup>
-		<CUPTIRoot>$(CUDA_PATH)\extras\CUPTI\</CUPTIRoot>
+		<CUPTIRoot>$(CUDARoot)\extras\CUPTI\</CUPTIRoot>
 
 		<IncludePath>$(CUPTIRoot)include;$(IncludePath)</IncludePath>
 

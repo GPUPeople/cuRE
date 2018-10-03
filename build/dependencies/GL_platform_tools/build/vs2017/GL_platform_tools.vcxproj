@@ -105,7 +105,7 @@
     <ProjectGuid>{9FE148B8-877E-49B1-B598-A98940D5AC0A}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>GL_platform_tools</RootNamespace>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">

@@ -17,7 +17,7 @@ namespace config
 	class DatabaseOverlay : public virtual Database
 	{
 		std::vector<const Database*> overlays;
-		Database& base;
+		Database* base;
 
 	public:
 		DatabaseOverlay(Database& base, std::initializer_list<const Database*> overlays);

@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 	<PropertyGroup>
+		<CUDA_common_tools_root>$(MSBuildThisFileDirectory)..\..\..\CUDA_common_tools\</CUDA_common_tools_root>
 		<CUDA_core_tools_root>$(MSBuildThisFileDirectory)..\..\..\CUDA_core_tools\</CUDA_core_tools_root>
 	</PropertyGroup>
 </Project>

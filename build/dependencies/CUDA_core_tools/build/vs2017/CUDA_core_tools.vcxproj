@@ -16,7 +16,10 @@
     <ClCompile Include="..\..\source\device.cpp" />
     <ClCompile Include="..\..\source\error.cpp" />
     <ClCompile Include="..\..\source\event.cpp" />
-    <ClCompile Include="..\..\source\launch.cpp" />
+    <ClCompile Include="..\..\source\launch.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="..\..\source\link.cpp" />
     <ClCompile Include="..\..\source\memory.cpp" />
     <ClCompile Include="..\..\source\module.cpp" />
@@ -48,7 +51,7 @@
     <ProjectGuid>{767AF2B8-BED2-4252-9867-6FFF3673D7D8}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>CUDA_core_tools</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
@@ -100,6 +103,7 @@
       <MinimalRebuild>false</MinimalRebuild>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ConformanceMode>true</ConformanceMode>
+      <DiagnosticsFormat>Caret</DiagnosticsFormat>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -122,6 +126,7 @@
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ConformanceMode>true</ConformanceMode>
+      <DiagnosticsFormat>Caret</DiagnosticsFormat>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
