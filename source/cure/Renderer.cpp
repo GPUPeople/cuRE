@@ -268,7 +268,8 @@ namespace cuRE
 	::Geometry* Renderer::createCheckerboardGeometry(int type, const float* position, size_t num_vertices, const uint32_t* indices, const float* triangle_colors, size_t num_triangles)
 	{
 		auto geom = ResourceImp<CheckerboardGeometry>::create(pipeline, type, position, num_vertices, indices, triangle_colors, num_triangles);
-		need_target_upsampling = (type & 0x4U) != 0U;
+		if ((type & 0x4U) != 0U)
+			need_target_upsampling = 0x2U | ((type >> 1) & 0x1U);
 		perf_mon.recordMemoryStatus();
 		return geom;
 	}
@@ -327,7 +328,12 @@ namespace cuRE
 	void Renderer::finish()
 	{
 		if (need_target_upsampling)
-			pipeline.upsampleTargetQuad(upsample_target);
+		{
+			if ((need_target_upsampling & 0x1U) == 0U)
+				pipeline.upsampleTarget(upsample_target);
+			else
+				pipeline.upsampleTargetQuad(upsample_target);
+		}
 
 		CUgraphicsResource resources[] = { color_buffer_resource };
 		succeed(cuGraphicsUnmapResources(1U, resources, 0));

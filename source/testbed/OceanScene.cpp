@@ -505,7 +505,7 @@ void OceanScene::handleButton(GL::platform::Key c)
 
 void OceanScene::save(Config& config) const
 {
-	auto& cfg = config.loadConfig("water_demo");
+	auto& cfg = config.loadConfig("ocean");
 
 	cfg.saveInt("paused", paused);
 	cfg.saveInt("base_waves", base_waves);

@@ -1,11 +1,12 @@
 
 
 
+#include <type_traits>
 #include <cstdint>
 #include <stdexcept>
 #include <algorithm>
 #include <fstream>
-#include <type_traits>
+#include <filesystem>
 
 #include <vector>
 #include <map>
@@ -24,17 +25,11 @@
 
 namespace
 {
-	bool fileExists(const char* filename)
+	std::filesystem::path textureLayerName(std::filesystem::path basename, int i)
 	{
-		std::ifstream file(filename);
-		return !!file;
-	}
-
-	std::string textureLayerName(const std::string& basename, int i)
-	{
-		std::ostringstream fn;
-		fn << basename << "." << i << ".png";
-		return fn.str();
+		std::ostringstream new_ext;
+		new_ext << '.' << i << basename.extension().u8string();
+		return basename.replace_extension(new_ext.str());
 	}
 
 	template <typename InputIt, typename OutputIt>
@@ -168,61 +163,70 @@ void LoadedScene::addTexture(const char* name, const char* filename)
 {
 	if (texture_mapping.find(name) == texture_mapping.end())
 	{
-		std::unique_ptr<std::uint32_t[]> texdata;
-		unsigned int texw = 256U;
-		unsigned int texh = 256U;
-
-		std::string basename = std::string("assets/") + filename;
+		auto basename = std::filesystem::path("assets")/filename;
 
 		auto layer_image_0 = textureLayerName(basename, 0);
 
-		if (fileExists(layer_image_0.c_str()))
+		if (std::filesystem::exists(layer_image_0))
 		{
-			auto size = PNG::readSize(layer_image_0.c_str());
-			texw = static_cast<unsigned int>(std::get<0>(size));
-			texh = static_cast<unsigned int>(std::get<1>(size));
-		}
+			auto size = PNG::readSize(layer_image_0.u8string().c_str());
+			unsigned int texw = static_cast<unsigned int>(std::get<0>(size));
+			unsigned int texh = static_cast<unsigned int>(std::get<1>(size));
 
-		texdata = std::make_unique<std::uint32_t[]>(texw * texh * 4);
+			auto texdata = std::make_unique<std::uint32_t[]>(texw * texh * 4);
 
 
-		int texlevels = 0;
-		auto teximage = &texdata[0];
+			int texlevels = 0;
+			auto teximage = &texdata[0];
 
-		static const int pattern_size = 6;
-		
-		for (unsigned int w = texw, h = texh; w > 1 || h > 1; w = std::max(w / 2U, 1U), h = std::max(h / 2U, 1U))
-		{
-			auto layer_image = textureLayerName(basename, texlevels);
+			static const int pattern_size = 6;
 
-			if (fileExists(layer_image.c_str()))
+			for (unsigned int w = texw, h = texh; w > 1 || h > 1; w = std::max(w / 2U, 1U), h = std::max(h / 2U, 1U))
 			{
-				auto png = PNG::loadRGBA8(layer_image.c_str());
+				auto layer_image = textureLayerName(basename, texlevels);
 
-				if (width(png) != w || height(png) != h)
-					throw std::runtime_error("mip level image dimension mismatch");
-
-				teximage = flipCopy(teximage, data(png), w, h);
-			}
-			else
-			{
-				const int s = std::max(pattern_size - texlevels, 0);
-
-				for (unsigned int y = 0; y < h; ++y)
+				if (std::filesystem::exists(layer_image))
 				{
-					for (unsigned int x = 0; x < w; ++x)
+					auto png = PNG::loadRGBA8(layer_image.u8string().c_str());
+
+					if (width(png) != w || height(png) != h)
+						throw std::runtime_error("mip level image dimension mismatch");
+
+					teximage = flipCopy(teximage, data(png), w, h);
+				}
+				else
+				{
+					const int s = std::max(pattern_size - texlevels, 0);
+
+					for (unsigned int y = 0; y < h; ++y)
 					{
-						*teximage++ = ((y >> s) & 0x1U) ^ ((x >> s) & 0x1U) ? 0xFFFFFFFFU : 0xFF000000U;
+						for (unsigned int x = 0; x < w; ++x)
+						{
+							*teximage++ = ((y >> s) & 0x1U) ^ ((x >> s) & 0x1U) ? 0xFFFFFFFFU : 0xFF000000U;
+						}
 					}
 				}
+
+				++texlevels;
+				//break;
 			}
 
-			++texlevels;
-			//break;
+			textures.emplace_back(std::move(texdata), texw, texh, texlevels);
+			texture_mapping.insert(std::make_pair(name, static_cast<int>(textures.size()) - 1));
 		}
+		else
+		{
+			auto teximg = PNG::loadRGBA8(basename.u8string().c_str());
 
-		textures.emplace_back(std::move(texdata), texw, texh, texlevels);
-		texture_mapping.insert(std::make_pair(name, static_cast<int>(textures.size()) - 1));
+			unsigned int texw = static_cast<unsigned int>(width(teximg));
+			unsigned int texh = static_cast<unsigned int>(height(teximg));
+			auto texdata = std::make_unique<std::uint32_t[]>(texw * texh * 4);
+
+			std::copy(begin(teximg), end(teximg), &texdata[0]);
+
+			textures.emplace_back(std::move(texdata), texw, texh, 1);
+			texture_mapping.insert(std::make_pair(name, static_cast<int>(textures.size()) - 1));
+		}
 	}
 }
 

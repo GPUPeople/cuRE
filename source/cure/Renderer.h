@@ -56,7 +56,7 @@ namespace cuRE
 		CU::graphics::unique_resource color_buffer_resource;
 		CUarray mapped_color_buffer;
 
-		bool need_target_upsampling = false;
+		unsigned int need_target_upsampling = 0U;
 		CU::unique_array target_color_buffer;
 		CU::unique_surface upsample_target;
 
