@@ -59,6 +59,9 @@ void ClipspaceViewScene::switchRenderer(Renderer* renderer)
 	{
 		material.reset(renderer->createLitMaterial(math::float4(0.6f, 0.6f, 0.6f, 1.0f)));
 		geometry.reset(renderer->createIndexedTriangles(&vertices[0], &normals[0], &texcoords[0], num_vertices, &indices[0], num_vertices));
+
+		if (!material || !geometry)
+			throw std::runtime_error("renderer cannot support this scene type");
 	}
 	else
 	{

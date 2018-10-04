@@ -124,6 +124,9 @@ void EyeCandyScene::switchRenderer(Renderer* renderer)
 		}
 
 		geometry.reset(renderer->createEyeCandyGeometry(&vertices[0].pos.x, num_vertices, &triangles[0].x, &triangle_colors[0].x, num_triangles));
+
+		if (!material || !geometry)
+			throw std::runtime_error("renderer cannot support this scene type");
 	}
 	else
 	{

@@ -48,7 +48,10 @@ namespace cuRE
 		PipelineKernel eyecandy_shading_kernel;
 		PipelineKernel vertex_heavy_eyecandy_shading_kernel;
 		PipelineKernel fragment_heavy_eyecandy_shading_kernel;
-		PipelineKernel water_demo_kernel;
+		PipelineKernel ocean_adaptive_kernel;
+		PipelineKernel ocean_static_kernel;
+		PipelineKernel ocean_adaptive_wire_kernel;
+		PipelineKernel ocean_static_wire_kernel;
 		PipelineKernel blend_demo_kernel;
 		PipelineKernel iso_blend_demo_kernel;
 		PipelineKernel iso_stipple_kernel;
@@ -110,7 +113,7 @@ namespace cuRE
 
 		void drawTriangles(CUdeviceptr vertices, size_t num_vertices, CUdeviceptr indices, size_t num_indices);
 		void drawQuads(CUdeviceptr vertices, size_t num_vertices, CUdeviceptr indices, size_t num_indices);
-		void drawWaterDemo(CUdeviceptr vertices, size_t num_vertices, CUdeviceptr indices, size_t num_indices);
+		void drawOcean(CUdeviceptr vertices, size_t num_vertices, CUdeviceptr indices, size_t num_indices, bool adaptive, bool wireframe);
 		void drawBlendDemo(CUdeviceptr vertices, size_t num_vertices, CUdeviceptr indices, size_t num_indices);
 		void drawIsoBlendDemo(CUdeviceptr vertices, size_t num_vertices, CUdeviceptr indices, size_t num_indices);
 		void drawIsoStipple(CUdeviceptr vertices, size_t num_vertices, CUdeviceptr indices, size_t num_indices);

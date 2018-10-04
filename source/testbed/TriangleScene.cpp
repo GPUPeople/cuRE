@@ -2,6 +2,7 @@
 
 
 #include <cstdint>
+#include <stdexcept>
 
 #include <math/vector.h>
 
@@ -36,6 +37,9 @@ void TriangleScene::switchRenderer(Renderer* renderer)
 	{
 		material.reset(renderer->createColoredMaterial(math::float4(1.0f, 1.0f, 1.0f, 1.0f)));
 		geometry.reset(renderer->createIndexedTriangles(&Triangle::positions[0], &Triangle::normals[0], &Triangle::positions[0], 3, &Triangle::indices[0], 3));
+
+		if (!material || !geometry)
+			throw std::runtime_error("renderer cannot support this scene type");
 	}
 	else
 	{
@@ -47,7 +51,7 @@ void TriangleScene::switchRenderer(Renderer* renderer)
 void TriangleScene::draw(RendereringContext* context) const
 {
 	context->setObjectTransform(math::float3x4(1.0f, 0.0f, 0.0f, 0.0f,
-		                                        0.0f, 1.0f, 0.0f, 0.0f,
-		                                        0.0f, 0.0f, 1.0f, 0.0f));
+	                                            0.0f, 1.0f, 0.0f, 0.0f,
+	                                            0.0f, 0.0f, 1.0f, 0.0f));
 	material->draw(geometry.get());
 }

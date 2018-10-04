@@ -3,6 +3,7 @@
 
 #include <cstdint>
 #include <type_traits>
+#include <stdexcept>
 
 #include <vector>
 #include <map>
@@ -207,6 +208,9 @@ void IcosahedronScene::switchRenderer(Renderer* renderer)
 		material4 = resource_ptr<Material>(renderer->createLitMaterial(math::float4(1.0f, 1.0f, 1.0f, 1.0f)));
 
 		geometry = resource_ptr<Geometry>(renderer->createIndexedTriangles(&positions[0].x, &normals[0].x, &positions[0].x, num_vertices, indices, num_indices));
+
+		if (!material1 || !material2 || !material3 ||!material4 || !geometry)
+			throw std::runtime_error("renderer cannot support this scene type");
 	}
 	else
 	{

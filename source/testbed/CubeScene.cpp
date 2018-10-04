@@ -3,6 +3,7 @@
 
 #include <cstdint>
 #include <type_traits>
+#include <stdexcept>
 
 #include <vector>
 #include <map>
@@ -199,6 +200,9 @@ void CubeScene::switchRenderer(Renderer* renderer)
 		material = resource_ptr<Material>(renderer->createLitMaterial(math::float4(1.0f, 1.0f, 1.0f, 1.0f)));
 
 		geometry = resource_ptr<Geometry>(renderer->createIndexedQuads(&vertices[0].x, &normals[0].x, &texcoords[0].x, num_vertices, indices, num_indices));
+
+		if (!material || !geometry)
+			throw std::runtime_error("renderer cannot support this scene type");
 	}
 	else
 	{

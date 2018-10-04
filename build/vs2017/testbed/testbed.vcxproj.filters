@@ -130,9 +130,6 @@
     <ClInclude Include="..\..\..\source\testbed\EyeCandyScene.h">
       <Filter>source\scenes</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\source\testbed\WaterScene.h">
-      <Filter>source\scenes</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\source\testbed\BlendScene.h">
       <Filter>source\scenes</Filter>
     </ClInclude>
@@ -153,6 +150,9 @@
     </ClInclude>
     <ClInclude Include="..\..\..\source\testbed\argparse.h">
       <Filter>source\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\testbed\OceanScene.h">
+      <Filter>source\scenes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -228,9 +228,6 @@
     <ClCompile Include="..\..\..\source\testbed\EyeCandyScene.cpp">
       <Filter>source\scenes</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\source\testbed\WaterScene.cpp">
-      <Filter>source\scenes</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\source\testbed\BlendScene.cpp">
       <Filter>source\scenes</Filter>
     </ClCompile>
@@ -251,6 +248,9 @@
     </ClCompile>
     <ClCompile Include="..\..\..\source\testbed\argparse.cpp">
       <Filter>source\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\testbed\OceanScene.cpp">
+      <Filter>source\scenes</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

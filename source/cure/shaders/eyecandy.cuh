@@ -28,6 +28,7 @@ struct EyeCandyVertexShader
 };
 
 
+template <bool WIREFRAME>
 struct EyeCandyFragmentShader : FragmentShader
 {
 	using FragmentShader::FragmentShader;

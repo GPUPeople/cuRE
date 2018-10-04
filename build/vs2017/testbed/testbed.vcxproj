@@ -43,6 +43,7 @@
     <ClInclude Include="..\..\..\source\testbed\LoadedScene.h" />
     <ClInclude Include="..\..\..\source\testbed\Navigator.h" />
     <ClInclude Include="..\..\..\source\testbed\Noncamera.h" />
+    <ClInclude Include="..\..\..\source\testbed\OceanScene.h" />
     <ClInclude Include="..\..\..\source\testbed\OrbitalNavigator.h" />
     <ClInclude Include="..\..\..\source\testbed\PerformanceMonitor.h" />
     <ClInclude Include="..\..\..\source\testbed\PerspectiveCamera.h" />
@@ -54,7 +55,6 @@
     <ClInclude Include="..\..\..\source\testbed\StippleIsoScene.h" />
     <ClInclude Include="..\..\..\source\testbed\Testbed.h" />
     <ClInclude Include="..\..\..\source\testbed\TriangleScene.h" />
-    <ClInclude Include="..\..\..\source\testbed\WaterScene.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\source\testbed\argparse.cpp" />
@@ -79,6 +79,7 @@
     <ClCompile Include="..\..\..\source\testbed\LoadedScene.cpp" />
     <ClCompile Include="..\..\..\source\testbed\main.cpp" />
     <ClCompile Include="..\..\..\source\testbed\Noncamera.cpp" />
+    <ClCompile Include="..\..\..\source\testbed\OceanScene.cpp" />
     <ClCompile Include="..\..\..\source\testbed\OrbitalNavigator.cpp" />
     <ClCompile Include="..\..\..\source\testbed\PerspectiveCamera.cpp" />
     <ClCompile Include="..\..\..\source\testbed\PlugInManager.cpp" />
@@ -88,7 +89,6 @@
     <ClCompile Include="..\..\..\source\testbed\StippleIsoScene.cpp" />
     <ClCompile Include="..\..\..\source\testbed\Testbed.cpp" />
     <ClCompile Include="..\..\..\source\testbed\TriangleScene.cpp" />
-    <ClCompile Include="..\..\..\source\testbed\WaterScene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <GLSL Include="..\..\..\source\testbed\shaders\draw_color_buffer.fs.glsl" />

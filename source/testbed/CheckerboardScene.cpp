@@ -107,6 +107,9 @@ void CheckerboardScene::switchRenderer(Renderer* renderer)
 	{
 		material.reset(renderer->createEyeCandyMaterial());
 		geometry.reset(renderer->createCheckerboardGeometry(type, &vertices[0].pos.x, num_vertices, &triangles[0].x, &triangle_colors[0].x, num_triangles));
+
+		if (!material || !geometry)
+			throw std::runtime_error("renderer cannot support this scene type");
 	}
 	else
 	{

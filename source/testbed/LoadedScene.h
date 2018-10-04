@@ -16,14 +16,14 @@
 #include <image.h>
 #include <rgba8.h>
 
+#include <SceneBuilder.h>
+
 #include "Resource.h"
 #include "Renderer.h"
 #include "Camera.h"
-
-#include "resource_ptr.h"
 #include "Scene.h"
 
-#include <SceneBuilder.h>
+#include "resource_ptr.h"
 
 
 class LoadedScene : public Scene, private SceneBuilder

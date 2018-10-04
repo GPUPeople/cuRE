@@ -23,7 +23,7 @@ namespace cuRE
 	public:
 		EyeCandyMaterial(Pipeline& pipeline);
 
-		void draw(const ::Geometry* geometry) const;
+		void draw(const ::Geometry* geometry) const override;
 		void draw(const ::Geometry* geometry, int start, int num_indices) const override;
 	};
 
@@ -38,7 +38,7 @@ namespace cuRE
 	public:
 		VertexHeavyEyeCandyMaterial(Pipeline& pipeline, int iterations);
 
-		void draw(const ::Geometry* geometry) const;
+		void draw(const ::Geometry* geometry) const override;
 		void draw(const ::Geometry* geometry, int start, int num_indices) const override;
 	};
 
@@ -53,7 +53,7 @@ namespace cuRE
 	public:
 		FragmentHeavyEyeCandyMaterial(Pipeline& pipeline, int iterations);
 
-		void draw(const ::Geometry* geometry) const;
+		void draw(const ::Geometry* geometry) const override;
 		void draw(const ::Geometry* geometry, int start, int num_indices) const override;
 	};
 }

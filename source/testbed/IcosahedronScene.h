@@ -14,13 +14,11 @@
 #include "Camera.h"
 #include "Scene.h"
 
-
 #include "resource_ptr.h"
 
 
 class IcosahedronScene : public Scene
 {
-private:
 	resource_ptr<Geometry> geometry;
 	resource_ptr<Texture> texture;
 	resource_ptr<Material> material1;
@@ -30,6 +28,7 @@ private:
 
 public:
 	IcosahedronScene() = default;
+
 	IcosahedronScene(const IcosahedronScene&) = delete;
 	IcosahedronScene& operator =(const IcosahedronScene&) = delete;
 

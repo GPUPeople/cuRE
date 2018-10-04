@@ -71,6 +71,9 @@ void ClipspaceScene::switchRenderer(Renderer* renderer)
 		}
 
 		geometry.reset(renderer->createClipspaceGeometry(&vertices[0], num_vertices));
+
+		if (!material || !geometry)
+			throw std::runtime_error("renderer cannot support this scene type");
 	}
 	else
 	{

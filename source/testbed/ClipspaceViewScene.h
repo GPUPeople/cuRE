@@ -12,9 +12,9 @@
 #include <math/vector.h>
 
 #include "Resource.h"
+#include "Scene.h"
 
 #include "resource_ptr.h"
-#include "Scene.h"
 
 
 struct Renderer;
@@ -23,7 +23,6 @@ struct RendereringContext;
 
 class ClipspaceViewScene : public Scene
 {
-private:
 	size_t num_vertices;
 	std::unique_ptr<float[]> vertices;
 	std::unique_ptr<float[]> normals;

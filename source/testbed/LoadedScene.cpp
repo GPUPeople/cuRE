@@ -253,6 +253,11 @@ void LoadedScene::switchRenderer(Renderer* renderer)
 			else
 				scene_geometries.emplace_back(std::move(renderer->createIndexedTriangles(&vertices[0], &normals[0], &texcoords[0], vertices.size() / 3, &indices[surf.start], surf.num_indices)));
 		}
+
+		if (std::any_of(begin(scene_textures), end(scene_textures), [](auto&& p) { return !p; }) ||
+			 std::any_of(begin(scene_geometries), end(scene_geometries), [](auto&& p) { return !p; }) ||
+			 std::any_of(begin(scene_materials), end(scene_materials), [](auto&& p) { return !p; }))
+			throw std::runtime_error("renderer cannot support this scene type");
 	}
 	else
 	{

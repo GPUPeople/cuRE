@@ -320,6 +320,7 @@
     <ClInclude Include="..\..\..\source\cure\materials\EyeCandyMaterial.h" />
     <ClInclude Include="..\..\..\source\cure\materials\HeavyMaterial.h" />
     <ClInclude Include="..\..\..\source\cure\materials\LitMaterial.h" />
+    <ClInclude Include="..\..\..\source\cure\materials\OceanMaterial.h" />
     <ClInclude Include="..\..\..\source\cure\materials\TexturedLitMaterial.h" />
     <ClInclude Include="..\..\..\source\cure\materials\TexturedMaterial.h" />
     <ClInclude Include="..\..\..\source\cure\Pipeline.h" />
@@ -340,6 +341,7 @@
     <ClCompile Include="..\..\..\source\cure\materials\EyeCandyMaterial.cpp" />
     <ClCompile Include="..\..\..\source\cure\materials\HeavyMaterial.cpp" />
     <ClCompile Include="..\..\..\source\cure\materials\LitMaterial.cpp" />
+    <ClCompile Include="..\..\..\source\cure\materials\OceanMaterial.cpp" />
     <ClCompile Include="..\..\..\source\cure\materials\TexturedLitMaterial.cpp" />
     <ClCompile Include="..\..\..\source\cure\materials\TexturedMaterial.cpp" />
     <ClCompile Include="..\..\..\source\cure\Pipeline.cpp" />

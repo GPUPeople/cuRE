@@ -14,18 +14,17 @@
 #include "Camera.h"
 #include "Scene.h"
 
-
 #include "resource_ptr.h"
 
 
 class TriangleScene : public Scene
 {
-private:
 	resource_ptr<Geometry> geometry;
 	resource_ptr<Material> material;
 
 public:
 	TriangleScene() = default;
+
 	TriangleScene(const TriangleScene&) = delete;
 	TriangleScene& operator =(const TriangleScene&) = delete;
 

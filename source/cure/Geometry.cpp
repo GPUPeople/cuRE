@@ -3,8 +3,11 @@
 
 #include <memory>
 
+#include <core/utils/memory>
+
 #include <CUDA/error.h>
 #include <CUDA/memory.h>
+
 #include <math/vector.h>
 
 #include "utils.h"
@@ -25,7 +28,7 @@ namespace cuRE
 	{
 		succeed(cuMemcpyHtoD(vertex_buffer, position, num_vertices * 4 * 4U));
 
-		auto buffer = std::make_unique<std::uint32_t[]>(num_vertices);
+		auto buffer = core::make_unique_default<std::uint32_t[]>(num_vertices);
 
 		for (std::uint32_t i = 0U; i < num_vertices; ++i)
 			buffer[i] = i;
@@ -50,7 +53,7 @@ namespace cuRE
 	      num_indices(num_indices),
 	      pipeline(pipeline)
 	{
-		auto buffer = std::make_unique<float[]>(num_vertices * 8);
+		auto buffer = core::make_unique_default<float[]>(num_vertices * 8);
 
 		for (float* dest = &buffer[0]; dest < &buffer[0] + num_vertices * 8;)
 		{
@@ -88,7 +91,7 @@ namespace cuRE
 	      num_indices(num_indices),
 	      pipeline(pipeline)
 	{
-		auto buffer = std::make_unique<float[]>(num_vertices * 8);
+		auto buffer = core::make_unique_default<float[]>(num_vertices * 8);
 
 		for (float* dest = &buffer[0]; dest < &buffer[0] + num_vertices * 8;)
 		{
@@ -143,16 +146,14 @@ namespace cuRE
 	}
 
 
-	WaterDemo::WaterDemo(Pipeline& pipeline, const float* position, size_t num_vertices, const std::uint32_t* indices, size_t num_indices, float* img_data, uint32_t width, uint32_t height, char* normal_data, uint32_t n_width, uint32_t n_height, uint32_t n_levels)
+	OceanGeometry::OceanGeometry(Pipeline& pipeline, const float* position, size_t num_vertices, const std::uint32_t* indices, size_t num_indices)
 	    : vertex_buffer(CU::allocMemory(num_vertices * 4 * 4U)),
 	      index_buffer(CU::allocMemory(num_indices * 4U)),
 	      num_vertices(num_vertices),
 	      num_indices(num_indices),
-	      width(width),
-	      height(height),
 	      pipeline(pipeline)
 	{
-		auto buffer = std::make_unique<float[]>(num_vertices * 4);
+		auto buffer = core::make_unique_default<float[]>(num_vertices * 4);
 
 		for (float* dest = &buffer[0]; dest < &buffer[0] + num_vertices * 4;)
 		{
@@ -164,87 +165,16 @@ namespace cuRE
 
 		succeed(cuMemcpyHtoD(vertex_buffer, buffer.get(), num_vertices * 4 * 4U));
 		succeed(cuMemcpyHtoD(index_buffer, indices, num_indices * 4U));
-
-		auto col_buffer = std::make_unique<float[]>(width * height * 4);
-		for (unsigned int i = 0; i < width * height; i++)
-		{
-			col_buffer[i * 4 + 0] = img_data[i * 3 + 0];
-			col_buffer[i * 4 + 1] = img_data[i * 3 + 1];
-			col_buffer[i * 4 + 2] = img_data[i * 3 + 2];
-			col_buffer[i * 4 + 3] = 1.0f;
-		}
-
-		{
-			color_array = CU::createArray2D(width, height, CU_AD_FORMAT_FLOAT, 4);
-
-			CUDA_MEMCPY2D cpy_info;
-			cpy_info.dstMemoryType = CU_MEMORYTYPE_ARRAY;
-			cpy_info.dstArray = color_array;
-			cpy_info.dstXInBytes = 0;
-			cpy_info.dstY = 0;
-
-			cpy_info.srcMemoryType = CU_MEMORYTYPE_HOST;
-			cpy_info.srcHost = col_buffer.get();
-			cpy_info.srcPitch = width * sizeof(float) * 4;
-			cpy_info.srcXInBytes = 0;
-			cpy_info.srcY = 0;
-
-			cpy_info.WidthInBytes = width * sizeof(float) * 4;
-			cpy_info.Height = height;
-			succeed(cuMemcpy2D(&cpy_info));
-
-			pipeline.setTextureF(color_array);
-		}
-
-		{
-			texi = CU::createArray2DMipmapped(n_width, n_height, n_levels, CU_AD_FORMAT_UNSIGNED_INT8, 4);
-
-			for (unsigned int i = 0; i < n_levels; ++i)
-			{
-				CUarray array;
-				succeed(cuMipmappedArrayGetLevel(&array, texi, i));
-
-				CUDA_MEMCPY3D cpy;
-
-				cpy.srcXInBytes = 0U;
-				cpy.srcY = 0U;
-				cpy.srcZ = 0U;
-				cpy.srcLOD = 0U;
-				cpy.srcMemoryType = CU_MEMORYTYPE_HOST;
-				cpy.srcHost = normal_data;
-				cpy.srcPitch = n_width * 4U;
-				cpy.srcHeight = n_height;
-
-				cpy.dstXInBytes = 0U;
-				cpy.dstY = 0U;
-				cpy.dstZ = 0U;
-				cpy.dstLOD = 0U;
-				cpy.dstMemoryType = CU_MEMORYTYPE_ARRAY;
-				cpy.dstArray = array;
-
-				cpy.WidthInBytes = n_width * 4U;
-				cpy.Height = n_height;
-				cpy.Depth = 1;
-
-				succeed(cuMemcpy3D(&cpy));
-
-				normal_data += (n_width * n_height * 4);
-
-				n_width = std::max<unsigned int>(n_width / 2, 1);
-				n_height = std::max<unsigned int>(n_height / 2, 1);
-			}
-
-			pipeline.setTexture(texi, std::numeric_limits<float>::max());
-		}
 	}
 
-	void WaterDemo::draw() const
+	void OceanGeometry::draw() const
 	{
-		pipeline.drawWaterDemo(vertex_buffer, num_vertices, index_buffer, num_indices);
 	}
 
-	void WaterDemo::draw(int from, int num_indices) const
+	void OceanGeometry::draw(int from, int num_indices) const
 	{
+		//                                                                                massive       HACK!!!
+		pipeline.drawOcean(vertex_buffer, num_vertices, index_buffer, this->num_indices, from != 0, num_indices != 0);
 	}
 
 
@@ -254,7 +184,7 @@ namespace cuRE
 	      num_vertices(num_vertices),
 	      pipeline(pipeline)
 	{
-		auto vertices = std::make_unique<float[]>(num_vertices * 8);
+		auto vertices = core::make_unique_default<float[]>(num_vertices * 8);
 
 		for (float* dest = &vertices[0]; dest < &vertices[0] + num_vertices * 8;)
 		{
@@ -272,7 +202,7 @@ namespace cuRE
 
 		succeed(cuMemcpyHtoD(vertex_buffer, vertices.get(), num_vertices * 8 * sizeof(float)));
 
-		auto indices = std::make_unique<uint32_t[]>(num_vertices);
+		auto indices = core::make_unique_default<uint32_t[]>(num_vertices);
 		for (int i = 0; i < num_vertices; i++)
 		{
 			indices[i] = i;

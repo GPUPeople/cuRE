@@ -119,9 +119,6 @@ namespace
 	};
 }
 
-
-
-
 IndexedTrianglemesh::IndexedTrianglemesh()
 {
 }

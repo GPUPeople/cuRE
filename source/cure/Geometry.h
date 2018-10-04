@@ -1,13 +1,16 @@
 
+
+
 #ifndef INCLUDED_CURE_GEOMETRY
 #define INCLUDED_CURE_GEOMETRY
 
 #include <cstdint>
 
-#include <CUDA/array.h>
 #include <CUDA/memory.h>
-#include <CUDA/module.h>
+
 #include <Resource.h>
+
+
 namespace cuRE
 {
 	class Pipeline;
@@ -96,28 +99,22 @@ namespace cuRE
 		void draw(int from, int num_indices) const override;
 	};
 
-	class WaterDemo : public ::Geometry
+	class OceanGeometry : public ::Geometry
 	{
 	protected:
-		WaterDemo(const WaterDemo&) = delete;
-		WaterDemo& operator=(const WaterDemo&) = delete;
+		OceanGeometry(const OceanGeometry&) = delete;
+		OceanGeometry& operator=(const OceanGeometry&) = delete;
 
 		CU::unique_ptr vertex_buffer;
 		CU::unique_ptr index_buffer;
-		CU::unique_array color_array;
-		CU::unique_array normal_array;
-		//CUtexObject tex;
-		CU::unique_mipmapped_array texi;
 
 		size_t num_vertices;
 		size_t num_indices;
-		uint32_t width;
-		uint32_t height;
 
 		Pipeline& pipeline;
 
 	public:
-		WaterDemo(Pipeline& pipeline, const float* position, size_t num_vertices, const std::uint32_t* indices, size_t num_indices, float* img_data, uint32_t width, uint32_t height, char* normal_data, uint32_t n_width, uint32_t n_height, uint32_t n_levels);
+		OceanGeometry(Pipeline& pipeline, const float* position, size_t num_vertices, const std::uint32_t* indices, size_t num_indices);
 
 		void draw() const override;
 		void draw(int start, int num_indices) const override;

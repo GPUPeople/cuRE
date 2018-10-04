@@ -188,6 +188,7 @@ struct WaveQuadTriangulationShader
 	}
 };
 
+template <bool WIREFRAME>
 struct WaterFragmentShader : FragmentShader
 {
 	using FragmentShader::FragmentShader;

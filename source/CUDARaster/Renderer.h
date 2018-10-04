@@ -77,9 +77,6 @@ namespace CUDARaster
 		void setLight(const math::float3& pos, const math::float3& color) override;
 		void finish() override;
 
-		static void* operator new(std::size_t size);
-		static void operator delete(void* p);
-
 	public:
 		static ::Renderer* __stdcall create(CUdevice device, PerformanceDataCallback* performance_callback);
 
@@ -87,26 +84,28 @@ namespace CUDARaster
 		::Geometry* createIndexedTriangles(const float* position, const float* normals, const float* texcoord, size_t num_vertices, const std::uint32_t* indices, size_t num_indices) override;
 		::Geometry* createIndexedQuads(const float* position, const float* normals, const float* texcoord, size_t num_vertices, const std::uint32_t* indices, size_t num_indices) override;
 		::Geometry* createEyeCandyGeometry(const float* position, size_t num_vertices, const uint32_t* indices, const float* triangle_colors, size_t num_triangles) override;
-		::Geometry* createCheckerboardGeometry(int type, const float* position, size_t num_vertices, const uint32_t* indices, const float* triangle_colors, size_t num_triangles) override;
-		::Geometry* create2DTriangles(const float* position, const float* normals, const float* color, size_t num_vertices) override;
-		::Geometry* createWaterDemo(const float* position, size_t num_vertices, const uint32_t* indices, size_t num_triangles, float* img_data, uint32_t width, uint32_t height, char* normal_data, uint32_t n_width, uint32_t n_height, uint32_t n_levels) override;
-		::Geometry* createIsoBlend(float* vert_data, uint32_t num_vertices, uint32_t* index_data, uint32_t num_indices) override;
-		::Geometry* createGlyphDemo(uint64_t mask, float* vert_data, uint32_t num_vertices, uint32_t* index_data, uint32_t num_indices) override;
-		::Geometry* createIsoStipple(uint64_t mask, float* vert_data, uint32_t num_vertices, uint32_t* index_data, uint32_t num_indices) override;
+		::Geometry* createOceanGeometry(const float* position, size_t num_vertices, const uint32_t* indices, size_t num_triangles) { return nullptr; }
+		::Geometry* createCheckerboardGeometry(int type, const float* position, size_t num_vertices, const uint32_t* indices, const float* triangle_colors, size_t num_triangles) override { return nullptr; }
+		::Geometry* create2DTriangles(const float* position, const float* normals, const float* color, size_t num_vertices) override { return nullptr; }
+		::Geometry* createIsoBlend(float* vert_data, uint32_t num_vertices, uint32_t* index_data, uint32_t num_indices) override { return nullptr; }
+		::Geometry* createGlyphDemo(uint64_t mask, float* vert_data, uint32_t num_vertices, uint32_t* index_data, uint32_t num_indices) override { return nullptr; }
+		::Geometry* createIsoStipple(uint64_t mask, float* vert_data, uint32_t num_vertices, uint32_t* index_data, uint32_t num_indices) override { return nullptr; }
 
 		::Texture* createTexture2DRGBA8(size_t width, size_t height, unsigned int levels, const std::uint32_t* data) override;
 		::Material* createColoredMaterial(const math::float4& color) override;
 		::Material* createLitMaterial(const math::float4& color) override;
-		::Material* createVertexHeavyMaterial(int iterations) override;
-		::Material* createFragmentHeavyMaterial(int iterations) override;
+		::Material* createVertexHeavyMaterial(int iterations) override { return nullptr; }
+		::Material* createFragmentHeavyMaterial(int iterations) override { return nullptr; }
 
 		::Material* createClipspaceMaterial() override;
-		::Material* createVertexHeavyClipspaceMaterial(int iterations) override;
-		::Material* createFragmentHeavyClipspaceMaterial(int iterations) override;
+		::Material* createVertexHeavyClipspaceMaterial(int iterations) override { return nullptr; }
+		::Material* createFragmentHeavyClipspaceMaterial(int iterations) override { return nullptr; }
 
 		::Material* createEyeCandyMaterial() override;
-		::Material* createVertexHeavyEyeCandyMaterial(int iterations) override;
-		::Material* createFragmentHeavyEyeCandyMaterial(int iterations) override;
+		::Material* createVertexHeavyEyeCandyMaterial(int iterations) override { return nullptr; }
+		::Material* createFragmentHeavyEyeCandyMaterial(int iterations) override { return nullptr; }
+
+		::Material* createOceanMaterial(const void* img_data, size_t width, size_t height, const void* normal_data, size_t n_width, size_t n_height, unsigned int n_levels) override { return nullptr; }
 
 		void setLight(const FW::Vec3f& pos, const FW::Vec3f& color);
 

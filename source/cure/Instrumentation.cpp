@@ -99,7 +99,6 @@ namespace
 		    << "\tBLENDING: " << BLENDING << '\n'
 		    << "\tFRAMEBUFFER_SRGB: " << FRAMEBUFFER_SRGB << '\n' << '\n'
 
-		    << "\tWIREFRAME: " << WIREFRAME << '\n'
 		    << "\tDRAW_BOUNDING_BOX: " << DRAW_BOUNDING_BOX << '\n' << '\n'
 
 		    << "\tTRIANGLE_BUFFER_SIZE: " << TRIANGLE_BUFFER_SIZE << '\n'

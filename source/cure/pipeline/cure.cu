@@ -33,8 +33,8 @@ INSTANTIATE_PIPELINE(simple_shading_quads, true, SimpleVertexAttributes, Indexed
 using TexturedVertexAttributes = InputVertexAttributes<
 	VertexBufferAttributes<SimpleVertexBuffer, math::float3, math::float3, math::float2>
 >;
-INSTANTIATE_PIPELINE(textured_shading_tris, true, TexturedVertexAttributes, IndexedTriangleList, TexturedVertexShader, CoverageShader, TexturedFragmentShader, TextureBlending);
-INSTANTIATE_PIPELINE(textured_shading_quads, true, TexturedVertexAttributes, IndexedQuadList, TexturedVertexShader, CoverageShader, TexturedFragmentShader, TextureBlending);
+INSTANTIATE_PIPELINE(textured_shading_tris, true, TexturedVertexAttributes, IndexedTriangleList, TexturedVertexShader, CoverageShader, TexturedFragmentShader<false>, TextureBlending);
+INSTANTIATE_PIPELINE(textured_shading_quads, true, TexturedVertexAttributes, IndexedQuadList, TexturedVertexShader, CoverageShader, TexturedFragmentShader<false>, TextureBlending);
 
 INSTANTIATE_PIPELINE(vertex_heavy_tris, true, SimpleVertexAttributes, IndexedTriangleList, VertexHeavyVertexShader, CoverageShader, VertexHeavyFragmentShader, NoBlending);
 INSTANTIATE_PIPELINE(fragment_heavy_tris, true, SimpleVertexAttributes, IndexedTriangleList, FragmentHeavyVertexShader, CoverageShader, FragmentHeavyFragmentShader, NoBlending);
@@ -42,9 +42,10 @@ INSTANTIATE_PIPELINE(fragment_heavy_tris, true, SimpleVertexAttributes, IndexedT
 
 using WaterVertexBuffer = VertexBuffer<16U>;
 using WaterVertexAttributes = InputVertexAttributes<VertexBufferAttributes<WaterVertexBuffer, math::float4>>;
-INSTANTIATE_PIPELINE(water_demo, true, WaterVertexAttributes, IndexedAdaptiveQuadList<WaveQuadTriangulationShader>, WaterVertexShader, CoverageShader, WaterFragmentShader, WaterBlending);
-//INSTANTIATE_PIPELINE(water_demo, true, WaterVertexAttributes, IndexedAdaptiveQuadList<WaveQuadTriangulationShader>, WaterVertexShader, CheckerboardCoverageShader, WaterFragmentShader, WaterBlending);
-//INSTANTIATE_PIPELINE(water_demo, true, WaterVertexAttributes, IndexedQuadList, WaterVertexShader, CoverageShader, WaterFragmentShader, WaterBlending);
+INSTANTIATE_PIPELINE(ocean_adaptive, ENABLE_OCEAN_DEMO, WaterVertexAttributes, IndexedAdaptiveQuadList<WaveQuadTriangulationShader>, WaterVertexShader, CoverageShader, WaterFragmentShader<false>, WaterBlending);
+INSTANTIATE_PIPELINE(ocean_normal, ENABLE_OCEAN_DEMO, WaterVertexAttributes, IndexedQuadList, WaterVertexShader, CoverageShader, WaterFragmentShader<false>, WaterBlending);
+INSTANTIATE_PIPELINE(ocean_adaptive_wire, ENABLE_OCEAN_DEMO, WaterVertexAttributes, IndexedAdaptiveQuadList<WaveQuadTriangulationShader>, WaterVertexShader, CoverageShader, WaterFragmentShader<true>, WaterBlending);
+INSTANTIATE_PIPELINE(ocean_normal_wire, ENABLE_OCEAN_DEMO, WaterVertexAttributes, IndexedQuadList, WaterVertexShader, CoverageShader, WaterFragmentShader<true>, WaterBlending);
 
 using ClipspaceVertexBuffer = VertexBuffer<16U>;
 using ClipspaceVertexAttributes = InputVertexAttributes<
@@ -56,7 +57,7 @@ INSTANTIATE_PIPELINE(fragment_heavy_clipspace_shading, true, ClipspaceVertexAttr
 
 using EyeCandyVertexBuffer = VertexBuffer<48U>;
 using EyeCandyeVertexAttributes = InputVertexAttributes<VertexBufferAttributes<EyeCandyVertexBuffer, math::float4, math::float4, math::float4>>;
-INSTANTIATE_PIPELINE(eyecandy_shading, true, EyeCandyeVertexAttributes, IndexedTriangleList, EyeCandyVertexShader, CoverageShader, EyeCandyFragmentShader, EyeCandyBlending);
+INSTANTIATE_PIPELINE(eyecandy_shading, true, EyeCandyeVertexAttributes, IndexedTriangleList, EyeCandyVertexShader, CoverageShader, EyeCandyFragmentShader<false>, EyeCandyBlending);
 INSTANTIATE_PIPELINE(vertex_heavy_eyecandy_shading, true, EyeCandyeVertexAttributes, IndexedTriangleList, EyeCandyVertexShaderVertexHeavy, CoverageShader, EyeCandyFragmentShaderVertexHeavy, EyeCandyBlending);
 INSTANTIATE_PIPELINE(fragment_heavy_eyecandy_shading, true, EyeCandyeVertexAttributes, IndexedTriangleList, EyeCandyVertexShader, CoverageShader, EyeCandyFragmentShaderFragmentHeavy, EyeCandyBlending);
 
@@ -85,7 +86,7 @@ INSTANTIATE_PIPELINE(glyph_demo, true, IsoBlendVertexAttributes, IndexedTriangle
 //INSTANTIATE_PIPELINE(glyph_demo, true, IsoBlendVertexAttributes, IndexedTriangleList, GlyphVertexShader, CoverageShader, GlyphFragmentShader, SeparableBlendOp<Difference>);
 //INSTANTIATE_PIPELINE(glyph_demo, true, IsoBlendVertexAttributes, IndexedTriangleList, GlyphVertexShader, CoverageShader, GlyphFragmentShader, SeparableBlendOp<Exclusion>);
 
-INSTANTIATE_PIPELINE(checkerboard_demo, true, EyeCandyeVertexAttributes, IndexedTriangleList, EyeCandyVertexShader, CheckerboardCoverageShader, EyeCandyFragmentShader, EyeCandyBlending);
-INSTANTIATE_PIPELINE(checkerboard_quad_demo, true, EyeCandyeVertexAttributes, IndexedTriangleList, EyeCandyVertexShader, CheckerboardQuadCoverageShader, EyeCandyFragmentShader, EyeCandyBlending);
+INSTANTIATE_PIPELINE(checkerboard_demo, true, EyeCandyeVertexAttributes, IndexedTriangleList, EyeCandyVertexShader, CheckerboardCoverageShader, EyeCandyFragmentShader<false>, EyeCandyBlending);
+INSTANTIATE_PIPELINE(checkerboard_quad_demo, true, EyeCandyeVertexAttributes, IndexedTriangleList, EyeCandyVertexShader, CheckerboardQuadCoverageShader, EyeCandyFragmentShader<false>, EyeCandyBlending);
 INSTANTIATE_PIPELINE(checkerboard_fragment_demo, true, EyeCandyeVertexAttributes, IndexedTriangleList, EyeCandyVertexShader, CoverageShader, EyeCandyCoverageFragmentShader, EyeCandyBlending);
 INSTANTIATE_PIPELINE(checkerboard_quad_fragment_demo, true, EyeCandyeVertexAttributes, IndexedTriangleList, EyeCandyVertexShader, CoverageShader, EyeCandyQuadCoverageFragmentShader, EyeCandyBlending);

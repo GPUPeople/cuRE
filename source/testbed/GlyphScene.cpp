@@ -2,14 +2,16 @@
 
 
 #include <cstdint>
-#include <math/vector.h>
-
-#include "GlyphScene.h"
+#include <stdexcept>
 #include <ctime>
 #include <fstream>
 #include <iostream>
 #include <sstream>
 #include <string>
+
+#include <math/vector.h>
+
+#include "GlyphScene.h"
 
 
 struct PosColor
@@ -177,6 +179,9 @@ void GlyphScene::switchRenderer(Renderer* renderer)
 		uint64_t mask = 0b1111111111111111111111111111111111111111111111111111111111111111;
 		material.reset(renderer->createLitMaterial(math::float4(1.0f, 1.0f, 1.0f, 1.0f)));
 		geometry.reset(renderer->createGlyphDemo(mask, (float*)final_vertices_.data(), static_cast<unsigned int>(final_vertices_.size()), (uint32_t*)indices_.data(), static_cast<unsigned int>(indices_.size())));
+
+		if (!material || !geometry)
+			throw std::runtime_error("renderer cannot support this scene type");
 	}
 	else
 	{

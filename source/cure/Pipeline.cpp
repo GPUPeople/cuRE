@@ -46,7 +46,10 @@ namespace cuRE
 		  eyecandy_shading_kernel(module.findPipelineKernel("eyecandy_shading")),
 		  vertex_heavy_eyecandy_shading_kernel(module.findPipelineKernel("vertex_heavy_eyecandy_shading")),
 		  fragment_heavy_eyecandy_shading_kernel(module.findPipelineKernel("fragment_heavy_eyecandy_shading")),
-		  water_demo_kernel(module.findPipelineKernel("water_demo")),
+		  ocean_adaptive_kernel(module.findPipelineKernel("ocean_adaptive")),
+		  ocean_static_kernel(module.findPipelineKernel("ocean_normal")),
+		  ocean_adaptive_wire_kernel(module.findPipelineKernel("ocean_adaptive_wire")),
+		  ocean_static_wire_kernel(module.findPipelineKernel("ocean_normal_wire")),
 		  blend_demo_kernel(module.findPipelineKernel("blend_demo")),
 		  iso_blend_demo_kernel(module.findPipelineKernel("iso_blend_demo")),
 		  iso_stipple_kernel(module.findPipelineKernel("iso_stipple_demo")),
@@ -260,10 +263,14 @@ namespace cuRE
 		draw(*quads_kernel, vertices, num_vertices, indices, num_indices);
 	}
 
-	void Pipeline::drawWaterDemo(CUdeviceptr vertices, size_t num_vertices, CUdeviceptr indices, size_t num_indices)
+	void Pipeline::drawOcean(CUdeviceptr vertices, size_t num_vertices, CUdeviceptr indices, size_t num_indices, bool adaptive, bool wireframe)
 	{
 		framebuffer.clearColorBufferToTextureF();
-		draw(water_demo_kernel, vertices, num_vertices, indices, num_indices);
+
+		if (adaptive)
+			draw(wireframe ? ocean_adaptive_wire_kernel : ocean_adaptive_kernel, vertices, num_vertices, indices, num_indices);
+		else
+			draw(wireframe ? ocean_static_wire_kernel : ocean_static_kernel, vertices, num_vertices, indices, num_indices);
 	}
 
 	void Pipeline::drawBlendDemo(CUdeviceptr vertices, size_t num_vertices, CUdeviceptr indices, size_t num_indices)

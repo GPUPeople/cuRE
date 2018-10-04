@@ -64,6 +64,9 @@
     <ClInclude Include="..\..\..\source\cure\materials\HeavyMaterial.h">
       <Filter>source\materials</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\source\cure\materials\OceanMaterial.h">
+      <Filter>source\materials</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\source\cure\Geometry.cpp">
@@ -118,6 +121,9 @@
       <Filter>source\materials</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\source\cure\materials\HeavyMaterial.cpp">
+      <Filter>source\materials</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\cure\materials\OceanMaterial.cpp">
       <Filter>source\materials</Filter>
     </ClCompile>
   </ItemGroup>

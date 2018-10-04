@@ -21,6 +21,8 @@ using PipelineConfigs = PipelineConfigList <
 	//GTX_980_Ti
 	//GTX_980_Ti_dynamic
 	//GTX_TITAN_X
+	//MX_150
+	//MX_150_dynamic
 	//GTX_1060
 	//GTX_1060_dynamic
 	//GTX_1070
@@ -47,7 +49,6 @@ constexpr bool DEPTH_WRITE = true;
 constexpr bool BLENDING = false;
 constexpr bool FRAMEBUFFER_SRGB = true;
 
-constexpr bool WIREFRAME = false;
 constexpr bool DRAW_BOUNDING_BOX = false;
 
 constexpr unsigned int TRIANGLE_BUFFER_SIZE = 1024 * 1024;
@@ -75,6 +76,8 @@ constexpr PATTERNTECHNIQUE PATTERN_TECHNIQUE = PATTERNTECHNIQUE::OFFSET;
 // floor(sqrt(MAX_NUM_RASTERIZERS + 1))
 //constexpr int OFFSET_PARAMETER = static_small_sqrt_floor<MAX_NUM_RASTERIZERS + 1>::value;
 constexpr int OFFSET_PARAMETER = static_small_sqrt_floor<MAX_NUM_RASTERIZERS>::value;
+
+constexpr bool ENABLE_OCEAN_DEMO = true;
 
 #include "instrumentation_config.h"
 

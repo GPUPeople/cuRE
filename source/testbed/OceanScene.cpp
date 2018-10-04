@@ -1,22 +1,26 @@
 
 
 
+#include <type_traits>
 #include <cstdint>
 #include <ctime>
+#include <stdexcept>
 #include <fstream>
 #include <iostream>
 #include <map>
 #include <set>
 #include <sstream>
-#include <type_traits>
 #include <vector>
-
-#include <GL/platform/InputHandler.h>
 
 #include <math/vector.h>
 
+#include <GL/platform/InputHandler.h>
+
+#include <pfm.h>
+#include <png.h>
+
 #include "Config.h"
-#include "WaterScene.h"
+#include "OceanScene.h"
 
 
 using math::float2;
@@ -214,7 +218,7 @@ namespace
 	};
 }
 
-WaterScene::WaterScene(const Config& config)
+OceanScene::OceanScene(const Config& config)
     : img(0, 0), normal_map(0, 0)
 {
 	paused = 0;
@@ -255,7 +259,7 @@ WaterScene::WaterScene(const Config& config)
 		waves[i] = {Q, A, w, S * w, normalize(dir)};
 	}
 
-	auto& cfg = config.loadConfig("water_demo");
+	auto& cfg = config.loadConfig("ocean");
 
 	paused = cfg.loadInt("paused", paused);
 	base_waves = cfg.loadInt("base_waves", base_waves);
@@ -286,7 +290,7 @@ WaterScene::WaterScene(const Config& config)
 	}
 }
 
-void WaterScene::createImage(const char* fname)
+void OceanScene::createImage(const char* fname)
 {
 	img = PFM::loadRGB32F(fname);
 }
@@ -312,7 +316,7 @@ OutputIt flipCopy(OutputIt dest, const InputIt src, size_t w, size_t h)
 	return dest;
 }
 
-void WaterScene::createNormalMap(const char* fname, bool single)
+void OceanScene::createNormalMap(const char* fname, bool single)
 {
 	//normal_map = PNG::loadRGBA8(fname);
 
@@ -366,12 +370,10 @@ void WaterScene::createNormalMap(const char* fname, bool single)
 	texture = std::tuple<std::unique_ptr<uint32_t[]>, size_t, size_t, int>(std::move(texdata), texw, texh, texlevels);
 }
 
-void WaterScene::switchRenderer(Renderer* renderer)
+void OceanScene::switchRenderer(Renderer* renderer)
 {
 	if (renderer)
 	{
-		material = resource_ptr<Material>(renderer->createLitMaterial(math::float4(1.0f, 1.0f, 1.0f, 1.0f)));
-
 		//water demo
 		//std::vector<uint32_t> ranges = { 1, 2, 2, 2, 3, 1, 1};
 		//WaterMesh mesh(20.f, ranges.data(), ranges.size(), 0);
@@ -388,14 +390,13 @@ void WaterScene::switchRenderer(Renderer* renderer)
 		//createNormalMap("assets/checker2");
 		//createNormalMap("assets/checker3", true);
 
-		geometry = resource_ptr<Geometry>(renderer->createWaterDemo(&mesh.positions()[0].x, mesh.positions().size(), &mesh.indices()[0], mesh.indices().size(),
-		                                                            reinterpret_cast<float*>(data(img)), static_cast<unsigned int>(width(img)), static_cast<unsigned int>(height(img)),
-		                                                            //reinterpret_cast<char*>(data(normal_map)), width(normal_map), height(normal_map)));
-		                                                            reinterpret_cast<char*>(std::get<0>(texture).get()), static_cast<unsigned int>(std::get<1>(texture)), static_cast<unsigned int>(std::get<2>(texture)), std::get<3>(texture)));
+		material = resource_ptr<Material>(renderer->createOceanMaterial(data(img), width(img), height(img), std::get<0>(texture).get(), std::get<1>(texture), std::get<2>(texture), std::get<3>(texture)));
+		geometry = resource_ptr<Geometry>(renderer->createOceanGeometry(&mesh.positions()[0].x, size(mesh.positions()), &mesh.indices()[0], size(mesh.indices())));
 
-		//geometry = resource_ptr<Geometry>(renderer->createIndexedQuads(poss.data(), poss.data(), poss.data(), poss.size() / 3, indices.data(), indices.size()));
-		//geometry = resource_ptr<Geometry>(renderer->createWaterDemo(poss.data(), poss.size() / 3, indices.data(), indices.size()));
-		std::cout << "generated sphere has " << mesh.positions().size() << " vertices and " << mesh.indices().size() << " indices.\n";
+		std::cout << "generated ocean has " << size(mesh.positions()) << " vertices and " << size(mesh.indices()) << " indices.\n";
+
+		if (!material || !geometry)
+			throw std::runtime_error("renderer cannot support this scene type");
 	}
 	else
 	{
@@ -404,7 +405,7 @@ void WaterScene::switchRenderer(Renderer* renderer)
 	}
 }
 
-void WaterScene::update(Camera::UniformBuffer& buff)
+void OceanScene::update(Camera::UniformBuffer& buff)
 {
 	if (!paused)
 	{
@@ -418,7 +419,7 @@ void WaterScene::update(Camera::UniformBuffer& buff)
 	}
 }
 
-void WaterScene::draw(RendereringContext* context) const
+void OceanScene::draw(RendereringContext* context) const
 {
 	context->setLight(math::float3(0.0f, 10.0f, 0.0f), math::float3(1.0f, 1.0f, 1.0f));
 
@@ -450,46 +451,59 @@ void WaterScene::draw(RendereringContext* context) const
 		context->setUniformf(off + 5, w.D.y);
 	}
 
-	material->draw(geometry.get());
+	//                                    this is really bad!
+	material->draw(geometry.get(), adaptive ? 1 : 0, wireframe ? 1 : 0);
 }
 
-void WaterScene::handleButton(GL::platform::Key c)
+void OceanScene::handleButton(GL::platform::Key c)
 {
-	if (c == GL::platform::Key::C_B)
+	switch (c)
 	{
-		int index = base_waves + (boop_index % max_boop_waves);
-		boop_index++;
+	case GL::platform::Key::C_B:
+		{
+			int index = base_waves + (boop_index % max_boop_waves);
+			boop_index++;
 
-		float median_length = 2;
-		float median_amplitude = 8.15;
-		float G = 0.00001f;
+			float median_length = 2;
+			float median_amplitude = 8.15;
+			float G = 0.00001f;
 
-		float r = 1.f;
-		float ratio = (0.5f + 1.5f * r);
-		float L = ratio * median_length;
-		float w = (2 * math::constants<float>::pi()) / L;
-		float S = sqrt(G * (2 * math::constants<float>::pi()) / L);
-		float A = ratio * median_amplitude;
+			float r = 1.f;
+			float ratio = (0.5f + 1.5f * r);
+			float L = ratio * median_length;
+			float w = (2 * math::constants<float>::pi()) / L;
+			float S = sqrt(G * (2 * math::constants<float>::pi()) / L);
+			float A = ratio * median_amplitude;
 
-		math::float4 on_far(0, 0, 1, 1);
-		math::float4 on_near(0, 0, 0, 1);
+			math::float4 on_far(0, 0, 1, 1);
+			math::float4 on_near(0, 0, 0, 1);
 
-		on_far = buffer.PV_inv * on_far;
-		on_near = buffer.PV_inv * on_near;
+			on_far = buffer.PV_inv * on_far;
+			on_near = buffer.PV_inv * on_near;
 
-		math::float2 pos = center_pos + 15.f * normalize(math::float2(on_far.x / on_far.w - on_near.x / on_near.w, on_far.z / on_far.w - on_near.z / on_near.w));
+			math::float2 pos = center_pos + 15.f * normalize(math::float2(on_far.x / on_far.w - on_near.x / on_near.w, on_far.z / on_far.w - on_near.z / on_near.w));
 
-		Wave wave = {-current_time, A, w, S * w, pos};
+			Wave wave = {-current_time, A, w, S * w, pos};
 
-		waves[index] = wave;
-	}
-	if (c == GL::platform::Key::C_P)
-	{
+			waves[index] = wave;
+		}
+		break;
+
+	case GL::platform::Key::C_P:
 		paused = !paused;
+		break;
+
+	case GL::platform::Key::C_W:
+		wireframe = !wireframe;
+		break;
+
+	case GL::platform::Key::C_A:
+		adaptive = !adaptive;
+		break;
 	}
 }
 
-void WaterScene::save(Config& config) const
+void OceanScene::save(Config& config) const
 {
 	auto& cfg = config.loadConfig("water_demo");
 
@@ -519,17 +533,4 @@ void WaterScene::save(Config& config) const
 		cfg.saveFloat((std::string("D_x") + post).c_str(), waves[i].D.x);
 		cfg.saveFloat((std::string("D_y") + post).c_str(), waves[i].D.y);
 	}
-}
-
-void* WaterScene::operator new(std::size_t size)
-{
-	auto p = _aligned_malloc(size, __alignof(WaterScene));
-	if (p == nullptr)
-		throw std::bad_alloc();
-	return p;
-}
-
-void WaterScene::operator delete(void* p)
-{
-	_aligned_free(p);
 }

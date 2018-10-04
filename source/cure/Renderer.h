@@ -95,7 +95,7 @@ namespace cuRE
 		::Geometry* createEyeCandyGeometry(const float* position, size_t num_vertices, const uint32_t* indices, const float* triangle_colors, size_t num_triangles) override;
 		::Geometry* createCheckerboardGeometry(int type, const float* position, size_t num_vertices, const uint32_t* indices, const float* triangle_colors, size_t num_triangles) override;
 		::Geometry* create2DTriangles(const float* position, const float* normals, const float* color, size_t num_vertices) override;
-		::Geometry* createWaterDemo(const float* position, size_t num_vertices, const uint32_t* indices, size_t num_triangles, float* img_data, uint32_t width, uint32_t height, char* normal_data, uint32_t n_width, uint32_t n_height, uint32_t n_levels) override;
+		::Geometry* createOceanGeometry(const float* position, size_t num_vertices, const uint32_t* indices, size_t num_triangles) override;
 		::Geometry* createIsoBlend(float* vert_data, uint32_t num_vertices, uint32_t* index_data, uint32_t num_indices) override;
 		::Geometry* createGlyphDemo(uint64_t mask, float* vert_data, uint32_t num_vertices, uint32_t* index_data, uint32_t num_indices) override;
 		::Geometry* createIsoStipple(uint64_t mask, float* vert_data, uint32_t num_vertices, uint32_t* index_data, uint32_t num_indices) override;
@@ -113,6 +113,8 @@ namespace cuRE
 		::Material* createEyeCandyMaterial() override;
 		::Material* createVertexHeavyEyeCandyMaterial(int iterations) override;
 		::Material* createFragmentHeavyEyeCandyMaterial(int iterations) override;
+
+		::Material* createOceanMaterial(const void* img_data, size_t width, size_t height, const void* normal_data, size_t n_width, size_t n_height, unsigned int n_levels) override;
 
 		void setRenderTarget(GLuint color_buffer, int width, int height) override;
 		RendereringContext* beginFrame() override;

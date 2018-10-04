@@ -9,17 +9,13 @@
 #include "Scene.h"
 
 
-
 class IndexedTrianglemesh : public Scene
 {
-private:
-
-
 public:
+	IndexedTrianglemesh();
+
 	IndexedTrianglemesh(const IndexedTrianglemesh&) = delete;
 	IndexedTrianglemesh& operator =(const IndexedTrianglemesh&) = delete;
-
-	IndexedTrianglemesh();
 
 	void save(Config& config) const override {}
 };

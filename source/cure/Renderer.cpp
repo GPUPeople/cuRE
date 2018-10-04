@@ -15,6 +15,8 @@
 #include "materials/HeavyMaterial.h"
 #include "materials/ClipspaceMaterial.h"
 #include "materials/EyeCandyMaterial.h"
+#include "materials/OceanMaterial.h"
+
 #include "Renderer.h"
 
 #include "utils.h"
@@ -187,6 +189,12 @@ namespace cuRE
 		return mat;
 	}
 
+	::Material* Renderer::createOceanMaterial(const void* img_data, size_t width, size_t height, const void* normal_data, size_t n_width, size_t n_height, unsigned int n_levels)
+	{
+		OceanMaterial* mat = ResourceImp<OceanMaterial>::create(pipeline, static_cast<const float*>(img_data), width, height, static_cast<const std::uint32_t*>(normal_data), n_width, n_height, n_levels);
+		return mat;
+	}
+
 	::Geometry* Renderer::createIndexedTriangles(const float* position, const float* normals, const float* texcoord, size_t num_vertices, const std::uint32_t* indices, size_t num_indices)
 	{
 		auto geom = ResourceImp<IndexedTriangles>::create(pipeline, position, normals, texcoord, num_vertices, indices, num_indices);
@@ -201,9 +209,9 @@ namespace cuRE
 		return geom;
 	}
 
-	::Geometry* Renderer::createWaterDemo(const float* position, size_t num_vertices, const uint32_t* indices, size_t num_indices, float* img_data, uint32_t width, uint32_t height, char* normal_data, uint32_t n_width, uint32_t n_height, uint32_t n_levels)
+	::Geometry* Renderer::createOceanGeometry(const float* position, size_t num_vertices, const uint32_t* indices, size_t num_indices)
 	{
-		auto geom = ResourceImp<WaterDemo>::create(pipeline, position, num_vertices, indices, num_indices, img_data, width, height, normal_data, n_width, n_height, n_levels);
+		auto geom = ResourceImp<OceanGeometry>::create(pipeline, position, num_vertices, indices, num_indices);
 		perf_mon.recordMemoryStatus();
 		return geom;
 	}

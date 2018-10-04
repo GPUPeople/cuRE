@@ -11,10 +11,9 @@
 #include <math/vector.h>
 
 #include "Resource.h"
-
-#include "resource_ptr.h"
 #include "Scene.h"
 
+#include "resource_ptr.h"
 
 struct Renderer;
 struct RendereringContext;

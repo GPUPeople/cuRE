@@ -3,6 +3,7 @@
 
 #include <cstdint>
 #include <type_traits>
+#include <stdexcept>
 #include <iostream>
 
 #include <vector>
@@ -315,9 +316,6 @@ namespace
 	};
 }
 
-SphereScene::SphereScene()
-{
-}
 
 void SphereScene::switchRenderer(Renderer* renderer)
 {
@@ -336,8 +334,6 @@ void SphereScene::switchRenderer(Renderer* renderer)
 			mesh.markVertices();
 		}
 
-
-
 		size_t refinements = 6;
 		for (size_t ref = 0; ref < refinements; ++ref)
 		{
@@ -348,9 +344,13 @@ void SphereScene::switchRenderer(Renderer* renderer)
 				for (int i = 0; i < 3*ref; ++i)
 					mesh.optimize(1.0f);
 		}
-				
+		
 		geometry = resource_ptr<Geometry>(renderer->createIndexedTriangles(&mesh.positions()[0].x, &mesh.positions()[0].x, &mesh.positions()[0].x, mesh.positions().size(), &mesh.indices()[0], mesh.indices().size()));
+
 		std::cout << "generated sphere has " << mesh.positions().size() << " vertices and " << mesh.indices().size() << " indices.\n";
+
+		if (!material || !geometry)
+			throw std::runtime_error("renderer cannot support this scene type");
 	}
 	else
 	{
@@ -373,5 +373,4 @@ void SphereScene::draw(RendereringContext* context) const
 			                                           0.0f, 0.0f, 1.0f, z));
 			material->draw(geometry.get());
 		}
-
 }

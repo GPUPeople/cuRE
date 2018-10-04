@@ -137,6 +137,7 @@ struct FragmentHeavyFragmentShader : FragmentShader
 
 texture<uchar4, cudaTextureType2D, cudaReadModeNormalizedFloat> tex;
 
+template <bool WIREFRAME>
 struct TexturedFragmentShader : FragmentShader
 {
 	using FragmentShader::FragmentShader;

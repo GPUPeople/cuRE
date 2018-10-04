@@ -30,7 +30,7 @@
 #include "SphereScene.h"
 #include "StippleIsoScene.h"
 #include "TriangleScene.h"
-#include "WaterScene.h"
+#include "OceanScene.h"
 
 extern "C" __declspec(dllexport) DWORD NvOptimusEnablement = 0x1U;
 
@@ -99,8 +99,8 @@ RenderingSystem::RenderingSystem(PlugInManager& plugin_man, const Config& config
 		this->scene = std::make_unique<SphereScene>();
 	else if (std::strncmp(scene, "checkerboard_rendering_demo", 13) == 0)
 		this->scene = std::make_unique<CheckerboardScene>(config, display);
-	else if (std::strncmp(scene, "water", 5) == 0)
-		this->scene = std::make_unique<WaterScene>(config);
+	else if (std::strncmp(scene, "ocean", 5) == 0)
+		this->scene = std::make_unique<OceanScene>(config);
 	else if (std::strncmp(scene, "blend", 5) == 0)
 		this->scene = std::make_unique<BlendScene>();
 	else if (std::strncmp(scene, "isoblend", 8) == 0)

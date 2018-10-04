@@ -23,7 +23,7 @@ namespace cuRE
 	public:
 		LitMaterial(Pipeline& pipeline, const math::float4& color);
 
-		void draw(const ::Geometry* geometry) const;
+		void draw(const ::Geometry* geometry) const override;
 		void draw(const ::Geometry* geometry, int start, int num_indices) const override;
 	};
 }

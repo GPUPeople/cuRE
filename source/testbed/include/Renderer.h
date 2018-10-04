@@ -67,9 +67,9 @@ struct INTERFACE Renderer : public virtual PlugIn
 	virtual Geometry* createIndexedTriangles(const float* position, const float* normals, const float* texcoord, size_t num_vertices, const std::uint32_t* indices, size_t num_indices) = 0;
 	virtual Geometry* createIndexedQuads(const float* position, const float* normals, const float* texcoord, size_t num_vertices, const std::uint32_t* indices, size_t num_indices) = 0;
 	virtual Geometry* createEyeCandyGeometry(const float* position, size_t num_vertices, const uint32_t* indices, const float* triangle_colors, size_t num_triangles) = 0;
+	virtual Geometry* createOceanGeometry(const float* position, size_t num_vertices, const uint32_t* indices, size_t num_triangles) = 0;
 	virtual Geometry* createCheckerboardGeometry(int type, const float* position, size_t num_vertices, const uint32_t* indices, const float* triangle_colors, size_t num_triangles) = 0;
 	virtual Geometry* create2DTriangles(const float* position, const float* normals, const float* color, size_t num_vertices) = 0;
-	virtual Geometry* createWaterDemo(const float* position, size_t num_vertices, const uint32_t* indices, size_t num_triangles, float* img_data, uint32_t width, uint32_t height, char* normal_data, uint32_t n_width, uint32_t n_height, uint32_t n_levels) = 0;
 	virtual Geometry* createIsoBlend(float* vert_data, uint32_t num_vertices, uint32_t* index_data, uint32_t num_indices) = 0;
 	virtual Geometry* createGlyphDemo(uint64_t mask, float* vert_data, uint32_t num_vertices, uint32_t* index_data, uint32_t num_indices) = 0;
 	virtual Geometry* createIsoStipple(uint64_t mask, float* vert_data, uint32_t num_vertices, uint32_t* index_data, uint32_t num_indices) = 0;
@@ -87,6 +87,8 @@ struct INTERFACE Renderer : public virtual PlugIn
 	virtual Material* createEyeCandyMaterial() = 0;
 	virtual Material* createVertexHeavyEyeCandyMaterial(int iterations) = 0;
 	virtual Material* createFragmentHeavyEyeCandyMaterial(int iterations) = 0;
+
+	virtual Material* createOceanMaterial(const void* img_data, size_t width, size_t height, const void* normal_data, size_t n_width, size_t n_height, unsigned int n_levels) = 0;
 
 	virtual void setRenderTarget(GLuint color_buffer, int width, int height) = 0;
 	virtual RendereringContext* beginFrame() = 0;

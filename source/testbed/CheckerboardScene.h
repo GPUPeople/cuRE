@@ -11,8 +11,8 @@
 #include <math/vector.h>
 
 #include "Resource.h"
-
 #include "Scene.h"
+
 #include "resource_ptr.h"
 
 
@@ -23,7 +23,6 @@ class Display;
 
 class CheckerboardScene : public Scene
 {
-private:
 	struct GPUVertex
 	{
 		math::float4 pos;
@@ -31,8 +30,8 @@ private:
 		math::float4 color;
 	};
 
-	 uint32_t width;
-	 uint32_t height;
+	uint32_t width;
+	uint32_t height;
 
 	uint32_t num_vertices;
 	uint32_t num_meshes;

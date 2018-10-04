@@ -118,7 +118,7 @@ namespace FreePipe
 
 	::Geometry* Renderer::createIndexedQuads(const float* position, const float* normals, const float* texcoord, size_t num_vertices, const unsigned int* indices, size_t num_indices)
 	{
-		throw std::runtime_error("primitive type not supported");
+		return nullptr;
 	}
 
 	::Geometry* Renderer::createClipspaceGeometry(const float* position, size_t num_vertices)
@@ -144,80 +144,10 @@ namespace FreePipe
 		return mat;
 	}
 
-	::Material* Renderer::createVertexHeavyMaterial(int iterations)
-	{
-		throw std::runtime_error("no heavy materials here!");
-	}
-
-	::Material* Renderer::createFragmentHeavyMaterial(int iterations)
-	{
-		throw std::runtime_error("no heavy materials here!");
-	}
-
 	::Material* Renderer::createClipspaceMaterial()
 	{
 		ClipspaceMaterial* mat = ResourceImp<ClipspaceMaterial>::create(*this, module);
 		return mat;
-	}
-
-	::Material* Renderer::createVertexHeavyClipspaceMaterial(int iterations)
-	{
-		throw std::runtime_error("no heavy materials here!");
-	}
-
-	::Material* Renderer::createFragmentHeavyClipspaceMaterial(int iterations)
-	{
-		throw std::runtime_error("no heavy materials here!");
-	}
-
-	::Geometry* Renderer::createEyeCandyGeometry(const float* position, size_t num_vertices, const uint32_t* indices, const float* triangle_colors, size_t num_triangles)
-	{
-		throw std::runtime_error("Help! Eye candy not implemented for this renderer!");
-	}
-
-	::Material* Renderer::createEyeCandyMaterial()
-	{
-		throw std::runtime_error("Help! Eye candy not implemented for this renderer!");
-	}
-
-	::Material* Renderer::createVertexHeavyEyeCandyMaterial(int iterations)
-	{
-		throw std::runtime_error("no heavy materials here!");
-	}
-
-	::Material* Renderer::createFragmentHeavyEyeCandyMaterial(int iterations)
-	{
-		throw std::runtime_error("no heavy materials here!");
-	}
-
-	::Geometry* Renderer::createCheckerboardGeometry(int type, const float* position, size_t num_vertices, const uint32_t* indices, const float* triangle_colors, size_t num_triangles)
-	{
-		throw std::runtime_error("Help! Checker board not implemented for this renderer!");
-	}
-
-	::Geometry* Renderer::create2DTriangles(const float* position, const float* normals, const float* color, size_t num_vertices)
-	{
-		throw std::runtime_error("Help! 2D triangles not implemented for this renderer!");
-	}
-
-	::Geometry* Renderer::createWaterDemo(const float* position, size_t num_vertices, const uint32_t* indices, size_t num_triangles, float* img_data, uint32_t width, uint32_t height, char* normal_data, uint32_t n_width, uint32_t n_height, uint32_t n_levels)
-	{
-		throw std::runtime_error("Help! Water demo not implemented for this renderer!");
-	}
-
-	::Geometry* Renderer::createIsoBlend(float* vert_data, uint32_t num_vertices, uint32_t* index_data, uint32_t num_indices)
-	{
-		throw std::runtime_error("Help! Isoblend demo not implemented for this renderer!");
-	}
-
-	::Geometry* Renderer::createGlyphDemo(uint64_t mask, float* vert_data, uint32_t num_vertices, uint32_t* index_data, uint32_t num_indices)
-	{
-		throw std::runtime_error("Help! Glyph demo not implemented for this renderer!");
-	}
-
-	::Geometry* Renderer::createIsoStipple(uint64_t mask, float* vert_data, uint32_t num_vertices, uint32_t* index_data, uint32_t num_indices)
-	{
-		throw std::runtime_error("Help! Isostipple not implemented for this renderer!");
 	}
 
 
@@ -385,18 +315,5 @@ namespace FreePipe
 	void Renderer::destroy()
 	{
 		delete this;
-	}
-
-	void* Renderer::operator new(std::size_t size)
-	{
-		auto p = _aligned_malloc(size, __alignof(Renderer));
-		if (p == nullptr)
-			throw std::bad_alloc();
-		return p;
-	}
-
-	void Renderer::operator delete(void* p)
-	{
-		_aligned_free(p);
 	}
 }

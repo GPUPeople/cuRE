@@ -17,12 +17,12 @@
 
 class SphereScene : public Scene
 {
-private:
 	resource_ptr<Geometry> geometry;
 	resource_ptr<Material> material;
 
 public:
-	SphereScene();
+	SphereScene() = default;
+
 	SphereScene(const SphereScene&) = delete;
 	SphereScene& operator =(const SphereScene&) = delete;
 
